@@ -17,7 +17,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
             <h1>Gender:{user.gender}</h1>
             <h1>Birthday:{user.birthday}</h1>
             <h1>Workplace:{user.workplace}</h1>
-            <UpdateProfile id={user.userId} />
+            <UpdateProfile id={user.id} />
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
             <FriendList id={user.userId}/>
