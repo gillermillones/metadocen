@@ -3,12 +3,14 @@ import Link from 'next/link';
 
 export default function UpdateProfile({ id }: { id: string }) {
   return (
-    <Link
-      href={`/dashboard/files/${id}/edit`}
-      className="rounded-md border p-2 hover:bg-gray-100"
-    >
-      <PencilIcon className="w-5" />
-    </Link>
+    <div className="flex flex-row">
+      <Link
+        href={`/dashboard/profile/${id}/edit`}
+        className="rounded-md border p-2 hover:bg-gray-100"
+      >
+        <PencilIcon className="w-5" />
+      </Link>
+    </div>
   );
 }
 /*

@@ -1,23 +1,26 @@
-import { SessionData } from '@/app/lib/session';
 import { FriendListSkeleton } from '@/app/ui/skeletons';
 import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import FriendList from '@/app/ui/friends/friend-list';
 import UpdateProfile from '@/app/ui/profile/buttons';
-import Link from 'next/link';
+import { getFullUserById } from '@/auth';
 
-export default async function OwnProfileTable({ session }: { session: SessionData }) {
+export default async function OwnProfileTable({ id }: { id: string }) {
+  const user = await getFullUserById(id);
 
   return (
     <div className="flex flex-col w-full justify-between">
         <h1 className={`${lusitana.className} text-2xl`}>Your Profile Page</h1>
         <div>
-            <h1>Email: {session.email}</h1>
-            <h1>User ID:{session.userId}</h1>
-            <UpdateProfile id={session.userId} />
+            <h1>Email: {user.email}</h1>
+            <h1>User ID:{user.userId}</h1>
+            <h1>Gender:{user.gender}</h1>
+            <h1>Birthday:{user.birthday}</h1>
+            <h1>Workplace:{user.workplace}</h1>
+            <UpdateProfile id={user.userId} />
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
-            <FriendList id={session.userId}/>
+            <FriendList id={user.userId}/>
         </Suspense>
     </div>
   );

@@ -20,60 +20,6 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
     return (
         <form action={formAction}>
             <div className="rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
-                {/* Password */}
-                <div className="mb-4">
-                    <label htmlFor="password" className="mb-2 block text-sm font-medium">
-                        Contraseña
-                    </label>
-                    <div className="relative mt-2 rounded-md">
-                        <div className="relative">
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                defaultValue={user.password}
-                                placeholder="Contraseña"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
-                                aria-describedby="password-error"
-                            />
-                        </div>
-                        <div id="password-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.password &&
-                            state.errors.password.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                {/* Password 2 */}
-                <div className="mb-4">
-                    <label htmlFor="password2" className="mb-2 block text-sm font-medium">
-                        Repetir contraseña
-                    </label>
-                    <div className="relative mt-2 rounded-md">
-                        <div className="relative">
-                            <input
-                                id="password2"
-                                name="password2"
-                                type="password"
-                                defaultValue={user.password}
-                                placeholder="Repetir contraseña"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
-                                aria-describedby="password2-error"
-                            />
-                        </div>
-                        <div id="password2-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.password2 &&
-                            state.errors.password2.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-                </div>
                 {/* Gender */}
                 <div className="mb-4">
                     <label htmlFor="gender" className="mb-2 block text-sm font-medium">
@@ -149,6 +95,32 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                         <div id="workplace-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.workplace &&
                             state.errors.workplace.map((error: string) => (
+                                <p className="mt-2 text-sm text-red-500" key={error}>
+                                {error}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                {/* Password */}
+                <div className="mb-4">
+                    <label htmlFor="password" className="mb-2 block text-sm font-medium">
+                        Introduzca su contraseña
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="Contraseña"
+                                className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
+                                aria-describedby="password-error"
+                            />
+                        </div>
+                        <div id="password-error" aria-live="polite" aria-atomic="true">
+                            {state.errors?.password &&
+                            state.errors.password.map((error: string) => (
                                 <p className="mt-2 text-sm text-red-500" key={error}>
                                 {error}
                                 </p>

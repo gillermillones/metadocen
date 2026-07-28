@@ -4,7 +4,7 @@ import { z } from 'zod';
 import postgres from 'postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { signIn } from '@/auth';
+import { getUserById, signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 import bcrypt from 'bcrypt';
 import { getIronSession, IronSession } from "iron-session";
@@ -31,8 +31,7 @@ const RegisterFormSchema = z.object({
 
 const ProfileFormSchema = z.object({
   id: z.string(),
-  password: z.string().min(6, { message: 'Password must be at least 6 characters' }),
-  password2: z.string().min(6, { message: 'Passwords do not match' }),
+  password: z.string(),
   gender: z.enum(['masculino', 'femenino', 'otro'], { invalid_type_error: 'Error en el genero' }).optional().or(z.literal('')),
   birthday: z.string().optional(),
   workplace: z.string().optional().or(z.literal('')),
@@ -492,7 +491,6 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
 export async function updateProfile(id: string, prevState: ProfileState, formData: FormData) {
     const validatedFields = UpdateProfile.safeParse({
         password: formData.get('password'),
-        password2: formData.get('password2'),
         gender: formData.get('gender'),
         workplace: formData.get('workplace'),
     });
@@ -505,22 +503,23 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
         };
     }
 
-    const { password, password2, gender, workplace } = validatedFields.data;
+    const { password, gender, workplace } = validatedFields.data;
+    const target = await getUserById(id);
+    const passwordsMatch = await bcrypt.compare(password, target?.password);
 
-    if (password.localeCompare(password2) != 0) {
+    if (!passwordsMatch) {
         return {
-            message: 'Las constraseñas no coinciden',
+            message: 'Contraseña erronea',
         };
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
     const date = <string>formData.get('birthday')
     const dateFix = date ? new Date(date) : null;
 
     try{  
         await sql`
             UPDATE users
-            SET password = ${hashedPassword}, gender = ${gender ?? null}, birthday = ${dateFix}, worplace = ${workplace ?? null}
+            SET gender = ${gender ?? null}, birthday = ${dateFix}, worplace = ${workplace ?? null}
             WHERE id = ${id}
         `;
     }catch(error){
