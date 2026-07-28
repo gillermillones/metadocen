@@ -94,7 +94,6 @@ export type RegisterState = {
 export type ProfileState = {
   errors?: {
     password?: string[];
-    password2?: string[];
     gender?: string[];
     workplace?: string[];
   };
