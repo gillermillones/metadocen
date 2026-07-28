@@ -15,10 +15,10 @@ export default async function OwnProfileTable({ id }: { id: string }) {
         <div className="flex flex-row justify-between">
           <div className="flex flex-col w-full justify-start">
               <h1>Email: {user.email}</h1>
-              <h1>Username:{user.name}</h1>
-              <h1>Gender:{user.gender}</h1>
-              <h1>Birthday:{formatDateToLocal(user.birthday)}</h1>
-              <h1>Workplace:{user.workplace}</h1>
+              <h1>Username: {user.name}</h1>
+              <h1>Gender: {user.gender}</h1>
+              <h1>Birthday: {formatDateToLocal(user.birthday)}</h1>
+              <h1>Workplace: {user.workplace}</h1>
           </div>
           <UpdateProfile id={user.id} />
         </div>
