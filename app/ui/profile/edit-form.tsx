@@ -88,7 +88,7 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                                 defaultValue={user.gender}
                                 aria-describedby="gender-error"
                             >
-                                <option value="" disabled>
+                                <option key="standard" value="">
                                     Selecciona un genero
                                 </option>
                                 <option key="masculino" value="masculino">

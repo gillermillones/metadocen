@@ -34,7 +34,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                     },
                 ]}
             />
-            <div className="flex w-full items-center justify-between pt-4">
+            <div className="flex flex-col w-full items-center justify-start pt-4">
                 <div>
                     <h1>Email: {session.email}</h1>
                     <h1>User ID:{session.userId}</h1>
