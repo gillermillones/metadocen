@@ -494,7 +494,6 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
         password: formData.get('password'),
         password2: formData.get('password2'),
         gender: formData.get('gender'),
-        birthday: formData.get('birthday'),
         workplace: formData.get('workplace'),
     });
 
@@ -506,7 +505,7 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
         };
     }
 
-    const { password, password2, gender, birthday, workplace } = validatedFields.data;
+    const { password, password2, gender, workplace } = validatedFields.data;
 
     if (password.localeCompare(password2) != 0) {
         return {
@@ -515,11 +514,12 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    const date = new Date(<string>formData.get('birthday'));
 
     try{  
         await sql`
             INSERT INTO users (password, gender, birthday, workplace)
-            VALUES (${hashedPassword}, ${gender}, ${birthday}, ${workplace})
+            VALUES (${hashedPassword}, ${gender}, ${date}, ${workplace})
             WHERE id = ${id}
         `;
     }catch(error){
