@@ -20,7 +20,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
             <UpdateProfile id={user.id} />
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
-            <FriendList id={user.userId}/>
+            <FriendList id={user.id}/>
         </Suspense>
     </div>
   );
