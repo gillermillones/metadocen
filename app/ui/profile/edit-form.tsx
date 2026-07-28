@@ -128,14 +128,6 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                                 max="2018-12-31" 
                             />
                         </div>
-                        <div id="birthday-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.birthday &&
-                            state.errors.birthday.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                                </p>
-                            ))}
-                        </div>
                     </div>
                 </div>
                 {/* Workplace */}
