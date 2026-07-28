@@ -11,13 +11,15 @@ export default async function OwnProfileTable({ id }: { id: string }) {
   return (
     <div className="flex flex-col w-full justify-between">
         <h1 className={`${lusitana.className} text-2xl`}>Your Profile Page</h1>
-        <div>
-            <h1>Email: {user.email}</h1>
-            <h1>Username:{user.name}</h1>
-            <h1>Gender:{user.gender}</h1>
-            <h1>Birthday:{user.birthday}</h1>
-            <h1>Workplace:{user.workplace}</h1>
-            <UpdateProfile id={user.id} />
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-col w-full justify-start">
+              <h1>Email: {user.email}</h1>
+              <h1>Username:{user.name}</h1>
+              <h1>Gender:{user.gender}</h1>
+              <h1>Birthday:{user.birthday}</h1>
+              <h1>Workplace:{user.workplace}</h1>
+          </div>
+          <UpdateProfile id={user.id} />
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
             <FriendList id={user.id}/>

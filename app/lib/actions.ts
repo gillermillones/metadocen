@@ -523,7 +523,7 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
     try{  
         await sql`
             UPDATE users
-            SET gender = ${gender ?? null}, birthday = ${dateFix}, worplace = ${workplace ?? null}
+            SET gender = ${gender ?? null}, birthday = ${dateFix}, workplace = ${workplace ?? null}
             WHERE id = ${id}
         `;
     }catch(error){
