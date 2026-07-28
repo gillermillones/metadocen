@@ -514,12 +514,13 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const date = new Date(<string>formData.get('birthday'));
+    const date = <string>formData.get('birthday')
+    const dateFix = date ? new Date(date) : null;
 
     try{  
         await sql`
-            INSERT INTO users (password, gender, birthday, workplace)
-            VALUES (${hashedPassword}, ${gender}, ${date}, ${workplace})
+            UPDATE users
+            SET password = ${hashedPassword}, gender = ${gender ?? null}, birthday = ${dateFix}, worplace = ${workplace ?? null}
             WHERE id = ${id}
         `;
     }catch(error){
