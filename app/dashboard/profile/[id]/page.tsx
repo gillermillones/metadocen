@@ -8,7 +8,7 @@ import UnknownProfileTable from '@/app/ui/profile/unknown-table';
 import { areWeFriends, areWeRequested } from '@/app/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Profile',
+  title: 'Perfil',
 };
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
@@ -25,7 +25,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   if(session.userId.localeCompare(user?.id) == 0){
     return (
       <div className="w-full">
-        <OwnProfileTable session={session} />
+        <OwnProfileTable id={session.userId} />
       </div>
     );
   }else if(friendship == true){
