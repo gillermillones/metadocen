@@ -505,7 +505,12 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
 
     const { password, gender, workplace } = validatedFields.data;
     const target = await getUserById(id);
-    const passwordsMatch = await bcrypt.compare(password, target?.password);
+    if(target == undefined){
+        return {
+            message: 'Id de usuario invalido',
+        };
+    }
+    const passwordsMatch = await bcrypt.compare(password, target.password);
 
     if (!passwordsMatch) {
         return {
