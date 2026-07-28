@@ -13,7 +13,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
         <h1 className={`${lusitana.className} text-2xl`}>Your Profile Page</h1>
         <div>
             <h1>Email: {user.email}</h1>
-            <h1>User ID:{user.userId}</h1>
+            <h1>Username:{user.name}</h1>
             <h1>Gender:{user.gender}</h1>
             <h1>Birthday:{user.birthday}</h1>
             <h1>Workplace:{user.workplace}</h1>
