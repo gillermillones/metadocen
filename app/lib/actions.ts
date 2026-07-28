@@ -29,6 +29,15 @@ const RegisterFormSchema = z.object({
   password2: z.string().min(6, { message: 'Passwords do not match' }),
 });
 
+const ProfileFormSchema = z.object({
+  id: z.string(),
+  password: z.string().min(6, { message: 'Password must be at least 6 characters' }),
+  password2: z.string().min(6, { message: 'Passwords do not match' }),
+  gender: z.enum(['masculino', 'femenino', 'otro'], { invalid_type_error: 'Error en el genero' }).optional().or(z.literal('')),
+  birthday: z.string().optional(),
+  workplace: z.string().optional().or(z.literal('')),
+});
+
 const ItemsFormSchema = z.object({
     id: z.string(),
     user_id: z.string(),
@@ -56,6 +65,7 @@ const ItemsFormSchema = z.object({
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 const RegisterUser = RegisterFormSchema.omit({ id: true });
+const UpdateProfile = ProfileFormSchema.omit({ id: true, birthday: true });
 const CreateItem = ItemsFormSchema.omit({ id: true, user_id: true, date: true });
 const UpdateItem = ItemsFormSchema.omit({ id: true, user_id: true, date: true });
 
@@ -78,6 +88,16 @@ export type RegisterState = {
     email?: string[];
     password?: string[];
     password2?: string[];
+  };
+  message?: string | null;
+};
+
+export type ProfileState = {
+  errors?: {
+    password?: string[];
+    password2?: string[];
+    gender?: string[];
+    workplace?: string[];
   };
   message?: string | null;
 };
@@ -467,4 +487,49 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
     }
 
     redirect('/dashboard');
+}
+
+export async function updateProfile(id: string, prevState: ProfileState, formData: FormData) {
+    const validatedFields = UpdateProfile.safeParse({
+        password: formData.get('password'),
+        password2: formData.get('password2'),
+        gender: formData.get('gender'),
+        birthday: formData.get('birthday'),
+        workplace: formData.get('workplace'),
+    });
+
+    // If form validation fails, return errors early. Otherwise, continue.
+    if (!validatedFields.success) {
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Faltan campos. Por favor, completa los obligatorios.',
+        };
+    }
+
+    const { password, password2, gender, birthday, workplace } = validatedFields.data;
+
+    if (password.localeCompare(password2) != 0) {
+        return {
+            message: 'Las constraseñas no coinciden',
+        };
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    try{  
+        await sql`
+            INSERT INTO users (password, gender, birthday, workplace)
+            VALUES (${hashedPassword}, ${gender}, ${birthday}, ${workplace})
+            WHERE id = ${id}
+        `;
+    }catch(error){
+        console.error(error);
+
+        return {
+            message: 'Error en base de datos: fallo al actualizar tu perfil',
+        };
+    }
+ 
+  revalidatePath('/dashboard/profile/' + id);
+  redirect('/dashboard/profile/' + id);
 }

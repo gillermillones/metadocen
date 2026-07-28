@@ -227,7 +227,7 @@ export async function fetchUserNumber() {
 export async function fetchUserByName(name: string) {
   try {
     const user = await sql<User[]>`
-      SELECT *
+      SELECT id, name, email, password
       FROM users u
       WHERE u.name = ${name}
     `;

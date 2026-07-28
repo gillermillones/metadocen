@@ -9,6 +9,16 @@ export type User = {
   password: string;
 };
 
+export type FullUser = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  gender: 'masculino' | 'femenino' | 'otro' | '';
+  birthday: string;
+  workplace: string;
+};
+
 export type Customer = {
   id: string;
   name: string;
