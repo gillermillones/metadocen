@@ -19,9 +19,9 @@ export default async function CardWrapper() {
 
   return (
     <>
-      <Card title="Number of users" value={userNum} type="users" />
-      <Card title="Number of files" value={itemNum} type="files" />
-      <Card title="Users connected" value={friendNum} type="friends" />
+      <Card title="Numero de usuarios" value={userNum} type="users" />
+      <Card title="Numero de archivos" value={itemNum} type="files" />
+      <Card title="Amigos hechos" value={friendNum} type="friends" />
     </>
   );
 }

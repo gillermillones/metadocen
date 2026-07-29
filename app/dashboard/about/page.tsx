@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { lusitana } from '@/app/ui/fonts';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'Informacion',
 };
 
 export default function Page(){
@@ -10,7 +10,7 @@ export default function Page(){
     return(
         <div className="w-full">
             <div className="flex flex-col w-full items-start justify-between">
-                <h1 className={`${lusitana.className} text-2xl`}>About us</h1>
+                <h1 className={`${lusitana.className} text-2xl`}>Informacion</h1>
                 <h2 className={`${lusitana.className} text-xl`}>Norma 71362:2020</h2>
                 <p>La Norma 71362:2020 de “Calidad de los materiales educativos digitales” elaborada por UNE responde a la necesidad 
                 de proporcionar un documento de referencia sobre la calidad de los materiales educativos digitales (MED) y una herramienta para su medición.

@@ -23,7 +23,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
             <div className="rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                        Email
+                        Correo electronico
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">

@@ -19,7 +19,7 @@ export default function ItemForm() {
             {/* Name */}
             <div className="mb-4">
                 <label htmlFor="name" className="mb-2 block text-sm font-medium">
-                    File name
+                    Nombre del archivo
                 </label>
                 <div className="relative mt-2 rounded-md">
                     <div className="relative">
@@ -45,7 +45,7 @@ export default function ItemForm() {
             {/* Extension */}
             <div className="mb-4">
                 <label htmlFor="extension" className="mb-2 block text-sm font-medium">
-                    File extension
+                    Extension del archivo
                 </label>
                 <div className="relative mt-2 rounded-md">
                     <div className="relative">
@@ -71,7 +71,7 @@ export default function ItemForm() {
             {/* File description */}
             <div className="mb-4">
                 <label htmlFor="summary" className="mb-2 block text-sm font-medium">
-                    File description
+                    Descripcion del archivo
                 </label>
                 <div className="relative mt-2 rounded-md">
                     <div className="relative">
@@ -274,9 +274,9 @@ export default function ItemForm() {
             href="/dashboard/files"
             className="flex h-10 items-center rounded-lg bg-red-400 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-red-500"
             >
-                Cancel
+                Cancelar
             </Link>
-            <Button type="submit">Create Item</Button>
+            <Button type="submit">Crear Archivo</Button>
         </div>
     </form>
     );

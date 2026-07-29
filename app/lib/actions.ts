@@ -583,6 +583,11 @@ export async function updatePassword(id: string, prevState: PasswordState, formD
             message: 'Las contraseñas no coinciden',
         };
     }
+    if (newPassword.localeCompare(oldPassword) == 0) {
+        return {
+            message: 'Las contraseñas no pueden ser iguales',
+        };
+    }
 
     const oldPasswordsMatch = await bcrypt.compare(oldPassword, target.password);
     if (!oldPasswordsMatch) {

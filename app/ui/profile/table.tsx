@@ -11,12 +11,12 @@ export default async function OwnProfileTable({ id }: { id: string }) {
 
   return (
     <div className="flex flex-col w-full justify-between">
-        <h1 className={`${lusitana.className} text-2xl`}>Your Profile Page</h1>
+        <h1 className={`${lusitana.className} text-2xl`}>Tu Perfil</h1>
         <div className="flex flex-row justify-start">
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                        Email
+                        Correo electronico
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
@@ -79,8 +79,10 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                     </div>
                 </div>
             </div>
-            <UpdateProfile id={user.id} />
-            <UpdatePassword id={user.id} />
+            <div className="flex flex-col justify-between">
+                <UpdateProfile id={user.id} />
+                <UpdatePassword id={user.id} />
+            </div>
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
             <FriendList id={user.id}/>

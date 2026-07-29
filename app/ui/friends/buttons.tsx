@@ -9,7 +9,7 @@ export function AddFriend({ id }: { id: string | undefined }) {
       await addFriend(id);
     }}>
       <button type="submit" className="rounded-md border p-2 bg-green-300 hover:bg-green-400">
-        <span className="sr-only">Add Friend</span>
+        <span className="sr-only">Agregar Amigo</span>
         <PlusIcon className="w-4" />
       </button>
     </form>
@@ -24,7 +24,7 @@ export function AcceptFriend({ id }: { id: string }) {
       await acceptFriend(id);
     }}>
       <button type="submit" className="rounded-md border p-2 bg-green-300 hover:bg-green-400">
-        <span className="sr-only">Accept Friend</span>
+        <span className="sr-only">Aceptar Solicitud</span>
         <CheckIcon className="w-4" />
       </button>
     </form>
@@ -39,7 +39,7 @@ export function RemoveFriend({ id }: { id: string | undefined }) {
       await removeFriend(id);
     }}>
       <button type="submit" className="rounded-md border p-2 bg-red-400 hover:bg-red-500">
-        <span className="sr-only">Remove Friend</span>
+        <span className="sr-only">Eliminar</span>
         <XMarkIcon className="w-4" />
       </button>
     </form>

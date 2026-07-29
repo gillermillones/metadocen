@@ -7,10 +7,10 @@ export default async function UnknownProfileTable({ user, requested }: { user: U
   return (
     <div className="flex flex-col w-full justify-between">
         <div className="flex flex-row w-full items-center justify-between pt-4">
-            <h1 className={`${lusitana.className} text-2xl`}>{user?.name}'s Profile Page</h1>
+            <h1 className={`${lusitana.className} text-2xl`}>Perfil</h1>
                 {requested ? (
                     <div className="flex justify-end gap-2">
-                        <p className="pt-1">Already sent request</p>
+                        <p className="pt-1">Solicitud enviada</p>
                         <RemoveFriend id={user.id} />
                     </div>
                 ):(
@@ -19,9 +19,15 @@ export default async function UnknownProfileTable({ user, requested }: { user: U
                     </div>
                 )}
         </div>
-        <div>
-            <h1>Email: {user?.email}</h1>
-            <h1>User ID:{user?.id}</h1>
+        <div className="mb-4">
+            <label htmlFor="name" className="mb-2 block text-sm font-medium">
+                Nombre de usuario
+            </label>
+            <div className="relative mt-2 rounded-md">
+                <div className="relative">
+                    <h1>{user.name}</h1>
+                </div>
+            </div>
         </div>
     </div>
   );

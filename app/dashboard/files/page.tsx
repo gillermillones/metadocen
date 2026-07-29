@@ -10,7 +10,7 @@ import ItemsTable from '@/app/ui/items/table';
 import { lusitana } from '@/app/ui/fonts';
 
 export const metadata: Metadata = {
-    title: 'Files',
+    title: 'Archivos',
 };
 
 export default async function Page(props: {
@@ -29,7 +29,7 @@ export default async function Page(props: {
     return (
         <div className="w-full">
             <div className="flex w-full items-center justify-between">
-                <h1 className={`${lusitana.className} text-2xl`}>Your Files</h1>
+                <h1 className={`${lusitana.className} text-2xl`}>Tus archivos</h1>
             </div>
             <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
                 <Search placeholder="Search a file..." />

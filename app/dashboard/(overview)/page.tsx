@@ -8,7 +8,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
+  title: 'Pagina Principal',
 };
 
 export default async function Page() {
@@ -17,7 +17,7 @@ export default async function Page() {
     <main>
       <div className="flex flex-row justify-between">
         <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-          Dashboard
+          Pagina Principal
         </h1>
         <UserSearch />
       </div>

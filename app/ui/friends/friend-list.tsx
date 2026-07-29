@@ -12,12 +12,12 @@ export default async function FriendList({ id }: { id: string }) {
     return (
         <div className="flex w-full flex-col md:col-span-4">
             <h2 className={`${lusitana.className} mt-4 text-xl md:text-2xl`}>
-                Your friends
+                Tus Amigos
             </h2>
             <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4">
                 <div className="bg-white px-6">
                     {friends.length === 0 ? (
-                        <p>You dont have any friends yet </p>
+                        <p>No tienes ningun amigo todavia</p>
                         ):(
                             friends.map((friend) => (
                                 <div key={friend.id} className='flex flex-row items-center justify-between py-4'>
@@ -43,12 +43,12 @@ export default async function FriendList({ id }: { id: string }) {
                 </div>
             </div>
             <h2 className={`${lusitana.className} mt-4 text-xl md:text-2xl`}>
-                Your friend requests
+                Tus solicitudes de amistad
             </h2>
             <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4">
                 <div className="bg-white px-6">
                     {friendRequests.length === 0 ? (
-                        <p>You dont have any friend requests yet </p>
+                        <p>No tienes ninguna solicitud de amistad pendiente</p>
                         ):(
                             friendRequests.map((friend) => (
                                 <div key={friend.id} className='flex flex-row items-center justify-between py-4'>

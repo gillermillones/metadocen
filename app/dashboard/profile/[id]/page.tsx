@@ -1,6 +1,6 @@
 import { getSession } from '@/app/lib/actions';
 import { Metadata } from 'next';
-import { getUserById } from '@/auth';
+import { getUserById, getFullUserById } from '@/auth';
 import { notFound, forbidden } from 'next/navigation';
 import OwnProfileTable from '@/app/ui/profile/table';
 import FriendProfileTable from '@/app/ui/profile/friend-table';
@@ -21,6 +21,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   const session = await getSession();
   const friendship = await areWeFriends(session.userId, id);
   const requested = await areWeRequested(session.userId, id);
+  const fullUser = await getFullUserById(id);
   
   if(session.userId.localeCompare(user?.id) == 0){
     return (
@@ -31,7 +32,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   }else if(friendship == true){
     return (
       <div className="w-full">
-        <FriendProfileTable user={user} />
+        <FriendProfileTable user={fullUser} />
       </div>
     );
   }

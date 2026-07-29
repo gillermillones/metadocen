@@ -6,7 +6,7 @@ import { getSession } from '@/app/lib/actions';
 import Breadcrumbs from '@/app/ui/breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Edit File',
+  title: 'Editar Archivo',
 };
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
@@ -26,9 +26,9 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
         <main>
             <Breadcrumbs
                 breadcrumbs={[
-                    { label: 'Your Files', href: '/dashboard/files' },
+                    { label: 'Tus Archivos', href: '/dashboard/files' },
                     {
-                        label: 'Edit File',
+                        label: 'Editar Archivo',
                         href: `/dashboard/files/${data.id}/edit`,
                         active: true,
                     },

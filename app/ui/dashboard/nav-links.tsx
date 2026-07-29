@@ -13,10 +13,10 @@ import clsx from 'clsx';
 export default function NavLinks({ userId }: { userId: string }){
   const pathname = usePathname();
   const links = [
-    { name: 'Home', href: '/dashboard', icon: HomeIcon },
-    { name: 'Files', href: '/dashboard/files', icon: DocumentDuplicateIcon },
-    { name: 'Profile', href: '/dashboard/profile/' + userId, icon: UserIcon },
-    { name: 'About us', href: '/dashboard/about', icon: ClipboardDocumentListIcon },
+    { name: 'Pagina principal', href: '/dashboard', icon: HomeIcon },
+    { name: 'Archivos', href: '/dashboard/files', icon: DocumentDuplicateIcon },
+    { name: 'Perfil', href: '/dashboard/profile/' + userId, icon: UserIcon },
+    { name: 'Sobre nosotros', href: '/dashboard/about', icon: ClipboardDocumentListIcon },
   ];
 
   return (

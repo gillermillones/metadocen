@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sign up',
+  title: 'Registro',
 };
 
 

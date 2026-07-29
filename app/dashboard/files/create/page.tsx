@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Breadcrumbs from '@/app/ui/breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'New File',
+  title: 'Nuevo Archivo',
 };
 
 export default async function Page() {
@@ -12,9 +12,9 @@ export default async function Page() {
     <main>
       <Breadcrumbs
           breadcrumbs={[
-              { label: 'Your Files', href: '/dashboard/files' },
+              { label: 'Tus Archivos', href: '/dashboard/files' },
               {
-                  label: 'New File',
+                  label: 'Nuevo Archivo',
                   href: '/dashboard/files/create',
                   active: true,
               },

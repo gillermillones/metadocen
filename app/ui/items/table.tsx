@@ -64,16 +64,16 @@ export default function ItemsTable({
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  File name
+                  Nombre del archivo
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  File extension
+                  Extension del archivo
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  File description
+                  Descripcion del archivo
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Values
+                  Valores
                 </th>
                 {idSession.localeCompare(idUser) == 0 ? (
                   <th scope="col" className="relative py-3 pl-6 pr-3">
