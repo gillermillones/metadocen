@@ -20,6 +20,26 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
     return (
         <form action={formAction}>
             <div className="rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
+                <div className="mb-4">
+                    <label htmlFor="gender" className="mb-2 block text-sm font-medium">
+                        Email
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{user.email}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="gender" className="mb-2 block text-sm font-medium">
+                        Nombre de usuario
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{user.name}</h1>
+                        </div>
+                    </div>
+                </div>
                 {/* Gender */}
                 <div className="mb-4">
                     <label htmlFor="gender" className="mb-2 block text-sm font-medium">
