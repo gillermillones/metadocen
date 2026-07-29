@@ -7,6 +7,7 @@ import ItemsTable from '@/app/ui/items/table';
 import { ItemTableSkeleton } from '@/app/ui/skeletons';
 import { fetchItemPagesUserId, fetchFilteredItemsUserId } from '@/app/lib/data';
 import { getSession } from '@/app/lib/actions';
+import { formatDateToLocal } from '@/app/lib/utils';
 
 export default async function FriendProfileTable({ user }: { user: FullUser }) {
     const query = '';
