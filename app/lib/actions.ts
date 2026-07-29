@@ -578,8 +578,7 @@ export async function updatePassword(id: string, prevState: PasswordState, formD
         };
     }
 
-    const newPasswordsMatch = await bcrypt.compare(newPassword, newPassword2);
-    if (!newPasswordsMatch) {
+    if (newPassword.localeCompare(newPassword2) != 0) {
         return {
             message: 'Las contraseñas no coinciden',
         };
