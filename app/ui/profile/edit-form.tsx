@@ -16,8 +16,6 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
     const updateUserProfile= updateProfile.bind(null, user.id);
     const initialState: ProfileState = { message: null, errors: {} };
     const [state, formAction] = useActionState(updateUserProfile, initialState);
-    const [day, month, year] = user.birthday.split('-');
-    const birthday = `${year}-${month}-${day}`;
 
     return (
         <form action={formAction}>
@@ -71,7 +69,7 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                                 type="date"
                                 id="birthday"
                                 name="birthday"
-                                defaultValue={birthday}
+                                defaultValue={user.birthday}
                                 min="1900-01-01"
                                 max="2018-12-31" 
                             />

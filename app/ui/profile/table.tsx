@@ -13,14 +13,73 @@ export default async function OwnProfileTable({ id }: { id: string }) {
     <div className="flex flex-col w-full justify-between">
         <h1 className={`${lusitana.className} text-2xl`}>Your Profile Page</h1>
         <div className="flex flex-row justify-between">
-          <div className="flex flex-col w-full justify-start">
-              <h1>Email: {user.email}</h1>
-              <h1>Username: {user.name}</h1>
-              <h1>Gender: {user.gender}</h1>
-              <h1>Birthday: {formatDateToLocal(user.birthday)}</h1>
-              <h1>Workplace: {user.workplace}</h1>
-          </div>
-          <UpdateProfile id={user.id} />
+            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+                <div className="mb-4">
+                    <label htmlFor="gender" className="mb-2 block text-sm font-medium">
+                        Email
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{user.email}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="gender" className="mb-2 block text-sm font-medium">
+                        Nombre de usuario
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{user.name}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="gender" className="mb-2 block text-sm font-medium">
+                        Genero
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{user.gender}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="birthday" className="mb-2 block text-sm font-medium">
+                        Fecha de nacimiento
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{formatDateToLocal(user.birthday)}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="workplace" className="mb-2 block text-sm font-medium">
+                        Lugar de trabajo
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <h1>{user.workplace}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="password" className="mb-2 block text-sm font-medium">
+                        Contraseña
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                      <input
+                          type="password"
+                          id="password"
+                          name="password"
+                          defaultValue="sample"
+                          disabled
+                      />
+                    </div>
+                </div>
+            </div>
+            <UpdateProfile id={user.id} />
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
             <FriendList id={user.id}/>
