@@ -27,7 +27,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                          <h1 name="email" id="email">{user.email}</h1>
+                          <h1 id="email">{user.email}</h1>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                          <h1 name="name" id="name">{user.name}</h1>
+                          <h1 id="name">{user.name}</h1>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                           <h1 name="gender" id="gender">{user.gender}</h1>
+                           <h1 id="gender">{user.gender}</h1>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                            <h1 name="birthday" id="birthday">{formatDateToLocal(user.birthday)}</h1>
+                            <h1 id="birthday">{formatDateToLocal(user.birthday)}</h1>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                            <h1 name="workplace" id="workplace">{user.workplace}</h1>
+                            <h1 id="workplace">{user.workplace}</h1>
                         </div>
                     </div>
                 </div>
