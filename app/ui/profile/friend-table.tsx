@@ -24,6 +24,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                 <RemoveFriend id={user.id} />
             </div>
         </div>
+        <div className="flex flex-row justify-start">
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -76,6 +77,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                     </div>
                 </div>
             </div>
+        </div>
         <h1 className={`${lusitana.className} mt-4 text-2xl`}>{user.name}'s Public Files</h1>
         <Suspense key={query + currentPage} fallback={<ItemTableSkeleton />}>
             <ItemsTable items={items} idSession={session.userId} idUser={user.id}/>

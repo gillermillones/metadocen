@@ -21,9 +21,7 @@ export default async function Page() {
           ]}
        />
       <div className="flex w-full items-center justify-between pt-4">
-        <div className="flex justify-end gap-2">
-            <ItemForm />
-        </div>
+          <ItemForm />
       </div>
     </main>
   );

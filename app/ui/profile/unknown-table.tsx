@@ -19,13 +19,17 @@ export default async function UnknownProfileTable({ user, requested }: { user: U
                     </div>
                 )}
         </div>
-        <div className="mb-4">
-            <label htmlFor="name" className="mb-2 block text-sm font-medium">
-                Nombre de usuario
-            </label>
-            <div className="relative mt-2 rounded-md">
-                <div className="relative">
-                    <h1>{user.name}</h1>
+        <div className="flex flex-row justify-start">
+            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+                <div className="mb-4">
+                    <label htmlFor="name" className="mb-2 block text-sm font-medium">
+                        Nombre de usuario
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                            <h1>{user.name}</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

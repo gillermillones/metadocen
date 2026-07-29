@@ -79,7 +79,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-start gap-4">
                 <UpdateProfile id={user.id} />
                 <UpdatePassword id={user.id} />
             </div>

@@ -1,4 +1,4 @@
-export default function FormOptions({ field }: { field: string }) {
+export default function FormOptions({ field, num }: { field: string; num: number }) {
 
     return (
         <div>
@@ -13,6 +13,7 @@ export default function FormOptions({ field }: { field: string }) {
                         name={field}
                         type="radio"
                         value="1"
+                        checked={num === 1}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -28,6 +29,7 @@ export default function FormOptions({ field }: { field: string }) {
                         name={field}
                         type="radio"
                         value="2"
+                        checked={num === 2}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -43,6 +45,7 @@ export default function FormOptions({ field }: { field: string }) {
                         name={field}
                         type="radio"
                         value="3"
+                        checked={num === 3}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -58,6 +61,7 @@ export default function FormOptions({ field }: { field: string }) {
                         name={field}
                         type="radio"
                         value="4"
+                        checked={num === 4}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -73,6 +77,7 @@ export default function FormOptions({ field }: { field: string }) {
                         name={field}
                         type="radio"
                         value="5"
+                        checked={num === 5}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
