@@ -4,7 +4,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { searchUserByName, SimpleState } from '@/app/lib/actions';
 import { useActionState } from 'react';
 
-export default async function Page() {
+export default function Page() {
     const initialState: SimpleState = { message: null };
     const [state, formAction] = useActionState(
         searchUserByName,

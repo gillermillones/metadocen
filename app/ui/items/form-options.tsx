@@ -1,4 +1,12 @@
+'use client'
+
+import { useState, useEffect } from 'react';
+
 export default function FormOptions({ field, num }: { field: string; num: number }) {
+    const [selected, setSelected] = useState(num);
+    useEffect(() => {
+        setSelected(num);
+    }, [num]);
 
     return (
         <div>
@@ -13,7 +21,8 @@ export default function FormOptions({ field, num }: { field: string; num: number
                         name={field}
                         type="radio"
                         value="1"
-                        checked={num === 1}
+                        checked={selected === 1}
+                        onChange={() => setSelected(1)}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -29,7 +38,8 @@ export default function FormOptions({ field, num }: { field: string; num: number
                         name={field}
                         type="radio"
                         value="2"
-                        checked={num === 2}
+                        checked={selected === 2}
+                        onChange={() => setSelected(2)}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -45,7 +55,8 @@ export default function FormOptions({ field, num }: { field: string; num: number
                         name={field}
                         type="radio"
                         value="3"
-                        checked={num === 3}
+                        checked={selected === 3}
+                        onChange={() => setSelected(3)}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -61,7 +72,8 @@ export default function FormOptions({ field, num }: { field: string; num: number
                         name={field}
                         type="radio"
                         value="4"
-                        checked={num === 4}
+                        checked={selected === 4}
+                        onChange={() => setSelected(4)}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label
@@ -77,7 +89,8 @@ export default function FormOptions({ field, num }: { field: string; num: number
                         name={field}
                         type="radio"
                         value="5"
-                        checked={num === 5}
+                        checked={selected === 5}
+                        onChange={() => setSelected(5)}
                         className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                         />
                         <label

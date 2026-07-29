@@ -35,20 +35,23 @@ export default function ItemForm() {
         text_accessible: "",
     });
 
-    const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+    const { acceptedFiles:bigAccept, getRootProps:getRootBigProps, getInputProps:getInputBigProps } = useDropzone({
         accept: {
         "application/xml": [".xml"],
         "text/xml": [".xml"],
         },
         multiple: false,
     });
+    const { acceptedFiles:lilAccept, getRootProps:getRootLilProps, getInputProps:getInputLilProps } = useDropzone({
+        multiple: false,
+    });
 
     useEffect(() => {
         const loadXml = async () => {
-            if (acceptedFiles.length === 0){
+            if (bigAccept.length === 0){
                 return;
             }
-            const xmlString = await acceptedFiles[0].text();
+            const xmlString = await bigAccept[0].text();
             const parser = new XMLParser();
             const result = parser.parse(xmlString);
             setFormData({
@@ -74,16 +77,26 @@ export default function ItemForm() {
         };
 
         loadXml();
-    }, [acceptedFiles]);
+    }, [bigAccept]);
+
+    useEffect(() => {
+        if (lilAccept.length === 0) {
+            return;
+        };
+        const file = lilAccept[0];
+        const parts = file.name.split('.');
+        const fileExtension = parts.pop() || "";
+        const fileName = parts.join('.');
+        setFormData(prev => ({
+            ...prev,
+            name: fileName,
+            extension: fileExtension,
+        }));
+
+    }, [lilAccept]);
 
     return (
         <div className="flex justify-end gap-2">
-            <section className="container">
-            <div {...getRootProps({ className: "dropzone" })}>
-                <input {...getInputProps()} />
-                <p>Arrastra aquí el archivo XML o haz click para seleccionar</p>
-            </div>
-            </section>
             <form action={formAction}>
                 <div className="rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
                     {/* Name */}
@@ -315,7 +328,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="av_accessible-error">
-                        <FormOptions field="av_accessible" num={Number(formData.av_accessible)}></FormOptions>
+                        <FormOptions key={formData.av_accessible} field="av_accessible" num={Number(formData.av_accessible)}></FormOptions>
                         <div id="av_accessible-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.av_accessible &&
                             state.errors.av_accessible.map((error: string) => (
@@ -355,6 +368,20 @@ export default function ItemForm() {
                     <Button type="submit">Crear Archivo</Button>
                 </div>
             </form>
+            <div className="flex flex-col justify center">
+                <section className="container">
+                    <div {...getRootBigProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
+                        <input {...getInputBigProps()} />
+                        <p>Arrastra aquí el archivo XML con metadatos o haz click para seleccionar</p>
+                    </div>
+                </section>
+                <section className="container2">
+                    <div {...getRootLilProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
+                        <input {...getInputLilProps()} />
+                        <p>Arrastra aquí el documento sobre el que quieres los metadatos o haz click para seleccionar</p>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 }
