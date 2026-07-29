@@ -2,7 +2,7 @@ import { FriendListSkeleton } from '@/app/ui/skeletons';
 import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import FriendList from '@/app/ui/friends/friend-list';
-import UpdateProfile from '@/app/ui/profile/buttons';
+import { UpdateProfile, UpdatePassword } from '@/app/ui/profile/buttons';
 import { getFullUserById } from '@/auth';
 import { formatDateToLocal } from '@/app/lib/utils'
 
@@ -80,6 +80,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                 </div>
             </div>
             <UpdateProfile id={user.id} />
+            <UpdatePassword id={user.id} />
         </div>
         <Suspense fallback={<FriendListSkeleton />}>
             <FriendList id={user.id}/>

@@ -9,13 +9,14 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
-import { updateProfile, ProfileState } from '@/app/lib/actions';
+import { updatePassword, PasswordState } from '@/app/lib/actions';
 import { useActionState } from 'react';
+import { formatDateToLocal } from '@/app/lib/utils'
 
-export default function EditProfileForm({ user }: {user: FullUser }) {
-    const updateUserProfile= updateProfile.bind(null, user.id);
-    const initialState: ProfileState = { message: null, errors: {} };
-    const [state, formAction] = useActionState(updateUserProfile, initialState);
+export default function EditPasswordForm({ user }: {user: FullUser }) {
+    const updateUserPassword= updatePassword.bind(null, user.id);
+    const initialState: PasswordState = { message: null, errors: {} };
+    const [state, formAction] = useActionState(updateUserPassword, initialState);
 
     return (
         <form action={formAction}>
@@ -40,81 +41,55 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                         </div>
                     </div>
                 </div>
-                {/* Gender */}
                 <div className="mb-4">
                     <label htmlFor="gender" className="mb-2 block text-sm font-medium">
                         Genero
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                           <select
-                                id="gender"
-                                name="gender"
-                                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                defaultValue={user.gender}
-                                aria-describedby="gender-error"
-                            >
-                                <option key="standard" value="">
-                                    Selecciona un genero
-                                </option>
-                                <option key="masculino" value="masculino">
-                                    Masculino
-                                </option>
-                                <option key="femenino" value="femenino">
-                                    Femenino
-                                </option>
-                                <option key="otro" value="otro">
-                                    Otro
-                                </option>
-                            </select>
-                        </div>
-                        <div id="gender-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.gender &&
-                            state.errors.gender.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                                </p>
-                            ))}
+                           <h1 name="gender" id="gender">{user.gender}</h1>
                         </div>
                     </div>
                 </div>
-                {/* Birthday */}
                 <div className="mb-4">
                     <label htmlFor="birthday" className="mb-2 block text-sm font-medium">
                         Fecha de nacimiento
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
-                            <input
-                                type="date"
-                                id="birthday"
-                                name="birthday"
-                                defaultValue={user.birthday}
-                                min="1900-01-01"
-                                max="2018-12-31" 
-                            />
+                            <h1 name="birthday" id="birthday">{formatDateToLocal(user.birthday)}</h1>
                         </div>
                     </div>
                 </div>
-                {/* Workplace */}
                 <div className="mb-4">
                     <label htmlFor="workplace" className="mb-2 block text-sm font-medium">
                         Lugar de trabajo
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
+                            <h1 name="workplace" id="workplace">{user.workplace}</h1>
+                        </div>
+                    </div>
+                </div>
+                {/* New Password */}
+                <div className="mb-4">
+                    <label htmlFor="newPassword" className="mb-2 block text-sm font-medium">
+                        Introduzca la nueva contraseña
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
                             <input
-                                id="workplace"
-                                name="workplace"
-                                type="text"
-                                defaultValue={user.workplace}
+                                id="newPassword"
+                                name="newPassword"
+                                type="password"
+                                placeholder="Nueva contraseña"
                                 className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
-                                aria-describedby="workplace-error"
+                                aria-describedby="newPassword-error"
                             />
                         </div>
-                        <div id="workplace-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.workplace &&
-                            state.errors.workplace.map((error: string) => (
+                        <div id="newPassword-error" aria-live="polite" aria-atomic="true">
+                            {state.errors?.newPassword &&
+                            state.errors.newPassword.map((error: string) => (
                                 <p className="mt-2 text-sm text-red-500" key={error}>
                                 {error}
                                 </p>
@@ -122,25 +97,51 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                         </div>
                     </div>
                 </div>
-                {/* Password */}
+                {/* New Password 2 */}
                 <div className="mb-4">
-                    <label htmlFor="password" className="mb-2 block text-sm font-medium">
-                        Introduzca su contraseña
+                    <label htmlFor="newPassword2" className="mb-2 block text-sm font-medium">
+                        Repita la nueva contraseña
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
                             <input
-                                id="password"
-                                name="password"
+                                id="newPassword2"
+                                name="newPassword2"
                                 type="password"
-                                placeholder="Contraseña"
+                                placeholder="Repetir contraseña"
                                 className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
-                                aria-describedby="password-error"
+                                aria-describedby="newPassword2-error"
                             />
                         </div>
-                        <div id="password-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.password &&
-                            state.errors.password.map((error: string) => (
+                        <div id="newPassword2-error" aria-live="polite" aria-atomic="true">
+                            {state.errors?.newPassword2 &&
+                            state.errors.newPassword2.map((error: string) => (
+                                <p className="mt-2 text-sm text-red-500" key={error}>
+                                {error}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                {/* Old Password */}
+                <div className="mb-4">
+                    <label htmlFor="oldPassword" className="mb-2 block text-sm font-medium">
+                        Introduzca la anterior contraseña
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                            <input
+                                id="oldPassword"
+                                name="oldPassword"
+                                type="password"
+                                placeholder="Contraseña anterior"
+                                className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
+                                aria-describedby="oldPassword-error"
+                            />
+                        </div>
+                        <div id="oldPassword-error" aria-live="polite" aria-atomic="true">
+                            {state.errors?.oldPassword &&
+                            state.errors.oldPassword.map((error: string) => (
                                 <p className="mt-2 text-sm text-red-500" key={error}>
                                 {error}
                                 </p>

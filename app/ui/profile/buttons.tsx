@@ -1,7 +1,7 @@
 import { PencilIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
-export default function UpdateProfile({ id }: { id: string }) {
+export function UpdateProfile({ id }: { id: string }) {
   return (
       <Link
         href={`/dashboard/profile/${id}/edit`}
@@ -12,6 +12,19 @@ export default function UpdateProfile({ id }: { id: string }) {
       </Link>
   );
 }
+
+export function UpdatePassword({ id }: { id: string }) {
+  return (
+      <Link
+        href={`/dashboard/profile/${id}/editPassword`}
+        className="flex h-10 ml-4 items-center rounded-lg bg-purple-300 px-4 text-sm font-medium text-white transition-colors hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+      >
+        <span className="hidden md:block">Cambiar contraseña</span>{' '}
+        <PencilIcon className="h-5 md:ml-4" />
+      </Link>
+  );
+}
+
 /*
 export function DeleteProfile({ id }: { id: string }) {
   return (

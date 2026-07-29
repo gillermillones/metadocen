@@ -37,6 +37,13 @@ const ProfileFormSchema = z.object({
   workplace: z.string().optional().or(z.literal('')),
 });
 
+const PasswordFormSchema = z.object({
+  id: z.string(),
+  newPassword: z.string().min(6, { message: 'New password must be at least 6 characters' }),
+  newPassword2: z.string().min(6, { message: 'Passwords do not match' }),
+  oldPassword: z.string(),
+});
+
 const ItemsFormSchema = z.object({
     id: z.string(),
     user_id: z.string(),
@@ -65,6 +72,7 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 const RegisterUser = RegisterFormSchema.omit({ id: true });
 const UpdateProfile = ProfileFormSchema.omit({ id: true, birthday: true });
+const UpdatePassword = PasswordFormSchema.omit({ id: true });
 const CreateItem = ItemsFormSchema.omit({ id: true, user_id: true, date: true });
 const UpdateItem = ItemsFormSchema.omit({ id: true, user_id: true, date: true });
 
@@ -96,6 +104,15 @@ export type ProfileState = {
     password?: string[];
     gender?: string[];
     workplace?: string[];
+  };
+  message?: string | null;
+};
+
+export type PasswordState = {
+  errors?: {
+    newPassword?: string[];
+    newPassword2?: string[];
+    oldPassword?: string[];
   };
   message?: string | null;
 };
@@ -531,6 +548,63 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
 
         return {
             message: 'Error en base de datos: fallo al actualizar tu perfil',
+        };
+    }
+ 
+  revalidatePath('/dashboard/profile/' + id);
+  redirect('/dashboard/profile/' + id);
+}
+
+export async function updatePassword(id: string, prevState: PasswordState, formData: FormData) {
+    const validatedFields = UpdatePassword.safeParse({
+        newPassword: formData.get('newPassword'),
+        newPassword2: formData.get('newPassword2'),
+        oldPassword: formData.get('oldPassword'),
+    });
+
+    // If form validation fails, return errors early. Otherwise, continue.
+    if (!validatedFields.success) {
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Faltan campos. Por favor, completalos',
+        };
+    }
+
+    const { newPassword, newPassword2, oldPassword } = validatedFields.data;
+    const target = await getUserById(id);
+    if(target == undefined){
+        return {
+            message: 'Id de usuario invalido',
+        };
+    }
+
+    const newPasswordsMatch = await bcrypt.compare(newPassword, newPassword2);
+    if (!newPasswordsMatch) {
+        return {
+            message: 'Las contraseñas no coinciden',
+        };
+    }
+
+    const oldPasswordsMatch = await bcrypt.compare(oldPassword, target.password);
+    if (!oldPasswordsMatch) {
+        return {
+            message: 'Contraseña incorrecta',
+        };
+    }
+
+    const newHashedPassword = await bcrypt.hash(newPassword, 10);
+
+    try{  
+        await sql`
+            UPDATE users
+            SET password = ${newHashedPassword}
+            WHERE id = ${id}
+        `;
+    }catch(error){
+        console.error(error);
+
+        return {
+            message: 'Error en base de datos: fallo al actualizar tu contraseña',
         };
     }
  
