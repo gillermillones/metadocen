@@ -22,7 +22,7 @@ export default function FormOptions({ field, num, numOpt, color }: { field: stri
             </legend>
             <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
                 <div className="flex gap-4" aria-describedby={`${field}-error`}>
-                    {numOpt.map((n) => (
+                    {elem.map((n) => (
                         <div className="flex items-center">
                             <input
                                 id={`${field}-${n}`}
