@@ -6,6 +6,7 @@
   .font-outline-025 {
     -webkit-text-stroke: 0.25px black;
   }
+}
 
 input[type='number'] {
   -moz-appearance: textfield;
