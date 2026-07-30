@@ -94,6 +94,8 @@ export default function ItemForm() {
         }));
 
     }, [lilAccept]);
+    const colors = ["rose", "red", "orange", "yellow", "lime", "green", "emerald", "cyan", "indigo", "purple", "fuchsia", "pink", "rose", "slate", "stone"];
+
 
     return (
         <div className="flex justify-end gap-2">
@@ -185,7 +187,7 @@ export default function ItemForm() {
                     </div>
                     {/* Evaluated fields */}
                     <fieldset className="mb-4" aria-describedby="description-error">
-                        <FormOptions field="description" num={Number(formData.description)}></FormOptions>
+                        <FormOptions field="description" num={Number(formData.description)} numOpt={Number(6)} color={colors[0]}></FormOptions>
                         <div id="description-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.description &&
                             state.errors.description.map((error: string) => (
@@ -196,7 +198,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="quality-error">
-                        <FormOptions field="quality" num={Number(formData.quality)}></FormOptions>
+                        <FormOptions field="quality" num={Number(formData.quality)} numOpt={Number(7)} color={colors[1]}></FormOptions>
                         <div id="quality-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.quality &&
                             state.errors.quality.map((error: string) => (
@@ -207,7 +209,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="capacity-error">
-                        <FormOptions field="capacity" num={Number(formData.capacity)}></FormOptions>
+                        <FormOptions field="capacity" num={Number(formData.capacity)} numOpt={Number(4)} color={colors[2]}></FormOptions>
                         <div id="capacity-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.capacity &&
                             state.errors.capacity.map((error: string) => (
@@ -218,7 +220,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="adaptable-error">
-                        <FormOptions field="adaptable" num={Number(formData.adaptable)}></FormOptions>
+                        <FormOptions field="adaptable" num={Number(formData.adaptable)} numOpt={Number(5)} color={colors[3]}></FormOptions>
                         <div id="adaptable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.adaptable &&
                             state.errors.adaptable.map((error: string) => (
@@ -229,7 +231,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="interaction-error">
-                        <FormOptions field="interaction" num={Number(formData.interaction)}></FormOptions>
+                        <FormOptions field="interaction" num={Number(formData.interaction)}  numOpt={Number(5)} color={colors[4]}></FormOptions>
                         <div id="interaction-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.interaction &&
                             state.errors.interaction.map((error: string) => (
@@ -240,7 +242,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="motivation-error">
-                        <FormOptions field="motivation" num={Number(formData.motivation)}></FormOptions>
+                        <FormOptions field="motivation" num={Number(formData.motivation)} numOpt={Number(5)} color={colors[5]}></FormOptions>
                         <div id="motivation-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.motivation &&
                             state.errors.motivation.map((error: string) => (
@@ -251,7 +253,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="design-error">
-                        <FormOptions field="design" num={Number(formData.design)}></FormOptions>
+                        <FormOptions field="design" num={Number(formData.design)} numOpt={Number(8)} color={colors[6]}></FormOptions>
                         <div id="design-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.design &&
                             state.errors.design.map((error: string) => (
@@ -262,7 +264,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="reusable-error">
-                        <FormOptions field="reusable" num={Number(formData.reusable)}></FormOptions>
+                        <FormOptions field="reusable" num={Number(formData.reusable)} numOpt={Number(3)} color={colors[7]}></FormOptions>
                         <div id="reusable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.reusable &&
                             state.errors.reusable.map((error: string) => (
@@ -273,7 +275,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="portable-error">
-                        <FormOptions field="portable" num={Number(formData.portable)}></FormOptions>
+                        <FormOptions field="portable" num={Number(formData.portable)} numOpt={Number(5)} color={colors[8]}></FormOptions>
                         <div id="portable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.portable &&
                             state.errors.portable.map((error: string) => (
@@ -284,7 +286,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="toughness-error">
-                        <FormOptions field="toughness" num={Number(formData.toughness)}></FormOptions>
+                        <FormOptions field="toughness" num={Number(formData.toughness)} numOpt={Number(4)} color={colors[9]}></FormOptions>
                         <div id="toughness-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.toughness &&
                             state.errors.toughness.map((error: string) => (
@@ -295,7 +297,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="structure-error">
-                        <FormOptions field="structure" num={Number(formData.structure)}></FormOptions>
+                        <FormOptions field="structure" num={Number(formData.structure)} numOpt={Number(4)} color={colors[10]}></FormOptions>
                         <div id="structure-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.structure &&
                             state.errors.structure.map((error: string) => (
@@ -306,7 +308,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="navigation-error">
-                        <FormOptions field="navigation" num={Number(formData.navigation)}></FormOptions>
+                        <FormOptions field="navigation" num={Number(formData.navigation)} numOpt={Number(11)} color={colors[11]}></FormOptions>
                         <div id="navigation-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.navigation &&
                             state.errors.navigation.map((error: string) => (
@@ -317,7 +319,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="operable-error">
-                        <FormOptions field="operable" num={Number(formData.operable)}></FormOptions>
+                        <FormOptions field="operable" num={Number(formData.operable)} numOpt={Number(6)} color={colors[12]}></FormOptions>
                         <div id="operable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.operable &&
                             state.errors.operable.map((error: string) => (
@@ -328,7 +330,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="av_accessible-error">
-                        <FormOptions key={formData.av_accessible} field="av_accessible" num={Number(formData.av_accessible)}></FormOptions>
+                        <FormOptions field="av_accessible" num={Number(formData.av_accessible)} numOpt={Number(7)} color={colors[13]}></FormOptions>
                         <div id="av_accessible-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.av_accessible &&
                             state.errors.av_accessible.map((error: string) => (
@@ -339,7 +341,7 @@ export default function ItemForm() {
                         </div>
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="text_accessible-error">
-                        <FormOptions field="text_accessible" num={Number(formData.text_accessible)}></FormOptions>
+                        <FormOptions field="text_accessible" num={Number(formData.text_accessible)} numOpt={Number(7)} color={colors[14]}></FormOptions>
                         <div id="text_accessible-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.text_accessible &&
                             state.errors.text_accessible.map((error: string) => (
@@ -368,13 +370,14 @@ export default function ItemForm() {
                     <Button type="submit">Crear Archivo</Button>
                 </div>
             </form>
-            <div className="flex flex-col justify center">
+            <div className="flex flex-col justify-start">
                 <section className="container">
-                    <div {...getRootBigProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
+                    <div {...getRootBigProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 mb-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
                         <input {...getInputBigProps()} />
                         <p>Arrastra aquí el archivo XML con metadatos o haz click para seleccionar</p>
                     </div>
                 </section>
+                <p>-------------------- o --------------------</p>
                 <section className="container2">
                     <div {...getRootLilProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
                         <input {...getInputLilProps()} />
