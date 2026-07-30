@@ -369,7 +369,7 @@ export default function ItemForm() {
                     <Button type="submit">Crear Archivo</Button>
                 </div>
             </form>
-            <div className="flex flex-col justify-start">
+            <div className="flex flex-col justify-start items-center">
                 <section className="container">
                     <div {...getRootBigProps({ className: "flex flex-col justify-center px-8 py-8 mx-2 mb-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
                         <input {...getInputBigProps()} />
