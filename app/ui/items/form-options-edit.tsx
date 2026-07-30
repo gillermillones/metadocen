@@ -22,7 +22,7 @@ export default function FormOptionsEdit({ field, num, numOpt, color  }: { field:
                                 name={field}
                                 type="radio"
                                 value={n}
-                                defaultChecked={num === 1}
+                                defaultChecked={num === n}
                                 className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                             />
                             <label
