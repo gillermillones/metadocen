@@ -11,3 +11,5 @@ vercel
 zod
 clsx
 use-debounce
+react-dropzone
+fast-xml-parser
