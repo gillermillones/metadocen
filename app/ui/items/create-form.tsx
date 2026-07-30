@@ -372,14 +372,14 @@ export default function ItemForm() {
             </form>
             <div className="flex flex-col justify-start">
                 <section className="container">
-                    <div {...getRootBigProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 mb-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
+                    <div {...getRootBigProps({ className: "flex flex-col justify-center px-8 py-8 mx-2 mb-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
                         <input {...getInputBigProps()} />
                         <p>Arrastra aquí el archivo XML con metadatos o haz click para seleccionar</p>
                     </div>
                 </section>
-                <p>-------------------- o --------------------</p>
+                <p>------------- o -------------</p>
                 <section className="container2">
-                    <div {...getRootLilProps({ className: "flex flex-col justify-center px-16 py-10 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
+                    <div {...getRootLilProps({ className: "flex flex-col justify-center px-8 py-8 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
                         <input {...getInputLilProps()} />
                         <p>Arrastra aquí el documento sobre el que quieres los metadatos o haz click para seleccionar</p>
                     </div>
