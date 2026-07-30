@@ -6,6 +6,11 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    {
+      pattern: /bg-(rose|red|orange|yellow|lime|green|emerald|cyan|indigo|purple|fuchsia|pink|rose|slate|stone)-(50|100|200|300|400|500|600|700|800|900|950)/,
+    },
+  ],
   theme: {
     extend: {
       gridTemplateColumns: {
