@@ -17,6 +17,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
     const updateDataWithId = updateItem.bind(null, data.id);
     const initialState: ItemState = { message: null, errors: {} };
     const [state, formAction] = useActionState(updateDataWithId, initialState);
+    const colors = ["rose", "red", "orange", "yellow", "lime", "green", "emerald", "cyan", "indigo", "purple", "fuchsia", "pink", "rose", "slate", "stone"];
 
     return (
         <form action={formAction}>
@@ -104,7 +105,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 </div>
                 {/* Evaluated fields */}
                 <fieldset className="mb-4" aria-describedby="description-error">
-                    <FormOptionsEdit field="description" num={data.description}></FormOptionsEdit>
+                    <FormOptionsEdit field="description" num={data.description} numOpt={Number(6)} color={colors[0]}></FormOptionsEdit>
                     <div id="description-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.description &&
                         state.errors.description.map((error: string) => (
@@ -115,7 +116,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="quality-error">
-                    <FormOptionsEdit field="quality" num={data.quality}></FormOptionsEdit>
+                    <FormOptionsEdit field="quality" num={data.quality} numOpt={Number(7)} color={colors[1]}></FormOptionsEdit>
                     <div id="quality-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.quality &&
                         state.errors.quality.map((error: string) => (
@@ -126,7 +127,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="capacity-error">
-                    <FormOptionsEdit field="capacity" num={data.capacity}></FormOptionsEdit>
+                    <FormOptionsEdit field="capacity" num={data.capacity} numOpt={Number(4)} color={colors[2]}></FormOptionsEdit>
                     <div id="capacity-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.capacity &&
                         state.errors.capacity.map((error: string) => (
@@ -137,7 +138,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="adaptable-error">
-                    <FormOptionsEdit field="adaptable" num={data.adaptable}></FormOptionsEdit>
+                    <FormOptionsEdit field="adaptable" num={data.adaptable} numOpt={Number(5)} color={colors[3]}></FormOptionsEdit>
                     <div id="adaptable-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.adaptable &&
                         state.errors.adaptable.map((error: string) => (
@@ -148,7 +149,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="interaction-error">
-                    <FormOptionsEdit field="interaction" num={data.interaction}></FormOptionsEdit>
+                    <FormOptionsEdit field="interaction" num={data.interaction} numOpt={Number(5)} color={colors[4]}></FormOptionsEdit>
                     <div id="interaction-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.interaction &&
                         state.errors.interaction.map((error: string) => (
@@ -159,7 +160,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="motivation-error">
-                    <FormOptionsEdit field="motivation" num={data.motivation}></FormOptionsEdit>
+                    <FormOptionsEdit field="motivation" num={data.motivation} numOpt={Number(5)} color={colors[5]}></FormOptionsEdit>
                     <div id="motivation-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.motivation &&
                         state.errors.motivation.map((error: string) => (
@@ -170,7 +171,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="design-error">
-                    <FormOptionsEdit field="design" num={data.design}></FormOptionsEdit>
+                    <FormOptionsEdit field="design" num={data.design} numOpt={Number(8)} color={colors[6]}></FormOptionsEdit>
                     <div id="design-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.design &&
                         state.errors.design.map((error: string) => (
@@ -181,7 +182,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="reusable-error">
-                    <FormOptionsEdit field="reusable" num={data.reusable}></FormOptionsEdit>
+                    <FormOptionsEdit field="reusable" num={data.reusable} numOpt={Number(3)} color={colors[7]}></FormOptionsEdit>
                     <div id="reusable-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.reusable &&
                         state.errors.reusable.map((error: string) => (
@@ -192,7 +193,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="portable-error">
-                    <FormOptionsEdit field="portable" num={data.portable}></FormOptionsEdit>
+                    <FormOptionsEdit field="portable" num={data.portable} numOpt={Number(5)} color={colors[8]}></FormOptionsEdit>
                     <div id="portable-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.portable &&
                         state.errors.portable.map((error: string) => (
@@ -203,7 +204,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="toughness-error">
-                    <FormOptionsEdit field="toughness" num={data.toughness}></FormOptionsEdit>
+                    <FormOptionsEdit field="toughness" num={data.toughness} numOpt={Number(4)} color={colors[9]}></FormOptionsEdit>
                     <div id="toughness-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.toughness &&
                         state.errors.toughness.map((error: string) => (
@@ -214,7 +215,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="structure-error">
-                    <FormOptionsEdit field="structure" num={data.structure}></FormOptionsEdit>
+                    <FormOptionsEdit field="structure" num={data.structure} numOpt={Number(4)} color={colors[10]}></FormOptionsEdit>
                     <div id="structure-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.structure &&
                         state.errors.structure.map((error: string) => (
@@ -225,7 +226,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="navigation-error">
-                    <FormOptionsEdit field="navigation" num={data.navigation}></FormOptionsEdit>
+                    <FormOptionsEdit field="navigation" num={data.navigation} numOpt={Number(11)} color={colors[11]}></FormOptionsEdit>
                     <div id="navigation-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.navigation &&
                         state.errors.navigation.map((error: string) => (
@@ -236,7 +237,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="operable-error">
-                    <FormOptionsEdit field="operable" num={data.operable}></FormOptionsEdit>
+                    <FormOptionsEdit field="operable" num={data.operable} numOpt={Number(6)} color={colors[12]}></FormOptionsEdit>
                     <div id="operable-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.operable &&
                         state.errors.operable.map((error: string) => (
@@ -247,7 +248,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="av_accessible-error">
-                    <FormOptionsEdit field="av_accessible" num={data.av_accessible}></FormOptionsEdit>
+                    <FormOptionsEdit field="av_accessible" num={data.av_accessible} numOpt={Number(7)} color={colors[13]}></FormOptionsEdit>
                     <div id="av_accessible-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.av_accessible &&
                         state.errors.av_accessible.map((error: string) => (
@@ -258,7 +259,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                     </div>
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="text_accessible-error">
-                    <FormOptionsEdit field="text_accessible" num={data.text_accessible}></FormOptionsEdit>
+                    <FormOptionsEdit field="text_accessible" num={data.text_accessible} numOpt={Number(7)} color={colors[14]}></FormOptionsEdit>
                     <div id="text_accessible-error" aria-live="polite" aria-atomic="true">
                         {state.errors?.text_accessible &&
                         state.errors.text_accessible.map((error: string) => (

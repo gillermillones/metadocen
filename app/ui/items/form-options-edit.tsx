@@ -1,4 +1,12 @@
-export default function FormOptionsEdit({ field, num }: { field: string, num: number }) {
+export default function FormOptionsEdit({ field, num, numOpt, color  }: { field: string, num: number; numOpt: number; color: string }) {
+    const colorVal = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+    const elem = [];
+    if(numOpt < 1){
+        return;
+    }
+    for (let i = 1; i <= numOpt; i++) {
+        elem.push(i);
+    }
 
     return (
         <div>
@@ -6,87 +14,25 @@ export default function FormOptionsEdit({ field, num }: { field: string, num: nu
                 Elige el valor {field}
             </legend>
             <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
-                <div className="flex gap-4" aria-describedby={`${field}-error`}>
-                    <div className="flex items-center">
-                        <input
-                        id={`${field}-1`}
-                        name={field}
-                        type="radio"
-                        value="1"
-                        defaultChecked={num === 1}
-                        className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
-                        />
-                        <label
-                        htmlFor={`${field}-1`}
-                        className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-red-400 px-3 py-1.5 text-xs font-medium text-white"
-                        >
-                            1
-                        </label>
-                    </div>
-                    <div className="flex items-center">
-                        <input
-                        id={`${field}-2`}
-                        name={field}
-                        type="radio"
-                        value="2"
-                        defaultChecked={num === 2}
-                        className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
-                        />
-                        <label
-                        htmlFor={`${field}-2`}
-                        className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-orange-300 px-3 py-1.5 text-xs font-medium text-white"
-                        >
-                            2
-                        </label>
-                    </div>
-                    <div className="flex items-center">
-                        <input
-                        id={`${field}-3`}
-                        name={field}
-                        type="radio"
-                        value="3"
-                        defaultChecked={num === 3}
-                        className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
-                        />
-                        <label
-                        htmlFor={`${field}-3`}
-                        className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-yellow-300 px-3 py-1.5 text-xs font-medium text-white"
-                        >
-                            3
-                        </label>
-                    </div>
-                    <div className="flex items-center">
-                        <input
-                        id={`${field}-4`}
-                        name={field}
-                        type="radio"
-                        value="4"
-                        defaultChecked={num === 4}
-                        className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
-                        />
-                        <label
-                        htmlFor={`${field}-4`}
-                        className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-300 px-3 py-1.5 text-xs font-medium text-white"
-                        >
-                            4
-                        </label>
-                    </div>
-                    <div className="flex items-center">
-                        <input
-                        id={`${field}-5`}
-                        name={field}
-                        type="radio"
-                        value="5"
-                        defaultChecked={num === 5}
-                        className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
-                        />
-                        <label
-                        htmlFor={`${field}-5`}
-                        className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-blue-300 px-3 py-1.5 text-xs font-medium text-white"
-                        >
-                            5
-                        </label>
-                    </div>
+                <div className="flex gap-4 justify-center" aria-describedby={`${field}-error`}>
+                    {elem.map((n) => (
+                        <div className="flex items-center">
+                            <input
+                                id={`${field}-${n}`}
+                                name={field}
+                                type="radio"
+                                value={n}
+                                defaultChecked={num === 1}
+                                className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                            />
+                            <label
+                                htmlFor={`${field}-${n}`}
+                                className={`ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-${color}-${colorVal[Math.floor((colorVal.length/2)-(numOpt/2)) + (n - 1)]} px-3 py-1.5 text-xs font-medium font-outline-025 text-white`}
+                            >
+                                {n}
+                            </label>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

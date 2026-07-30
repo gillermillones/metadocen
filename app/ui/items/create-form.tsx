@@ -96,7 +96,6 @@ export default function ItemForm() {
     }, [lilAccept]);
     const colors = ["rose", "red", "orange", "yellow", "lime", "green", "emerald", "cyan", "indigo", "purple", "fuchsia", "pink", "rose", "slate", "stone"];
 
-
     return (
         <div className="flex justify-end gap-2">
             <form action={formAction}>
@@ -377,7 +376,7 @@ export default function ItemForm() {
                         <p>Arrastra aquí el archivo XML con metadatos o haz click para seleccionar</p>
                     </div>
                 </section>
-                <p>------------- o -------------</p>
+                <p>------ o ------</p>
                 <section className="container2">
                     <div {...getRootLilProps({ className: "flex flex-col justify-center px-8 py-8 mx-2 my-4 border border-dashed rounded-2xl border-black hover:border-gray-500" })}>
                         <input {...getInputLilProps()} />
