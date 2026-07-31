@@ -1,4 +1,10 @@
-export default function GetDesc(rule: number, section: number){
+export default function GetDesc({
+    rule,
+    section,
+}: {
+    rule: number;
+    section: number;
+}) {
     switch(rule){
         case 1:
             switch(section){
