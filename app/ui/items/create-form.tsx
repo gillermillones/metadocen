@@ -36,8 +36,8 @@ export default function ItemForm() {
         av_accessible: "",
         text_accessible: "",
     });
-    const [show, setShow] = useState<string | null>(null);
-    const changeShow = (n : string) => {setShow(show === n ? null : n)}
+    const [show, setShow] = useState<number | null>(null);
+    const changeShow = (n : number) => {setShow(show == n ? null : n)}
 
     const { acceptedFiles:bigAccept, getRootProps:getRootBigProps, getInputProps:getInputBigProps } = useDropzone({
         accept: {
