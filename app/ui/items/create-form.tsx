@@ -255,7 +255,18 @@ export default function ItemForm() {
                             )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="capacity-error">
-                        <FormOptions field="capacity" num={Number(formData.capacity)} numOpt={Number(4)} color={colors[2]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="capacity" num={Number(formData.capacity)} numOpt={Number(4)} color={colors[2]}></FormOptions>
+                            {show === 0 ? (
+                                <button type="button" onClick={() => changeShow(2)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(2)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="capacity-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.capacity &&
                             state.errors.capacity.map((error: string) => (
@@ -264,9 +275,28 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 2 && (
+                                <div>
+                                    <GetDesc rule={3} section={1}/>
+                                    <GetDesc rule={3} section={2}/>
+                                    <GetDesc rule={3} section={3}/>
+                                    <GetDesc rule={3} section={4}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="adaptable-error">
-                        <FormOptions field="adaptable" num={Number(formData.adaptable)} numOpt={Number(5)} color={colors[3]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="adaptable" num={Number(formData.adaptable)} numOpt={Number(5)} color={colors[3]}></FormOptions>
+                            {show === 3 ? (
+                                <button type="button" onClick={() => changeShow(3)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(3)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="adaptable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.adaptable &&
                             state.errors.adaptable.map((error: string) => (
@@ -275,9 +305,29 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 3 && (
+                                <div>
+                                    <GetDesc rule={4} section={1}/>
+                                    <GetDesc rule={4} section={2}/>
+                                    <GetDesc rule={4} section={3}/>
+                                    <GetDesc rule={4} section={4}/>
+                                    <GetDesc rule={4} section={5}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="interaction-error">
-                        <FormOptions field="interaction" num={Number(formData.interaction)}  numOpt={Number(5)} color={colors[4]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="interaction" num={Number(formData.interaction)}  numOpt={Number(5)} color={colors[4]}></FormOptions>
+                            {show === 4 ? (
+                                <button type="button" onClick={() => changeShow(4)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(4)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="interaction-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.interaction &&
                             state.errors.interaction.map((error: string) => (
@@ -286,9 +336,29 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 4 && (
+                                <div>
+                                    <GetDesc rule={5} section={1}/>
+                                    <GetDesc rule={5} section={2}/>
+                                    <GetDesc rule={5} section={3}/>
+                                    <GetDesc rule={5} section={4}/>
+                                    <GetDesc rule={5} section={5}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="motivation-error">
-                        <FormOptions field="motivation" num={Number(formData.motivation)} numOpt={Number(5)} color={colors[5]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="motivation" num={Number(formData.motivation)} numOpt={Number(5)} color={colors[5]}></FormOptions>
+                            {show === 5 ? (
+                                <button type="button" onClick={() => changeShow(5)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(5)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="motivation-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.motivation &&
                             state.errors.motivation.map((error: string) => (
@@ -297,9 +367,29 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 5 && (
+                                <div>
+                                    <GetDesc rule={6} section={1}/>
+                                    <GetDesc rule={6} section={2}/>
+                                    <GetDesc rule={6} section={3}/>
+                                    <GetDesc rule={6} section={4}/>
+                                    <GetDesc rule={6} section={5}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="design-error">
-                        <FormOptions field="design" num={Number(formData.design)} numOpt={Number(8)} color={colors[6]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="design" num={Number(formData.design)} numOpt={Number(8)} color={colors[6]}></FormOptions>
+                            {show === 6 ? (
+                                <button type="button" onClick={() => changeShow(6)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(6)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="design-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.design &&
                             state.errors.design.map((error: string) => (
@@ -308,9 +398,32 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 6 && (
+                                <div>
+                                    <GetDesc rule={7} section={1}/>
+                                    <GetDesc rule={7} section={2}/>
+                                    <GetDesc rule={7} section={3}/>
+                                    <GetDesc rule={7} section={4}/>
+                                    <GetDesc rule={7} section={5}/>
+                                    <GetDesc rule={7} section={6}/>
+                                    <GetDesc rule={7} section={7}/>
+                                    <GetDesc rule={7} section={8}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="reusable-error">
-                        <FormOptions field="reusable" num={Number(formData.reusable)} numOpt={Number(3)} color={colors[7]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="reusable" num={Number(formData.reusable)} numOpt={Number(3)} color={colors[7]}></FormOptions>
+                            {show === 7 ? (
+                                <button type="button" onClick={() => changeShow(7)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(7)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="reusable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.reusable &&
                             state.errors.reusable.map((error: string) => (
@@ -319,9 +432,27 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 7 && (
+                                <div>
+                                    <GetDesc rule={8} section={1}/>
+                                    <GetDesc rule={8} section={2}/>
+                                    <GetDesc rule={8} section={3}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="portable-error">
+                        <div className="flex flex-row justify-start">
                         <FormOptions field="portable" num={Number(formData.portable)} numOpt={Number(5)} color={colors[8]}></FormOptions>
+                            {show === 8 ? (
+                                <button type="button" onClick={() => changeShow(8)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(8)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="portable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.portable &&
                             state.errors.portable.map((error: string) => (
@@ -330,9 +461,29 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 8 && (
+                                <div>
+                                    <GetDesc rule={9} section={1}/>
+                                    <GetDesc rule={9} section={2}/>
+                                    <GetDesc rule={9} section={3}/>
+                                    <GetDesc rule={9} section={4}/>
+                                    <GetDesc rule={9} section={5}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="toughness-error">
-                        <FormOptions field="toughness" num={Number(formData.toughness)} numOpt={Number(4)} color={colors[9]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="toughness" num={Number(formData.toughness)} numOpt={Number(4)} color={colors[9]}></FormOptions>
+                            {show === 9 ? (
+                                <button type="button" onClick={() => changeShow(9)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(9)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="toughness-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.toughness &&
                             state.errors.toughness.map((error: string) => (
@@ -341,9 +492,28 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 9 && (
+                                <div>
+                                    <GetDesc rule={10} section={1}/>
+                                    <GetDesc rule={10} section={2}/>
+                                    <GetDesc rule={10} section={3}/>
+                                    <GetDesc rule={10} section={4}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="structure-error">
-                        <FormOptions field="structure" num={Number(formData.structure)} numOpt={Number(4)} color={colors[10]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="structure" num={Number(formData.structure)} numOpt={Number(4)} color={colors[10]}></FormOptions>
+                            {show === 10 ? (
+                                <button type="button" onClick={() => changeShow(10)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(10)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="structure-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.structure &&
                             state.errors.structure.map((error: string) => (
@@ -352,9 +522,28 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 10 && (
+                                <div>
+                                    <GetDesc rule={11} section={1}/>
+                                    <GetDesc rule={11} section={2}/>
+                                    <GetDesc rule={11} section={3}/>
+                                    <GetDesc rule={11} section={4}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="navigation-error">
-                        <FormOptions field="navigation" num={Number(formData.navigation)} numOpt={Number(11)} color={colors[11]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="navigation" num={Number(formData.navigation)} numOpt={Number(11)} color={colors[11]}></FormOptions>
+                            {show === 11 ? (
+                                <button type="button" onClick={() => changeShow(11)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(11)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="navigation-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.navigation &&
                             state.errors.navigation.map((error: string) => (
@@ -363,9 +552,35 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 11 && (
+                                <div>
+                                    <GetDesc rule={12} section={1}/>
+                                    <GetDesc rule={12} section={2}/>
+                                    <GetDesc rule={12} section={3}/>
+                                    <GetDesc rule={12} section={4}/>
+                                    <GetDesc rule={12} section={5}/>
+                                    <GetDesc rule={12} section={6}/>
+                                    <GetDesc rule={12} section={7}/>
+                                    <GetDesc rule={12} section={8}/>
+                                    <GetDesc rule={12} section={9}/>
+                                    <GetDesc rule={12} section={10}/>
+                                    <GetDesc rule={12} section={11}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="operable-error">
-                        <FormOptions field="operable" num={Number(formData.operable)} numOpt={Number(6)} color={colors[12]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="operable" num={Number(formData.operable)} numOpt={Number(6)} color={colors[12]}></FormOptions>
+                            {show === 12 ? (
+                                <button type="button" onClick={() => changeShow(12)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(12)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="operable-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.operable &&
                             state.errors.operable.map((error: string) => (
@@ -374,9 +589,30 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 12 && (
+                                <div>
+                                    <GetDesc rule={13} section={1}/>
+                                    <GetDesc rule={13} section={2}/>
+                                    <GetDesc rule={13} section={3}/>
+                                    <GetDesc rule={13} section={4}/>
+                                    <GetDesc rule={13} section={5}/>
+                                    <GetDesc rule={13} section={6}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="av_accessible-error">
-                        <FormOptions field="av_accessible" num={Number(formData.av_accessible)} numOpt={Number(7)} color={colors[13]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="av_accessible" num={Number(formData.av_accessible)} numOpt={Number(7)} color={colors[13]}></FormOptions>
+                            {show === 13 ? (
+                                <button type="button" onClick={() => changeShow(13)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(13)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="av_accessible-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.av_accessible &&
                             state.errors.av_accessible.map((error: string) => (
@@ -385,9 +621,31 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 13 && (
+                                <div>
+                                    <GetDesc rule={14} section={1}/>
+                                    <GetDesc rule={14} section={2}/>
+                                    <GetDesc rule={14} section={3}/>
+                                    <GetDesc rule={14} section={4}/>
+                                    <GetDesc rule={14} section={5}/>
+                                    <GetDesc rule={14} section={6}/>
+                                    <GetDesc rule={14} section={7}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="text_accessible-error">
-                        <FormOptions field="text_accessible" num={Number(formData.text_accessible)} numOpt={Number(7)} color={colors[14]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="text_accessible" num={Number(formData.text_accessible)} numOpt={Number(7)} color={colors[14]}></FormOptions>
+                            {show === 14 ? (
+                                <button type="button" onClick={() => changeShow(14)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button type="button" onClick={() => changeShow(14)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="text_accessible-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.text_accessible &&
                             state.errors.text_accessible.map((error: string) => (
@@ -396,6 +654,17 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 14 && (
+                                <div>
+                                    <GetDesc rule={15} section={1}/>
+                                    <GetDesc rule={15} section={2}/>
+                                    <GetDesc rule={15} section={3}/>
+                                    <GetDesc rule={15} section={4}/>
+                                    <GetDesc rule={15} section={5}/>
+                                    <GetDesc rule={15} section={6}/>
+                                    <GetDesc rule={15} section={7}/>
+                                </div>
+                            )}
                     </fieldset>
                 </div>
                 <div id="general-error" aria-live="polite" aria-atomic="true">
