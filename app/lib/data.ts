@@ -34,12 +34,14 @@ export async function fetchLatestFriendItems(id: string) {
       JOIN users ON data.user_id = users.id
       JOIN friends ON friends."userIdTarget" = users.id
       WHERE friends."userIdSource" = ${id}
+        AND friends.accepted = TRUE
       UNION
       SELECT data.id, data.name, data.extension, data.date, users.name AS username
       FROM data
       JOIN users ON data.user_id = users.id
       JOIN friends ON friends."userIdSource" = users.id
       WHERE friends."userIdTarget" = ${id}
+        AND friends.accepted = TRUE
       ORDER BY date DESC
       LIMIT 5`;
 

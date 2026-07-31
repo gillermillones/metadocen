@@ -11,7 +11,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
 
   return (
     <div className="flex flex-col w-full justify-between">
-        <h1 className={`${lusitana.className} text-2xl`}>Tu Perfil</h1>
+        <h1 className={`${lusitana.className} text-2xl mb-6`}>Tu Perfil</h1>
         <div className="flex flex-row justify-start">
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
