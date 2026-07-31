@@ -6,6 +6,10 @@
   .font-outline-025 {
     -webkit-text-stroke: 0.25px black;
   }
+
+  .width-maxflex {
+    width: -webkit-fill-available;
+  }
 }
 
 input[type='number'] {

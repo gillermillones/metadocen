@@ -193,11 +193,11 @@ export default function ItemForm() {
                         <div className="flex flex-row justify-start">
                             <FormOptions field="description" num={Number(formData.description)} numOpt={Number(6)} color={colors[0]}></FormOptions>
                             {show === 0 ? (
-                                <button onClick={() => changeShow(0)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                <button type="button" onClick={() => changeShow(0)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                     <ChevronDownIcon className="w-5" />
                                 </button>
                                 ):(
-                                    <button onClick={() => changeShow(0)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                    <button type="button" onClick={() => changeShow(0)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                         <ChevronRightIcon className="w-5" />
                                     </button>
                             )}
@@ -213,35 +213,46 @@ export default function ItemForm() {
                         {show === 0 && (
                             <div>
                                 <GetDesc rule={1} section={1}/>
+                                <GetDesc rule={1} section={2}/>
+                                <GetDesc rule={1} section={3}/>
+                                <GetDesc rule={1} section={4}/>
+                                <GetDesc rule={1} section={5}/>
+                                <GetDesc rule={1} section={6}/>
                             </div>
                         )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="quality-error">
-                         <div className="flex flex-row justify-start">
+                        <div className="flex flex-row justify-start">
                             <FormOptions field="quality" num={Number(formData.quality)} numOpt={Number(7)} color={colors[1]}></FormOptions>
                             {show === 1 ? (
-                                <button onClick={() => changeShow(1)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                <button type="button" onClick={() => changeShow(1)} className="rounded-md border self-end p-2 ml-1 mb-4 bg-white hover:bg-gray-200">
                                     <ChevronDownIcon className="w-5" />
                                 </button>
                                 ):(
-                                    <button onClick={() => changeShow(1)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                    <button type="button" onClick={() => changeShow(1)} className="rounded-md border self-end p-2 ml-1 mb-4 bg-white hover:bg-gray-200">
                                         <ChevronRightIcon className="w-5" />
                                     </button>
                             )}
                         </div>
-                        <div id="quality-error" aria-live="polite" aria-atomic="true">
-                            {state.errors?.quality &&
-                            state.errors.quality.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                    {error}
-                                </p>
-                            ))}
-                        </div>
-                        {show === 1 && (
-                            <div>
-                                <GetDesc rule={2} section={2}/>
+                            <div id="quality-error" aria-live="polite" aria-atomic="true">
+                                {state.errors?.quality &&
+                                state.errors.quality.map((error: string) => (
+                                    <p className="mt-2 text-sm text-red-500" key={error}>
+                                        {error}
+                                    </p>
+                                ))}
                             </div>
-                        )}
+                            {show === 1 && (
+                                <div>
+                                    <GetDesc rule={2} section={1}/>
+                                    <GetDesc rule={2} section={2}/>
+                                    <GetDesc rule={2} section={3}/>
+                                    <GetDesc rule={2} section={4}/>
+                                    <GetDesc rule={2} section={5}/>
+                                    <GetDesc rule={2} section={6}/>
+                                    <GetDesc rule={2} section={7}/>
+                                </div>
+                            )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="capacity-error">
                         <FormOptions field="capacity" num={Number(formData.capacity)} numOpt={Number(4)} color={colors[2]}></FormOptions>

@@ -16,7 +16,7 @@ export default function FormOptions({ field, num, numOpt, color }: { field: stri
         elem.push(i);
     }
     return (
-        <div>
+        <div className="width-maxflex">
             <legend className="mb-2 block text-sm font-medium">
                 Elige el valor {field}
             </legend>
