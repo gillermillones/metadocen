@@ -4,6 +4,8 @@ import FormOptions  from '@/app/ui/items/form-options';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { createItem, ItemState } from '@/app/lib/actions';
+import GetDesc from '@/app/lib/paragraphs';
+import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { useActionState, useEffect, useState } from 'react';
 import { useDropzone } from "react-dropzone";
 import { XMLParser } from "fast-xml-parser";
@@ -34,6 +36,8 @@ export default function ItemForm() {
         av_accessible: "",
         text_accessible: "",
     });
+    const [show, setShow] = useState<string | null>(null);
+    const changeShow = (n : string) => {setShow(show === n ? null : n)}
 
     const { acceptedFiles:bigAccept, getRootProps:getRootBigProps, getInputProps:getInputBigProps } = useDropzone({
         accept: {
@@ -186,7 +190,18 @@ export default function ItemForm() {
                     </div>
                     {/* Evaluated fields */}
                     <fieldset className="mb-4" aria-describedby="description-error">
-                        <FormOptions field="description" num={Number(formData.description)} numOpt={Number(6)} color={colors[0]}></FormOptions>
+                        <div className="flex flex-row justify-start">
+                            <FormOptions field="description" num={Number(formData.description)} numOpt={Number(6)} color={colors[0]}></FormOptions>
+                            {show === 0 ? (
+                                <button onClick={() => changeShow(0)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button onClick={() => changeShow(0)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="description-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.description &&
                             state.errors.description.map((error: string) => (
@@ -195,9 +210,25 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 0 && (
+                            <div>
+                                <GetDesc rule={1} section={1}/>
+                            </div>
+                        )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="quality-error">
-                        <FormOptions field="quality" num={Number(formData.quality)} numOpt={Number(7)} color={colors[1]}></FormOptions>
+                         <div className="flex flex-row justify-start">
+                            <FormOptions field="quality" num={Number(formData.quality)} numOpt={Number(7)} color={colors[1]}></FormOptions>
+                            {show === 1 ? (
+                                <button onClick={() => changeShow(1)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                    <ChevronDownIcon className="w-5" />
+                                </button>
+                                ):(
+                                    <button onClick={() => changeShow(1)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                                        <ChevronRightIcon className="w-5" />
+                                    </button>
+                            )}
+                        </div>
                         <div id="quality-error" aria-live="polite" aria-atomic="true">
                             {state.errors?.quality &&
                             state.errors.quality.map((error: string) => (
@@ -206,6 +237,11 @@ export default function ItemForm() {
                                 </p>
                             ))}
                         </div>
+                        {show === 1 && (
+                            <div>
+                                <GetDesc rule={2} section={2}/>
+                            </div>
+                        )}
                     </fieldset>
                     <fieldset className="mb-4" aria-describedby="capacity-error">
                         <FormOptions field="capacity" num={Number(formData.capacity)} numOpt={Number(4)} color={colors[2]}></FormOptions>

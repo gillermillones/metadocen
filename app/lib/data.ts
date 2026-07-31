@@ -26,6 +26,33 @@ export async function fetchLatestItems() {
   }
 }
 
+export async function fetchLatestFriendItems(id: string) {
+  try {
+    const data = await sql<LatestItem[]>`
+      SELECT data.id, data.name, data.extension, data.date, users.name AS username
+      FROM data
+      JOIN users ON data.user_id = users.id
+      JOIN friends ON friends."userIdTarget" = users.id
+      WHERE friends."userIdSource" = ${id}
+      UNION
+      SELECT data.id, data.name, data.extension, data.date, users.name AS username
+      FROM data
+      JOIN users ON data.user_id = users.id
+      JOIN friends ON friends."userIdSource" = users.id
+      WHERE friends."userIdTarget" = ${id}
+      ORDER BY date DESC
+      LIMIT 5`;
+
+    const latestItems = data.map((item) => ({
+      ...item,
+    }));
+    return latestItems;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Error obteniendo los ultimos archivos de tus amigos');
+  }
+}
+
 export async function fetchUserNumber() {
   try{
     const userNum = await sql`SELECT COUNT(*) FROM users`;

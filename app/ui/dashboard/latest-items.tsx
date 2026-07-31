@@ -2,16 +2,18 @@ import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { lusitana } from '@/app/ui/fonts';
 import { LatestItem } from '@/app/lib/definitions';
-import { fetchLatestItems } from '@/app/lib/data';
+import { fetchLatestFriendItems } from '@/app/lib/data';
 import { formatDateToLocal } from '@/app/lib/utils';
+import { getSession } from '@/app/lib/actions';
 
 export default async function LatestItems() {
-  const latestItems = await fetchLatestItems();
+  const session = await getSession();
+  const latestItems = await fetchLatestFriendItems(session.userId);
 
   return (
     <div className="flex w-full flex-col md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Archivos Recientes
+        Archivos Recientes de tus Amigos
       </h2>
       <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4">
         { <div className="bg-white px-6">
