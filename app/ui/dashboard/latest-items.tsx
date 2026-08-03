@@ -22,7 +22,7 @@ export default async function LatestItems() {
               <div
                 key={item.id}
                 className={clsx(
-                  'flex flex-col md:flex-row items-center justify-between py-4',
+                  'flex flex-col md:flex-row items-center md:items-start justify-between py-4',
                   {
                     'border-t': i !== 0,
                   },

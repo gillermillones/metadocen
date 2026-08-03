@@ -71,7 +71,7 @@ export default function ItemsTable({
                     )}
                 {state === i.id && (
                     <div>
-                      <ShowValues item={i} />
+                      <ShowValues item={i} mobile={true} />
                     </div>
                 )}
               </div>
@@ -147,7 +147,7 @@ export default function ItemsTable({
                 {state === i.id && (
                   <tr>
                     <td colSpan={idSession.localeCompare(idUser) == 0 ? 5 : 4}>
-                      <ShowValues item={i} />
+                      <ShowValues item={i} mobile={false} />
                     </td>
                   </tr>
                 )}
