@@ -3,6 +3,7 @@
 import { ItemData } from '@/app/lib/definitions';
 import FormOptionsEdit  from '@/app/ui/items/form-options-edit';
 import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import GetDesc from '@/app/lib/paragraphs';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateItem, ItemState } from '@/app/lib/actions';
