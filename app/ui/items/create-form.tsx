@@ -211,7 +211,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 0 && (
-                            <div>
+                            <div className="width-fit">
                                 <GetDesc rule={1} section={1}/>
                                 <GetDesc rule={1} section={2}/>
                                 <GetDesc rule={1} section={3}/>
@@ -243,7 +243,7 @@ export default function ItemForm() {
                                 ))}
                             </div>
                             {show === 1 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={2} section={1}/>
                                     <GetDesc rule={2} section={2}/>
                                     <GetDesc rule={2} section={3}/>
@@ -276,7 +276,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 2 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={3} section={1}/>
                                     <GetDesc rule={3} section={2}/>
                                     <GetDesc rule={3} section={3}/>
@@ -306,7 +306,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 3 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={4} section={1}/>
                                     <GetDesc rule={4} section={2}/>
                                     <GetDesc rule={4} section={3}/>
@@ -337,7 +337,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 4 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={5} section={1}/>
                                     <GetDesc rule={5} section={2}/>
                                     <GetDesc rule={5} section={3}/>
@@ -368,7 +368,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 5 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={6} section={1}/>
                                     <GetDesc rule={6} section={2}/>
                                     <GetDesc rule={6} section={3}/>
@@ -399,7 +399,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 6 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={7} section={1}/>
                                     <GetDesc rule={7} section={2}/>
                                     <GetDesc rule={7} section={3}/>
@@ -433,7 +433,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 7 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={8} section={1}/>
                                     <GetDesc rule={8} section={2}/>
                                     <GetDesc rule={8} section={3}/>
@@ -462,7 +462,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 8 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={9} section={1}/>
                                     <GetDesc rule={9} section={2}/>
                                     <GetDesc rule={9} section={3}/>
@@ -493,7 +493,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 9 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={10} section={1}/>
                                     <GetDesc rule={10} section={2}/>
                                     <GetDesc rule={10} section={3}/>
@@ -523,7 +523,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 10 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={11} section={1}/>
                                     <GetDesc rule={11} section={2}/>
                                     <GetDesc rule={11} section={3}/>
@@ -553,7 +553,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 11 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={12} section={1}/>
                                     <GetDesc rule={12} section={2}/>
                                     <GetDesc rule={12} section={3}/>
@@ -590,7 +590,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 12 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={13} section={1}/>
                                     <GetDesc rule={13} section={2}/>
                                     <GetDesc rule={13} section={3}/>
@@ -622,7 +622,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 13 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={14} section={1}/>
                                     <GetDesc rule={14} section={2}/>
                                     <GetDesc rule={14} section={3}/>
@@ -655,7 +655,7 @@ export default function ItemForm() {
                             ))}
                         </div>
                         {show === 14 && (
-                                <div>
+                                <div className="width-fit">
                                     <GetDesc rule={15} section={1}/>
                                     <GetDesc rule={15} section={2}/>
                                     <GetDesc rule={15} section={3}/>

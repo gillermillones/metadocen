@@ -46,10 +46,22 @@ export default function ItemsTable({
                     <p className="text-sm text-gray-500">{i.extension}</p>
                     <p className="text-sm text-gray-500">{i.summary}</p>
                   </div>
+                  {state === i.id ? (
+                      <button onClick={() => changeState(i.id)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                        <ChevronDownIcon className="w-5" />
+                      </button>
+                      ):(
+                        <button onClick={() => changeState(i.id)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                          <ChevronRightIcon className="w-5" />
+                        </button>
+                   )}
                 </div>
                 {idSession.localeCompare(idUser) == 0 ? (
                     <div className="flex w-full items-center justify-between pt-4">
                         <div className="flex justify-end gap-2">
+                          <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                            <ArrowDownTrayIcon className="w-5" />
+                          </button>
                           <UpdateItem id={i.id} />
                           <DeleteItem id={i.id} />
                         </div>
@@ -57,6 +69,11 @@ export default function ItemsTable({
                     ):(
                       <></>
                     )}
+                {state === i.id && (
+                    <div>
+                      <ShowValues item={i} />
+                    </div>
+                )}
               </div>
             ))}
           </div>

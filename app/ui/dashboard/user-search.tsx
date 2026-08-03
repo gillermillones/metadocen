@@ -15,7 +15,7 @@ export default function Page() {
         <form action={formAction}>
             <div className="flex flex-col">
                 <div className="flex flex-row justify-end">
-                    <input id="username" name="username" type="text" placeholder="Search username"
+                    <input id="username" name="username" type="text" placeholder="Buscar usuario"
                         className="peer block w-full rounded-md border border-gray-200 py-2 mr-1 text-sm outline-2 placeholder:text-gray-500"
                         aria-describedby="name-error"
                     />
