@@ -9,7 +9,7 @@ export default function FormOptionsEdit({ field, num, numOpt, color  }: { field:
     }
 
     return (
-        <div>
+        <div className="width-maxflex">
             <legend className="mb-2 block text-sm font-medium">
                 Elige el valor {field}
             </legend>

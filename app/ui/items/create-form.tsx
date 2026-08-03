@@ -101,9 +101,9 @@ export default function ItemForm() {
     const colors = ["rose", "red", "orange", "yellow", "lime", "green", "emerald", "cyan", "indigo", "purple", "fuchsia", "pink", "rose", "slate", "stone"];
 
     return (
-        <div className="flex justify-end gap-2">
+        <div className="flex flex-col-reverse md:flex-row justify-end gap-2">
             <form action={formAction}>
-                <div className="rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
+                <div className="flex-wrap-balance rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
                     {/* Name */}
                     <div className="mb-4">
                         <label htmlFor="name" className="mb-2 block text-sm font-medium">
