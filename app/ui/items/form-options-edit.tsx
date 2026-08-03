@@ -14,7 +14,7 @@ export default function FormOptionsEdit({ field, num, numOpt, color  }: { field:
                 Elige el valor {field}
             </legend>
             <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
-                <div className="flex gap-4 justify-center" aria-describedby={`${field}-error`}>
+                <div className="flex flex-wrap-balance gap-4 justify-center" aria-describedby={`${field}-error`}>
                     {elem.map((n) => (
                         <div className="flex items-center">
                             <input

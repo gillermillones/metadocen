@@ -34,10 +34,8 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                     },
                 ]}
             />
-            <div className="flex w-full items-center justify-between pt-4">
-                <div className="flex justify-end gap-2">
-                    <EditItemForm data={data}></EditItemForm>
-                </div>
+            <div className="flex w-full items-center justify-between width-maxflex pt-4">
+                <EditItemForm data={data}></EditItemForm>
             </div>
         </main>
     );

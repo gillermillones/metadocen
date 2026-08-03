@@ -19,7 +19,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
 
     return (
         <form action={formAction}>
-            <div className="flex-wrap-balance rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
+            <div className="rounded-md bg-gray-50 p-4 md:p-6" aria-describedby="general-error">
                 {/* Name */}
                 <div className="mb-4">
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
@@ -134,7 +134,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         </div>
                     )}                    
                 </fieldset>
-                <fieldset className="mb-4" aria-describedby="quality-error">ç
+                <fieldset className="mb-4" aria-describedby="quality-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="quality" num={data.quality} numOpt={Number(7)} color={colors[1]}></FormOptionsEdit>
                         {show === 0 ? (
