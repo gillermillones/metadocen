@@ -1,4 +1,20 @@
-export const valArr = [{key: 'description', value: 6}, 
+type ItemProperty = | 'description'
+                    | 'quality'
+                    | 'capacity'
+                    | 'adaptable'
+                    | 'interaction'
+                    | 'motivation'
+                    | 'design'
+                    | 'reusable'
+                    | 'portable'
+                    | 'toughness'
+                    | 'structure'
+                    | 'navigation'
+                    | 'operable'
+                    | 'av_accessible'
+                    | 'text_accessible';
+
+export const valArr: { key: ItemProperty; value: number }[] = [{key: 'description', value: 6}, 
                 {key: 'quality', value: 7}, 
                 {key: 'capacity', value: 4}, 
                 {key: 'adaptable', value: 5}, 
