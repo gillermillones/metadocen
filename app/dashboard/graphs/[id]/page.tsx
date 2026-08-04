@@ -3,8 +3,9 @@ import { Metadata } from 'next';
 import { getUserById } from '@/auth';
 import { notFound, forbidden } from 'next/navigation';
 import { ChartSkeleton } from '@/app/ui/skeletons';
-import BarGraph from '@/app/ui/dashboard/bar-graph-lite';
+import BarGraph from '@/app/ui/dashboard/bar-graph';
 import { areWeFriends } from '@/app/lib/data';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Graficas',
