@@ -1,10 +1,9 @@
 import CardWrapper from '@/app/ui/dashboard/cards';
 import LatestItems from '@/app/ui/dashboard/latest-items';
 import UserSearch from '@/app/ui/dashboard/user-search';
-import BarGraph from '@/app/ui/dashboard/bar-graph';
-import { getSession } from '@/app/lib/actions';
+import BarGraphLite from '@/app/ui/dashboard/bar-graph-lite';
 import { Suspense } from 'react';
-import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
+import { ChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import { lusitana } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 
@@ -12,8 +11,7 @@ export const metadata: Metadata = {
   title: 'Pagina Principal',
 };
 
-export default async function Page() {
-  const session = await getSession();
+export default function Page() {
 
   return (
     <main>
@@ -32,8 +30,8 @@ export default async function Page() {
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestItems />
         </Suspense>
-        <Suspense fallback={<RevenueChartSkeleton />}>
-          <BarGraph n={6} userId={session.userId}/>
+        <Suspense fallback={<ChartSkeleton />}>
+          <BarGraphLite n={6} userId={"self"}/>
         </Suspense>
       </div>
     </main>

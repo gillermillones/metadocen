@@ -173,6 +173,10 @@ export async function fetchFriendRequests(id: string) {
 }
 
 export async function areWeFriends(id1: string, id2: string) {
+  if(id1.localeCompare(id2) == 0){
+    return false;
+  }
+
   try {
     const result = await sql<{ exists: boolean }[]>`
       SELECT EXISTS(
@@ -196,6 +200,10 @@ export async function areWeFriends(id1: string, id2: string) {
 }
 
 export async function areWeRequested(id1: string, id2: string) {
+  if(id1.localeCompare(id2) == 0){
+    return false;
+  }
+  
   try {
     const result = await sql<{ exists: boolean }[]>`
       SELECT EXISTS(
@@ -313,7 +321,7 @@ export async function fetchItemByUserId(id: string) {
   }
 }
 
-export async function fetchItemsByUserId(id: string) {
+export async function fetch5ItemsByUserId(id: string) {
   try {
     const data = await sql<ItemData[]>`
       SELECT *
@@ -329,6 +337,25 @@ export async function fetchItemsByUserId(id: string) {
     return items;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch items');
+    throw new Error('Failed to fetch all items');
+  }
+}
+
+export async function fetchAllItemsByUserId(id: string) {
+  try {
+    const data = await sql<ItemData[]>`
+      SELECT *
+      FROM data
+      WHERE data.user_id = ${id}
+    `;
+
+    const items = data.map((e) => ({
+      ...e,
+    }));
+
+    return items;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch all items');
   }
 }

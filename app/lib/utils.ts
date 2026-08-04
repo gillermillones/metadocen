@@ -45,8 +45,12 @@ export const formatDateToLocal = (
 };
 
 export const generateYAxis = (n: number) => {
+  let num = n;
+  if(num > 14){
+    num = 14;
+  }
   const yAxisLabels = [];
-  const topLabel = valArr[n].value;
+  const topLabel = valArr[num].value;
 
   for (let i = topLabel; i >= 0; i -= 1) {
     yAxisLabels.push(`${i}`);
