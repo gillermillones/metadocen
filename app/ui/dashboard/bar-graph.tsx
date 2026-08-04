@@ -19,7 +19,7 @@ export default async function BarGraph ({ n, userId }: { n: number; userId: stri
         Grafico de barras de propiedades de archivos
       </h2>
       <div className="rounded-xl bg-gray-50 p-4">
-        <div className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-4">
+        <div className="sm:grid-cols-6 mt-0 grid grid-cols-5 items-end gap-2 rounded-md bg-white p-4 md:gap-4">
           <div
             className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
             style={{ height: `${chartHeight}px` }}
@@ -37,7 +37,7 @@ export default async function BarGraph ({ n, userId }: { n: number; userId: stri
                   height: `${(chartHeight / topLabel) * i[valArr[n].key]}px`,
                 }}
               ></div>
-              <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
+              <p className="-rotate-90 text-xs truncate text-gray-400 sm:rotate-0">
                 {i.name}
               </p>
             </div>

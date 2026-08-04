@@ -319,6 +319,7 @@ export async function fetchItemsByUserId(id: string) {
       SELECT *
       FROM data
       WHERE data.user_id = ${id};
+      LIMIT 5
     `;
 
     const items = data.map((e) => ({
