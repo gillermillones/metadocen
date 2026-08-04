@@ -78,7 +78,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                 </div>
             </div>
         </div>
-        <h1 className={`${lusitana.className} mt-4 text-2xl`}>{user.name}'s Public Files</h1>
+        <h1 className={`${lusitana.className} mt-4 text-2xl`}>Archivos publicos de {user.name}</h1>
         <Suspense key={query + currentPage} fallback={<ItemTableSkeleton />}>
             <ItemsTable items={items} idSession={session.userId} idUser={user.id}/>
         </Suspense>

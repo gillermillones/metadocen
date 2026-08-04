@@ -2,7 +2,8 @@ import CardWrapper from '@/app/ui/dashboard/cards';
 import LatestItems from '@/app/ui/dashboard/latest-items';
 import UserSearch from '@/app/ui/dashboard/user-search';
 import BarGraphLite from '@/app/ui/dashboard/bar-graph-lite';
-import { Suspense } from 'react';
+import { valArr } from '@/app/lib/utils';
+import { Suspense, useState } from 'react';
 import { ChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import { lusitana } from '@/app/ui/fonts';
 import { Metadata } from 'next';
@@ -32,6 +33,11 @@ export default function Page() {
         </Suspense>
         <Suspense fallback={<ChartSkeleton />}>
           <BarGraphLite n={6} userId={"self"}/>
+          <div>
+            {valArr.map((i) => (
+              <button type="button">{i.key}</button>
+            ))}
+          </div>
         </Suspense>
       </div>
     </main>
