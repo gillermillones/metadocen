@@ -235,7 +235,7 @@ export async function fetchItemById(id: string) {
     const data = await sql<ItemData[]>`
       SELECT *
       FROM data
-      WHERE data.id = ${id};
+      WHERE data.id = ${id}
     `;
 
     const item = data.map((e) => ({
@@ -299,7 +299,7 @@ export async function fetchItemByUserId(id: string) {
     const data = await sql<ItemData[]>`
       SELECT *
       FROM data
-      WHERE data.user_id = ${id};
+      WHERE data.user_id = ${id}
     `;
 
     const item = data.map((e) => ({
@@ -318,7 +318,7 @@ export async function fetchItemsByUserId(id: string) {
     const data = await sql<ItemData[]>`
       SELECT *
       FROM data
-      WHERE data.user_id = ${id};
+      WHERE data.user_id = ${id}
       LIMIT 5
     `;
 
