@@ -32,7 +32,7 @@ export default async function BarGraph({ userId }: { userId: string }) {
         Grafico de barras de propiedades de todos los archivos
       </h2>
       <div className="rounded-xl bg-gray-50 p-4">
-        <div className="sm:grid-cols-16 mt-0 grid grid-cols-15 items-end gap-2 rounded-md bg-white p-4 md:gap-4">
+        <div className="sm:grid-cols-16 mt-0 grid grid-cols-15 grid-flow-col items-end gap-1 rounded-md bg-white p-4 md:gap-1">
           <div
             className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
             style={{ height: `${chartHeight}px` }}

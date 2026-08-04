@@ -43,7 +43,7 @@ export default async function BarGraphLite({ n, userId }: { n: number; userId: s
                   height: `${(chartHeight / topLabel) * i[valArr[n].key]}px`,
                 }}
               ></div>
-              <p className="-rotate-90 w-full text-xs text-clip text-gray-400 sm:rotate-0">
+              <p className="-rotate-90 w-full text-xs truncate text-gray-400 sm:rotate-0">
                 {i.name}
               </p>
             </div>

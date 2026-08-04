@@ -20,7 +20,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   }
   const session = await getSession();
   const friendship = await areWeFriends(session.userId, id);
-  if(!friendship){
+  if(!friendship && (id.localeCompare(session.userId) != 0)){
     forbidden();
   }
 
