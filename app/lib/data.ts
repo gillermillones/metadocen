@@ -306,7 +306,6 @@ export async function fetchItemByUserId(id: string) {
       ...e,
     }));
 
-    console.log(item);
     return item[0];
   } catch (error) {
     console.error('Database Error:', error);

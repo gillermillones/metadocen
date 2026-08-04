@@ -1,9 +1,18 @@
-export const formatCurrency = (amount: number) => {
-  return (amount / 100).toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-};
+export const valArr = [{key: 'description', value: 6}, 
+                {key: 'quality', value: 7}, 
+                {key: 'capacity', value: 4}, 
+                {key: 'adaptable', value: 5}, 
+                {key: 'interaction', value: 5}, 
+                {key: 'motivation', value: 5}, 
+                {key: 'design', value: 8}, 
+                {key: 'reusable', value: 3}, 
+                {key: 'portable', value: 5}, 
+                {key: 'toughness', value: 4}, 
+                {key: 'structure', value: 4}, 
+                {key: 'navigation', value: 11}, 
+                {key: 'operable', value: 6}, 
+                {key: 'av_accessible', value: 7}, 
+                {key: 'text_accessible', value: 7}];
 
 export const formatDateToLocal = (
   dateStr: string,
@@ -18,20 +27,17 @@ export const formatDateToLocal = (
   const formatter = new Intl.DateTimeFormat(locale, options);
   return formatter.format(date);
 };
-/*
-export const generateYAxis = (revenue: Revenue[]) => {
-  // Calculate what labels we need to display on the y-axis
-  // based on highest record and in 1000s
-  const yAxisLabels = [];
-  const highestRecord = Math.max(...revenue.map((month) => month.revenue));
-  const topLabel = Math.ceil(highestRecord / 1000) * 1000;
 
-  for (let i = topLabel; i >= 0; i -= 1000) {
-    yAxisLabels.push(`${i / 1000}K`);
+export const generateYAxis = (n: number) => {
+  const yAxisLabels = [];
+  const topLabel = valArr[n].value;
+
+  for (let i = topLabel; i >= 0; i -= 1) {
+    yAxisLabels.push(`${i}`);
   }
 
   return { yAxisLabels, topLabel };
-};*/
+};
 
 export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
