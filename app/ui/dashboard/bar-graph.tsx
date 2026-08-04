@@ -1,6 +1,6 @@
 import { valArr, generateYAxis } from '@/app/lib/utils';
 import { lusitana } from '@/app/ui/fonts';
-import { fetchItemByUserId } from '@/app/lib/data'
+import { fetchItemsByUserId } from '@/app/lib/data'
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -11,7 +11,7 @@ import { fetchItemByUserId } from '@/app/lib/data'
 export default async function BarGraph ({ n, userId }: { n: number; userId: string }) {
   const chartHeight = 350;
   const { yAxisLabels, topLabel } = generateYAxis(n);
-  const items = await fetchItemByUserId(userId);
+  const items = await fetchItemsByUserId(userId);
 
   return (
     <div className="w-full md:col-span-4">

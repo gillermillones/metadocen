@@ -312,3 +312,22 @@ export async function fetchItemByUserId(id: string) {
     throw new Error('Failed to fetch item');
   }
 }
+
+export async function fetchItemsByUserId(id: string) {
+  try {
+    const data = await sql<ItemData[]>`
+      SELECT *
+      FROM data
+      WHERE data.user_id = ${id};
+    `;
+
+    const items = data.map((e) => ({
+      ...e,
+    }));
+
+    return items;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch items');
+  }
+}
