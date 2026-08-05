@@ -3,6 +3,7 @@
 import { valArr, generateYAxis } from '@/app/lib/utils';
 import { useState } from 'react';
 import { ItemData } from '@/app/lib/definitions';
+import clsx from 'clsx';
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -43,7 +44,8 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
         </div>
         <div className="flex flex-row flex-wrap justify-between gap-1">
           {valArr.map((i, index) => (
-            <button type="button" onClick={() => changeGraph(index)} className={clsx("rounded-md border p-2 bg-white hover:bg-gray-500", 
+            <button type="button" onClick={() => changeGraph(index)} className={clsx(
+                'rounded-md border p-2 bg-white hover:bg-gray-500', 
               {
                 'bg-gray-500': graph === index,
               },
