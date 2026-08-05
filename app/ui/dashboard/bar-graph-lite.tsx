@@ -1,7 +1,6 @@
 'use client';
 
 import { valArr, generateYAxis } from '@/app/lib/utils';
-import { lusitana } from '@/app/ui/fonts';
 import { useState } from 'react';
 import { ItemData } from '@/app/lib/definitions';
 
