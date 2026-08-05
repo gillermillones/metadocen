@@ -11,7 +11,10 @@ export default async function GraphSelector({ userId }: { userId: string }) {
     const items = await fetch5ItemsByUserId(id);
 
     return(
-        <div>
+        <div className="w-full md:col-span-4">
+            <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+                Grafico de barras de propiedades de archivos
+            </h2>
             <BarGraphLite items={items}/>
         </div>
     );

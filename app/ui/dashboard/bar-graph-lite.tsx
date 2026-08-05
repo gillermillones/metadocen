@@ -18,10 +18,6 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
   const { yAxisLabels, topLabel } = generateYAxis(graph);
 
   return (
-    <div className="w-full md:col-span-4">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Grafico de barras de propiedades de archivos
-      </h2>
       <div className="rounded-xl bg-gray-50 p-4">
         <div className="flex flex-row justify-between gap-1">
           {valArr.map((i, index) => (
@@ -55,6 +51,5 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
           <h3 className="ml-2 text-sm text-gray-500 ">Propiedad {valArr[graph].key}</h3>
         </div>
       </div>
-    </div>
   );
 }
