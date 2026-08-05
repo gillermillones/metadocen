@@ -30,12 +30,12 @@ export default async function BarGraph({ userId }: { userId: string }) {
   return (
     <div className="w-full md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Grafico de barras de propiedades de todos los archivos
+        Grafico de barras de valores medios de todos los archivos
       </h2>
       <div className="rounded-xl bg-gray-50 p-4">
-        <div className="sm:grid-cols-16 mt-0 grid grid-cols-15 grid-flow-col items-end gap-1 rounded-md bg-white p-4 md:gap-1">
+        <div className="mt-0 grid grid-cols-16 grid-flow-col items-end gap-1 rounded-md bg-white p-4 overflow-x-auto">
           <div
-            className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
+            className="mb-6 flex-col justify-between text-sm text-gray-400 flex"
             style={{ height: `${chartHeight}px` }}
           >
             {yAxisLabels.map((label) => (
@@ -51,7 +51,7 @@ export default async function BarGraph({ userId }: { userId: string }) {
                   height: `${(chartHeight / topLabel) * itemValues[i.key]}px`,
                 }}
               ></div>
-              <p className="-rotate-90 w-full text-xs text-clip text-gray-400 sm:rotate-0">
+              <p className="w-full text-xs text-clip text-gray-400">
                 {i.key}
               </p>
             </div>

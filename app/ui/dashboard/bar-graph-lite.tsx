@@ -19,9 +19,9 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
 
   return (
       <div className="rounded-xl bg-gray-50 p-4">
-        <div className="sm:grid-cols-6 mt-0 mb-1 grid grid-cols-5 items-end gap-1 rounded-md bg-white p-4 md:gap-2">
+        <div className="mt-0 mb-1 grid grid-cols-6 items-end gap-1 rounded-md bg-white p-4">
           <div
-            className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
+            className="mb-6 flex-col justify-between text-sm text-gray-400 flex"
             style={{ height: `${chartHeight}px` }}
           >
             {yAxisLabels.map((label) => (
@@ -36,7 +36,7 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
                   height: `${(chartHeight / topLabel) * i[valArr[graph].key]}px`,
                 }}
               ></div>
-              <p className="-rotate-90 w-full text-xs truncate text-gray-400 sm:rotate-0">
+              <p className="w-full text-xs truncate text-gray-400 rotate-0">
                 {i.name}
               </p>
             </div>
