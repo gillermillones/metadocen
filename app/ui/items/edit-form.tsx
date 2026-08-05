@@ -8,12 +8,12 @@ import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateItem, ItemState } from '@/app/lib/actions';
 import { useActionState, useState } from 'react';
+import { colors } from '@/app/lib/utils';
 
 export default function EditItemForm({ data }: {data: ItemData }) {
     const updateDataWithId = updateItem.bind(null, data.id);
     const initialState: ItemState = { message: null, errors: {} };
     const [state, formAction] = useActionState(updateDataWithId, initialState);
-    const colors = ["rose", "red", "orange", "yellow", "lime", "green", "emerald", "cyan", "indigo", "purple", "fuchsia", "pink", "rose", "slate", "stone"];
     const [show, setShow] = useState<number | null>(null);
     const changeShow = (n : number) => {setShow(show == n ? null : n)}
 

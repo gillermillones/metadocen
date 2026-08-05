@@ -14,7 +14,8 @@ type ItemProperty = | 'description'
                     | 'av_accessible'
                     | 'text_accessible';
 
-export const valArr: { key: ItemProperty; value: number }[] = [{key: 'description', value: 6}, 
+export const valArr: { key: ItemProperty; value: number }[] = [
+                {key: 'description', value: 6}, 
                 {key: 'quality', value: 7}, 
                 {key: 'capacity', value: 4}, 
                 {key: 'adaptable', value: 5}, 
@@ -28,7 +29,25 @@ export const valArr: { key: ItemProperty; value: number }[] = [{key: 'descriptio
                 {key: 'navigation', value: 11}, 
                 {key: 'operable', value: 6}, 
                 {key: 'av_accessible', value: 7}, 
-                {key: 'text_accessible', value: 7}];
+                {key: 'text_accessible', value: 7}
+];
+
+export const colors = [
+              "rose", 
+              "red", 
+              "orange", 
+              "yellow", 
+              "lime", 
+              "green", 
+              "emerald", 
+              "cyan", 
+              "indigo", 
+              "purple", 
+              "fuchsia", 
+              "pink", "rose", 
+              "slate", 
+              "stone"
+];
 
 export const formatDateToLocal = (
   dateStr: string,

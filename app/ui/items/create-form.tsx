@@ -9,6 +9,7 @@ import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { useActionState, useEffect, useState } from 'react';
 import { useDropzone } from "react-dropzone";
 import { XMLParser } from "fast-xml-parser";
+import { colors } from '@/app/lib/utils';
 
 export default function ItemForm() {
     const initialState: ItemState = { message: null, errors: {} };
@@ -98,8 +99,7 @@ export default function ItemForm() {
         }));
 
     }, [lilAccept]);
-    const colors = ["rose", "red", "orange", "yellow", "lime", "green", "emerald", "cyan", "indigo", "purple", "fuchsia", "pink", "rose", "slate", "stone"];
-
+    
     return (
         <div className="flex flex-col-reverse width-maxflex md:width-fit justify-end gap-2">
             <form action={formAction}>

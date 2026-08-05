@@ -2,6 +2,7 @@ import { valArr, generateYAxis } from '@/app/lib/utils';
 import { lusitana } from '@/app/ui/fonts';
 import { fetchAllItemsByUserId } from '@/app/lib/data'
 import { notFound } from 'next/navigation';
+import { colors } from '@/app/lib/utils';
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -42,10 +43,10 @@ export default async function BarGraph({ userId }: { userId: string }) {
             ))}
           </div>
 
-          {valArr.map((i) => (
+          {valArr.map((i, index) => (
             <div key={i.key} className="flex flex-col items-center gap-2">
               <div
-                className="w-full rounded-md bg-blue-300"
+                className={`w-full rounded-md bg-${colors[index]}-400`}
                 style={{
                   height: `${(chartHeight / topLabel) * itemValues[i.key]}px`,
                 }}
