@@ -18,9 +18,11 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
 
   return (
       <div className="rounded-xl bg-gray-50 p-4">
-        <div className="flex flex-row justify-between gap-1">
+        <div className="flex flex-row flex-wrap justify-between gap-1">
           {valArr.map((i, index) => (
-            <button type="button" onClick={() => changeGraph(index)}>{i.key}</button>
+            <button type="button" onClick={() => changeGraph(index)} className="rounded-md border p-2 bg-white hover:bg-gray-500">
+              {i.key}
+            </button>
           ))}
         </div>
         <div className="sm:grid-cols-6 mt-0 grid grid-cols-5 items-end gap-1 rounded-md bg-white p-4 md:gap-2">
