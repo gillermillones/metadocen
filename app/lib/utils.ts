@@ -63,6 +63,11 @@ export const formatDateToLocal = (
   return formatter.format(date);
 };
 
+export const formatDateToISO = ( dateStr: string ) => {
+  const date = new Date(dateStr);
+  return date.toISOString().split('T')[0];
+};
+
 export const generateYAxis = (n: number) => {
   let num = n;
   if(num > 14){

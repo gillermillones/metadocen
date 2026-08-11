@@ -50,7 +50,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
-                          <h1>{formatDateToLocal(user.birthday)}</h1>
+                          <h1>{user.birthday && formatDateToLocal(user.birthday)}</h1>
                         </div>
                     </div>
                 </div>
