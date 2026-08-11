@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   },
   creator: 'Guillermo Colorado',
   description: 'Get your teaching resources metadata right away in a few steps',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
