@@ -19,7 +19,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                         Correo electronico
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 outline-2">
                           <h1>{user.email}</h1>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                         Nombre de usuario
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 outline-2">
                           <h1>{user.name}</h1>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                         Genero
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 outline-2">
                           <h1>{user.gender}</h1>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                         Fecha de nacimiento
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 outline-2">
                           <h1>{formatDateToLocal(user.birthday)}</h1>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                         Lugar de trabajo
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 outline-2">
                           <h1>{user.workplace}</h1>
                         </div>
                     </div>
@@ -73,6 +73,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                           type="password"
                           id="password"
                           name="password"
+                          className="peer block w-full rounded-md border border-gray-200 px-2 text-sm outline-2 placeholder:text-gray-500"
                           defaultValue="sample"
                           disabled
                       />

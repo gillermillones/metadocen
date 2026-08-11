@@ -137,7 +137,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="quality-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="quality" num={data.quality} numOpt={Number(7)} color={colors[1]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 1 ? (
                             <button type="button" onClick={() => changeShow(1)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -170,7 +170,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="capacity-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="capacity" num={data.capacity} numOpt={Number(4)} color={colors[2]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 2 ? (
                             <button type="button" onClick={() => changeShow(2)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -200,7 +200,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="adaptable-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="adaptable" num={data.adaptable} numOpt={Number(5)} color={colors[3]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 3 ? (
                             <button type="button" onClick={() => changeShow(3)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -231,7 +231,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="interaction-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="interaction" num={data.interaction} numOpt={Number(5)} color={colors[4]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 4 ? (
                             <button type="button" onClick={() => changeShow(4)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -262,7 +262,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="motivation-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="motivation" num={data.motivation} numOpt={Number(5)} color={colors[5]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 5 ? (
                             <button type="button" onClick={() => changeShow(5)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -293,7 +293,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="design-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="design" num={data.design} numOpt={Number(8)} color={colors[6]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 6 ? (
                             <button type="button" onClick={() => changeShow(6)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -327,7 +327,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="reusable-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="reusable" num={data.reusable} numOpt={Number(3)} color={colors[7]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 7 ? (
                             <button type="button" onClick={() => changeShow(7)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -356,7 +356,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="portable-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="portable" num={data.portable} numOpt={Number(5)} color={colors[8]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 8 ? (
                             <button type="button" onClick={() => changeShow(8)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -387,7 +387,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="toughness-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="toughness" num={data.toughness} numOpt={Number(4)} color={colors[9]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 9 ? (
                             <button type="button" onClick={() => changeShow(9)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -417,7 +417,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="structure-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="structure" num={data.structure} numOpt={Number(4)} color={colors[10]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 10 ? (
                             <button type="button" onClick={() => changeShow(10)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -447,7 +447,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="navigation-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="navigation" num={data.navigation} numOpt={Number(11)} color={colors[11]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 11 ? (
                             <button type="button" onClick={() => changeShow(11)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -484,7 +484,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="operable-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="operable" num={data.operable} numOpt={Number(6)} color={colors[12]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 12 ? (
                             <button type="button" onClick={() => changeShow(12)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -516,7 +516,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="av_accessible-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="av_accessible" num={data.av_accessible} numOpt={Number(7)} color={colors[13]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 13 ? (
                             <button type="button" onClick={() => changeShow(13)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>
@@ -549,7 +549,7 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                 <fieldset className="mb-4" aria-describedby="text_accessible-error">
                     <div className="flex flex-row justify-start">
                         <FormOptionsEdit field="text_accessible" num={data.text_accessible} numOpt={Number(7)} color={colors[14]}></FormOptionsEdit>
-                        {show === 0 ? (
+                        {show === 14 ? (
                             <button type="button" onClick={() => changeShow(14)} className="rounded-md border p-2 self-end ml-1 mb-4 bg-white hover:bg-gray-200">
                                 <ChevronDownIcon className="w-5" />
                             </button>

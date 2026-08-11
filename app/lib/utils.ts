@@ -67,6 +67,8 @@ export const generateYAxis = (n: number) => {
   let num = n;
   if(num > 14){
     num = 14;
+  }else if(num < 0){
+    num = 0;
   }
   const yAxisLabels = [];
   const topLabel = valArr[num].value;

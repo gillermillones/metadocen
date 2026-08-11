@@ -11,9 +11,10 @@ import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateProfile, ProfileState } from '@/app/lib/actions';
 import { useActionState } from 'react';
+import { formatDateToLocal } from '@/app/lib/utils'
 
 export default function EditProfileForm({ user }: {user: FullUser }) {
-    const updateUserProfile= updateProfile.bind(null, user.id);
+    const updateUserProfile = updateProfile.bind(null, user.id);
     const initialState: ProfileState = { message: null, errors: {} };
     const [state, formAction] = useActionState(updateUserProfile, initialState);
 
@@ -50,7 +51,7 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                            <select
                                 id="gender"
                                 name="gender"
-                                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={user.gender}
                                 aria-describedby="gender-error"
                             >
@@ -89,7 +90,8 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                                 type="date"
                                 id="birthday"
                                 name="birthday"
-                                defaultValue={user.birthday}
+                                className="width-maxflex rounded-md border border-gray-200 py-2 outline-2"
+                                defaultValue={formatDateToLocal(user.birthday)}
                                 min="1900-01-01"
                                 max="2018-12-31" 
                             />
@@ -107,6 +109,7 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                                 id="workplace"
                                 name="workplace"
                                 type="text"
+                                placeholder="Lugar de trabajo"
                                 defaultValue={user.workplace}
                                 className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"
                                 aria-describedby="workplace-error"
