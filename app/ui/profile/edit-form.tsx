@@ -26,7 +26,7 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                         Correo electronico
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1 id="email">{user.email}</h1>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                         Nombre de usuario
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1 id="name">{user.name}</h1>
                         </div>
                     </div>
@@ -90,8 +90,8 @@ export default function EditProfileForm({ user }: {user: FullUser }) {
                                 type="date"
                                 id="birthday"
                                 name="birthday"
-                                className="width-maxflex rounded-md border border-gray-200 py-2 outline-2"
-                                defaultValue={formatDateToLocal(user.birthday)}
+                                className="width-maxflex rounded-md border border-gray-200 py-2 px-2 outline-2"
+                                defaultValue={user.birthday}
                                 min="1900-01-01"
                                 max="2018-12-31" 
                             />
