@@ -1,15 +1,9 @@
 import BarGraph from '@/app/ui/dashboard/bar-graph';
 import { fetchAllItemsByUserId } from '@/app/lib/data'
 import { notFound } from 'next/navigation';
-import { getSession } from '@/app/lib/actions';
 import { lusitana } from '@/app/ui/fonts';
 
 export default async function GraphSelector({ userId }: { userId: string }) {
-    let id = userId;
-    if(userId.localeCompare("self") == 0){
-        const session = await getSession();
-        id = session.userId;
-    }
     const items = await fetchAllItemsByUserId(userId);
     if(items.length == 0){
         notFound();

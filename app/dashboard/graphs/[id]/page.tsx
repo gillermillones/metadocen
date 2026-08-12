@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { getUserById } from '@/auth';
 import { notFound, forbidden } from 'next/navigation';
 import { ChartSkeleton } from '@/app/ui/skeletons';
-import BarGraph from '@/app/ui/dashboard/bar-graph';
+import GraphSelector from '@/app/ui/dashboard/graph-selector';
 import { areWeFriends } from '@/app/lib/data';
 import { Suspense } from 'react';
 
@@ -28,7 +28,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     <main>
         <div className="flex w-full items-center justify-between pt-4">
             <Suspense fallback={<ChartSkeleton />}>
-                <BarGraph userId={id}/>
+                <GraphSelector userId={id}/>
             </Suspense>
         </div>
     </main>

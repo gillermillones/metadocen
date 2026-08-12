@@ -1,3 +1,5 @@
+'use client';
+
 import { valArr, generateYAxis } from '@/app/lib/utils';
 import { colors } from '@/app/lib/utils';
 import { useState } from 'react';
