@@ -12,7 +12,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
   return (
     <div className="flex flex-col w-full justify-between">
         <h1 className={`${lusitana.className} text-2xl mb-6`}>Tu Perfil</h1>
-        <div className="flex flex-row justify-start">
+        <div className="flex flex-col justify-start">
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -80,7 +80,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-start gap-4">
+            <div className="flex flex-col justify-start gap-4 my-2">
                 <UpdateProfile id={user.id} />
                 <UpdatePassword id={user.id} />
             </div>

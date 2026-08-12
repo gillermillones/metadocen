@@ -64,6 +64,9 @@ export const formatDateToLocal = (
 };
 
 export const formatDateToISO = ( dateStr: string ) => {
+  if(!dateStr){
+    return "";
+  }
   const date = new Date(dateStr);
   return date.toISOString().split('T')[0];
 };

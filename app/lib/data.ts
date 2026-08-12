@@ -43,7 +43,7 @@ export async function fetchLatestFriendItems(id: string) {
       WHERE friends."userIdTarget" = ${id}
         AND friends.accepted = TRUE
       ORDER BY date DESC
-      LIMIT 5`;
+      LIMIT 6`;
 
     const latestItems = data.map((item) => ({
       ...item,

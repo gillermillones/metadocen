@@ -26,7 +26,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                         Correo electronico
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1 id="email">{user.email}</h1>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                         Nombre de usuario
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1 id="name">{user.name}</h1>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                         Genero
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                            <h1 id="gender">{user.gender}</h1>
                         </div>
                     </div>
@@ -56,8 +56,8 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                         Fecha de nacimiento
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
-                            <h1 id="birthday">{formatDateToLocal(user.birthday)}</h1>
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
+                            <h1 id="birthday">{user.birthday && formatDateToLocal(user.birthday)}</h1>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ export default function EditPasswordForm({ user }: {user: FullUser }) {
                         Lugar de trabajo
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                             <h1 id="workplace">{user.workplace}</h1>
                         </div>
                     </div>

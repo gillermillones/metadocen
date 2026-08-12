@@ -3,7 +3,7 @@ import LatestItems from '@/app/ui/dashboard/latest-items';
 import UserSearch from '@/app/ui/dashboard/user-search';
 import GraphSelector from '@/app/ui/dashboard/graph-selector';
 import { Suspense } from 'react';
-import { ChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
+import { ChartSkeleton, LatestItemsSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import { lusitana } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 
@@ -27,7 +27,7 @@ export default function Page() {
         </Suspense>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
+        <Suspense fallback={<LatestItemsSkeleton />}>
           <LatestItems />
         </Suspense>
         <Suspense fallback={<ChartSkeleton />}>

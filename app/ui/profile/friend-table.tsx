@@ -25,13 +25,13 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
             </div>
         </div>
         <div className="flex flex-row justify-start">
-            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+            <div className="rounded-md width-maxflex bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
                         Correo electronico
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1>{user.email}</h1>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                         Nombre de usuario
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1>{user.name}</h1>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                         Genero
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1>{user.gender}</h1>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                         Fecha de nacimiento
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1>{formatDateToLocal(user.birthday)}</h1>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                         Lugar de trabajo
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                           <h1>{user.workplace}</h1>
                         </div>
                     </div>

@@ -26,7 +26,7 @@ export default async function UnknownProfileTable({ user, requested }: { user: U
                         Nombre de usuario
                     </label>
                     <div className="relative mt-2 rounded-md">
-                        <div className="relative">
+                        <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
                             <h1>{user.name}</h1>
                         </div>
                     </div>
