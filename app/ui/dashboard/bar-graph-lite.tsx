@@ -42,7 +42,7 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
             </div>
           ))}
         </div>
-        <div className="flex flex-row flex-wrap justify-between gap-1">
+        <div className="flex flex-row flex-wrap justify-start gap-1">
           {valArr.map((i, index) => (
             <button type="button" onClick={() => changeGraph(index)} className={clsx(
                 'rounded-md border p-1 bg-gray-100 hover:bg-gray-500', 

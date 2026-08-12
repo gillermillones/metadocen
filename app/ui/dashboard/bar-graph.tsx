@@ -14,7 +14,7 @@ import clsx from 'clsx';
 
 export default function BarGraph({ items }: { items: ItemData[] }) {
   const chartHeight = 550;
-  const [graph, setGraph] = useState<number>(0);
+  const [graph, setGraph] = useState<number>(-1);
   const changeGraph = (n : number) => {setGraph(n)};
   const { yAxisLabels, topLabel } = generateYAxis(11);
   const itemValues: Record<string, number> = {};
@@ -40,6 +40,7 @@ export default function BarGraph({ items }: { items: ItemData[] }) {
           </div>
           {valArr.map((i, index) => (
             <div key={i.key} className="flex flex-col items-center gap-2">
+              <p className="text-xs text-gray-500">{graph === -1 ? itemValues[i.key] : items[graph][i.key]}</p>
               <div
                 className={`w-full rounded-md bg-${colors[index]}-400`}
                 style={graph === -1 ? ({
@@ -55,7 +56,7 @@ export default function BarGraph({ items }: { items: ItemData[] }) {
             </div>
           ))}
         </div>
-        <div className="flex flex-row flex-wrap justify-between gap-1">
+        <div className="flex flex-row flex-wrap justify-start gap-1">
           <button type="button" onClick={() => changeGraph(-1)} className={clsx(
                 'rounded-md border p-1 bg-gray-100 hover:bg-gray-500', 
               {
