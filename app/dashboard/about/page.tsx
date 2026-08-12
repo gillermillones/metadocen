@@ -38,8 +38,8 @@ export default function Page(){
                 </p>
                 <h2 className="text-l">Criterios para evaluar recursos educativos:</h2>
                 <ul>
-                    <li className="ml-4">
-                        <h3>Criterio 1. Descripción didáctica</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 1.</strong> Descripción didáctica</h3>
                         <p className="ml-2">
                             El recurso define perfectamente los objetivos didácticos, los receptores a los que va dirigido, las competencias que desarrolla e 
                             incluye indicaciones para su uso. Esta descripción del recurso aporta valor y coherencia didáctica al mismo.
@@ -48,8 +48,8 @@ export default function Page(){
                             Tag &lt;description&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 2. Calidad de los contenidos</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 2.</strong> Calidad de los contenidos</h3>
                         <p className="ml-2">
                             La presentación es clara, los objetivos se relacionan coherentemente, se respetan los derechos de autor, el nivel es 
                             adecuado para el alumno, la información es veraz y objetiva y está actualizada.
@@ -58,8 +58,8 @@ export default function Page(){
                             Tag &lt;quality&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 3. Capacidad para generar aprendizaje</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 3.</strong> Capacidad para generar aprendizaje</h3>
                         <p className="ml-2">
                             El recurso educativo digital promueve el aprendizaje significativo, promueve la creatividad e innovación, y estimula el 
                             espíritu crítico y la reflexión.
@@ -68,8 +68,8 @@ export default function Page(){
                             Tag &lt;capacity&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 4. Adaptabilidad</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 4.</strong> Adaptabilidad</h3>
                         <p className="ml-2">
                             El recurso es adecuado para diferentes tipos de alumnos, se ajusta a su nivel y estilos de aprendizaje, y explota diferentes 
                             caminos para alcanzar los objetivos didácticos.
@@ -78,8 +78,8 @@ export default function Page(){
                             Tag &lt;adaptable&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 5. Interactividad</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 5.</strong> Interactividad</h3>
                         <p className="ml-2">
                             Se asegura la interacción del alumno con el recurso, contiene actividades diversas, el aprendizaje es dirigido y se registra 
                             el progreso en dichas actividades.
@@ -88,8 +88,8 @@ export default function Page(){
                             Tag &lt;interaction&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 6. Motivación</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 6.</strong> Motivación</h3>
                         <p className="ml-2">
                             El recurso está vinculado a las experiencias vitales del estudiante, desarrolla su autonomía, se adecúa al ritmo de 
                             aprendizaje y presenta los contenidos de manera atractiva e innovadora, incrementando la competencia social del alumno.
@@ -98,8 +98,8 @@ export default function Page(){
                             Tag &lt;motivation&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 7. Formato y diseño</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 7.</strong> Formato y diseño</h3>
                         <p className="ml-2">
                             El medio educativo presenta una clara organización, es intuitivo. Presenta medios audiovisuales de calidad que facilitan 
                             el aprendizaje y añaden dinamismo. Contiene múltiples formatos (texto, imagen, audio o vídeo). La información e instrucciones 
@@ -109,8 +109,8 @@ export default function Page(){
                             Tag &lt;design&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 8. Reusabilidad</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 8.</strong> Reusabilidad</h3>
                         <p className="ml-2">
                             El recurso tiene módulos lo que le confiere la posibilidad de organizarlos para crear nuevos recursos. Estos módulos pueden 
                             utilizarse en diferentes materias y en distintas agrupaciones de alumnos.
@@ -119,8 +119,8 @@ export default function Page(){
                             Tag &lt;reusable&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 9. Portabilidad</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 9.</strong> Portabilidad</h3>
                         <p className="ml-2">
                             El recurso tiene un formato estándar y puede ser utilizado de manera mayoritaria. Si no fuera el caso, se facilitará el 
                             software para que los usuarios puedan hacer uso del recurso. Además, el medio educativo digital puede ser utilizado con 
@@ -131,8 +131,8 @@ export default function Page(){
                             Tag &lt;portable&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 10. Robustez; estabilidad técnica</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 10.</strong> Robustez; estabilidad técnica</h3>
                         <p className="ml-2">
                             El recurso puede ejecutarse sin fallos y con rapidez. Reproduce audio y video cuando el usuario interactúa. Proporciona ayuda 
                             y soluciones ante problemas comunes.
@@ -141,8 +141,8 @@ export default function Page(){
                             Tag &lt;toughness&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 11. Estructura del escenario de aprendizaje</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 11.</strong> Estructura del escenario de aprendizaje</h3>
                         <p className="ml-2">
                             Los títulos describen el objetivo del recurso. La información de estos escenarios es coherente y significativa, lo que le 
                             confiere una mayor accesibilidad al recurso. Existe la movilidad y ajuste entre los diferentes escenarios de aprendizaje, 
@@ -152,8 +152,8 @@ export default function Page(){
                             Tag &lt;structure&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 12. Navegación</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 12.</strong> Navegación</h3>
                         <p className="ml-2">
                             Los enlaces del recurso aportan información relevante y diferente al resto de enlaces. Éstos funcionan correctamente y 
                             utilizan siempre el mismo texto descriptivo. El medio aporta distintas rutas para llegar al mismo escenario de aprendizaje. 
@@ -165,8 +165,8 @@ export default function Page(){
                             Tag &lt;navigation&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 13. Operabilidad</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 13.</strong> Operabilidad</h3>
                         <p className="ml-2">
                             El recurso puede ser utilizado con distintos periféricos (ratón, teclado…), de una forma intuitiva, clara y rápida. Presenta 
                             atajos y/o teclas de acceso rápido. El medio se comporta de manera predecible y lógica.
@@ -175,8 +175,8 @@ export default function Page(){
                             Tag &lt;operable&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 14. Accesibilidad del contenido audiovisual</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 14.</strong> Accesibilidad del contenido audiovisual</h3>
                         <p className="ml-2">
                             El contraste es adecuado, la imagen acompaña una descripción textual (excepto en imágenes decorativas). Existen alternativas a 
                             los audiovisuales (en general son textos). El usuario tiene el control de la reproducción de todos los contenidos. Se evitan los 
@@ -186,8 +186,8 @@ export default function Page(){
                             Tag &lt;av_accessible&gt;
                         </p>
                     </li>
-                    <li className="ml-4">
-                        <h3>Criterio 15. Accesibilidad del contenido textual</h3>
+                    <li className="ml-4 mt-2">
+                        <h3><strong>Criterio 15.</strong> Accesibilidad del contenido textual</h3>
                         <p className="ml-2">
                             Puede ajustarse el tamaño del texto. El contraste es adecuado. La información se proporciona en distintos medios. Los formularios 
                             son coherentes, presentan autocorrección. Las tablas y listas deben ser leídas por los productos de apoyo (son sencillas, con 
