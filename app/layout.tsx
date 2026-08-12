@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     default: 'Metadocen',
   },
   creator: 'Guillermo Colorado',
-  description: 'Get your teaching resources metadata right away in a few steps',
+  description: 'Obten metadatos para tus recursos digitales segun la Norma 71362:2020 de la UNE',
+  metadataBase: new URL('https://metadocen.vercel.app'),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

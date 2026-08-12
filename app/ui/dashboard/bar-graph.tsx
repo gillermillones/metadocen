@@ -40,7 +40,9 @@ export default function BarGraph({ items }: { items: ItemData[] }) {
           </div>
           {valArr.map((i, index) => (
             <div key={i.key} className="flex flex-col items-center gap-2">
-              <p className="text-xs text-gray-500">{graph === -1 ? itemValues[i.key] : items[graph][i.key]}</p>
+              <p className="text-xs text-gray-500">
+                {graph === -1 ? Math.round(itemValues[i.key]*100)/100 : items[graph][i.key]}
+              </p>
               <div
                 className={`w-full rounded-md bg-${colors[index]}-400`}
                 style={graph === -1 ? ({
