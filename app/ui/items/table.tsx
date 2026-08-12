@@ -59,7 +59,7 @@ export default function ItemsTable({
                 {idSession.localeCompare(idUser) == 0 ? (
                     <div className="flex w-full items-center justify-between pt-4">
                         <div className="flex justify-end gap-2">
-                          <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                          <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-green-300 hover:bg-green-400">
                             <ArrowDownTrayIcon className="w-5" />
                           </button>
                           <UpdateItem id={i.id} />
@@ -133,7 +133,7 @@ export default function ItemsTable({
                   {idSession.localeCompare(idUser) == 0 ? (
                     <td className="whitespace-nowrap py-3 pl-6 pr-3">
                       <div className="flex justify-end gap-3">
-                        <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-white hover:bg-gray-200">
+                        <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-green-300 hover:bg-green-400">
                           <ArrowDownTrayIcon className="w-5" />
                         </button>
                         <UpdateItem id={i.id} />

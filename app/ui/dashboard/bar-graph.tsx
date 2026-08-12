@@ -1,8 +1,8 @@
 import { valArr, generateYAxis } from '@/app/lib/utils';
-import { lusitana } from '@/app/ui/fonts';
-import { fetchAllItemsByUserId } from '@/app/lib/data'
-import { notFound } from 'next/navigation';
 import { colors } from '@/app/lib/utils';
+import { useState } from 'react';
+import { ItemData } from '@/app/lib/definitions';
+import clsx from 'clsx';
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -10,13 +10,11 @@ import { colors } from '@/app/lib/utils';
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function BarGraph({ userId }: { userId: string }) {
+export default function BarGraph({ items }: { items: ItemData[] }) {
   const chartHeight = 550;
+  const [graph, setGraph] = useState<number>(0);
+  const changeGraph = (n : number) => {setGraph(n)};
   const { yAxisLabels, topLabel } = generateYAxis(11);
-  const items = await fetchAllItemsByUserId(userId);
-  if(items.length == 0){
-    notFound();
-  }
   const itemValues: Record<string, number> = {};
   let aux = 0;
   for (let j = 0; j < 15; j++) {
@@ -28,10 +26,6 @@ export default async function BarGraph({ userId }: { userId: string }) {
   }
 
   return (
-    <div className="w-full md:col-span-4">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Grafico de barras de valores medios de todos los archivos
-      </h2>
       <div className="rounded-xl bg-gray-50 p-4">
         <div className="mt-0 grid grid-cols-16 grid-flow-col items-end gap-1 rounded-md bg-white p-4 overflow-x-auto">
           <div
@@ -42,14 +36,16 @@ export default async function BarGraph({ userId }: { userId: string }) {
               <p key={label}>{label}</p>
             ))}
           </div>
-
           {valArr.map((i, index) => (
             <div key={i.key} className="flex flex-col items-center gap-2">
               <div
                 className={`w-full rounded-md bg-${colors[index]}-400`}
-                style={{
-                  height: `${(chartHeight / topLabel) * itemValues[i.key]}px`,
-                }}
+                style={graph === -1 ? ({
+                    height: `${(chartHeight / topLabel) * itemValues[i.key]}px`,
+                  }) : ({
+                    height: `${(chartHeight / topLabel) * items[graph][i.key]}px`,
+                  })
+                }
               ></div>
               <p className="w-full text-xs text-clip text-gray-400">
                 {i.key}
@@ -57,10 +53,26 @@ export default async function BarGraph({ userId }: { userId: string }) {
             </div>
           ))}
         </div>
-        <div className="flex items-center pb-2 pt-6">
-          <h3 className="ml-2 text-sm text-gray-500 ">Valores medios de todos los archivos</h3>
+        <div className="flex flex-row flex-wrap justify-between gap-1">
+          <button type="button" onClick={() => changeGraph(-1)} className={clsx(
+                'rounded-md border p-1 bg-gray-100 hover:bg-gray-500', 
+              {
+                'bg-gray-500': graph === -1,
+              },
+            )}>
+              Todos
+          </button>
+          {items.map((i, index) => (
+            <button type="button" onClick={() => changeGraph(index)} className={clsx(
+                'rounded-md border p-1 bg-gray-100 hover:bg-gray-500', 
+              {
+                'bg-gray-500': graph === index,
+              },
+            )}>
+              {i.name}
+            </button>
+          ))}
         </div>
       </div>
-    </div>
   );
 }

@@ -1,7 +1,7 @@
 import CardWrapper from '@/app/ui/dashboard/cards';
 import LatestItems from '@/app/ui/dashboard/latest-items';
 import UserSearch from '@/app/ui/dashboard/user-search';
-import GraphSelector from '@/app/ui/dashboard/graph-selector';
+import GraphSelectorLite from '@/app/ui/dashboard/graph-selector-lite';
 import { Suspense } from 'react';
 import { ChartSkeleton, LatestItemsSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import { lusitana } from '@/app/ui/fonts';
@@ -31,7 +31,7 @@ export default function Page() {
           <LatestItems />
         </Suspense>
         <Suspense fallback={<ChartSkeleton />}>
-          <GraphSelector userId={"self"}/>
+          <GraphSelectorLite userId={"self"}/>
         </Suspense>
       </div>
     </main>

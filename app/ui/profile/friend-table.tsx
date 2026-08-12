@@ -19,7 +19,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
   return (
     <div className="flex flex-col w-full justify-between">
         <div className="flex flex-row w-full items-center justify-between pt-4">
-            <h1 className={`${lusitana.className} text-2xl`}>Perfil</h1>
+            <h1 className={`${lusitana.className} text-2xl mb-6`}>Perfil</h1>
             <div className="flex justify-end gap-2">
                 <RemoveFriend id={user.id} />
             </div>

@@ -36,9 +36,6 @@ export default function Page(){
                     La suma de las puntuaciones obtenidas en todos ellos arroja una calificación total del recurso educativo digital. De esta manera, 
                     los docentes tendrán una información precisa acerca de la calidad de un recurso educativo de interés.
                 </p>
-                <p>
-                    Aquí puedes encontrar el ANEXO F de la norma UNE 71362:2017 que corresponde a la adaptación de la misma al perfil del alumno y del profesor.
-                </p>
                 <h2 className="text-l">Criterios para evaluar recursos educativos:</h2>
                 <ul>
                     <li>

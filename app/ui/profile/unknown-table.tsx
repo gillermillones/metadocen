@@ -7,7 +7,7 @@ export default async function UnknownProfileTable({ user, requested }: { user: U
   return (
     <div className="flex flex-col w-full justify-between">
         <div className="flex flex-row w-full items-center justify-between pt-4">
-            <h1 className={`${lusitana.className} text-2xl`}>Perfil</h1>
+            <h1 className={`${lusitana.className} text-2xl mb-6`}>Perfil</h1>
                 {requested ? (
                     <div className="flex justify-end gap-2">
                         <p className="pt-1">Solicitud enviada</p>
@@ -20,7 +20,7 @@ export default async function UnknownProfileTable({ user, requested }: { user: U
                 )}
         </div>
         <div className="flex flex-row justify-start">
-            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+            <div className="width-maxflex rounded-md bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
                         Nombre de usuario

@@ -327,6 +327,7 @@ export async function fetch5ItemsByUserId(id: string) {
       SELECT *
       FROM data
       WHERE data.user_id = ${id}
+      ORDER BY date DESC
       LIMIT 5
     `;
 
