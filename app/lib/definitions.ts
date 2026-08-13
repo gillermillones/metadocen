@@ -55,4 +55,5 @@ export type LatestItem = {
   extension: string;
   date: string;
   username: string;
+  user_id: string;
 };

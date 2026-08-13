@@ -2,6 +2,7 @@ import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { lusitana } from '@/app/ui/fonts';
 import { LatestItem } from '@/app/lib/definitions';
+import Link from 'next/link';
 import { fetchLatestFriendItems } from '@/app/lib/data';
 import { formatDateToLocal } from '@/app/lib/utils';
 import { getSession } from '@/app/lib/actions';
@@ -33,9 +34,9 @@ export default async function LatestItems() {
                     <p className="truncate text-sm font-semibold md:text-base">
                       Archivo: {item.name}{item.extension}
                     </p>
-                    <p className="hidden text-sm text-gray-500 sm:block">
-                      Usuario: {item.username}
-                    </p>
+                    <Link href={`/dashboard/profile/${item.user_id}`}>
+                      <span className="block text-sm text-gray-500">Usuario: {item.username}</span>
+                    </Link>
                   </div>
                 </div>
                 <p

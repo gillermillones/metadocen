@@ -29,14 +29,14 @@ export async function fetchLatestItems() {
 export async function fetchLatestFriendItems(id: string) {
   try {
     const data = await sql<LatestItem[]>`
-      SELECT data.id, data.name, data.extension, data.date, users.name AS username
+      SELECT data.id, data.name, data.extension, data.date, users.name AS username, data.user_id
       FROM data
       JOIN users ON data.user_id = users.id
       JOIN friends ON friends."userIdTarget" = users.id
       WHERE friends."userIdSource" = ${id}
         AND friends.accepted = TRUE
       UNION
-      SELECT data.id, data.name, data.extension, data.date, users.name AS username
+      SELECT data.id, data.name, data.extension, data.date, users.name AS username, data.user_id
       FROM data
       JOIN users ON data.user_id = users.id
       JOIN friends ON friends."userIdSource" = users.id
