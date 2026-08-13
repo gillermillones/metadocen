@@ -10,12 +10,11 @@ import { fetchItemPagesUserId, fetchFilteredItemsUserId } from '@/app/lib/data';
 import { getSession } from '@/app/lib/actions';
 import { formatDateToLocal } from '@/app/lib/utils';
 
-export default async function FriendProfileTable({ user }: { user: FullUser }) {
+export default async function FriendProfileTable({ user, pageAct }: { user: FullUser; pageAct: number }) {
     const query = '';
-    const currentPage = 1;
     const session = await getSession();
     const totalPages = await fetchItemPagesUserId(query, user.id);
-    const items = await fetchFilteredItemsUserId(query, currentPage, user.id);
+    const items = await fetchFilteredItemsUserId(query, pageAct, user.id);
 
   return (
     <div className="flex flex-col w-full justify-between">
@@ -85,7 +84,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
             </div>
         </div>
         <h1 className={`${lusitana.className} mt-4 text-2xl`}>Archivos publicos de {user.name}</h1>
-        <Suspense key={query + currentPage} fallback={<ItemTableSkeleton />}>
+        <Suspense key={query + pageAct} fallback={<ItemTableSkeleton />}>
             <ItemsTable items={items} idSession={session.userId} idUser={user.id}/>
         </Suspense>
         <div className="mt-5 flex w-full justify-center">

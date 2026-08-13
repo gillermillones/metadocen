@@ -11,13 +11,20 @@ export const metadata: Metadata = {
   title: 'Perfil',
 };
 
-export default async function Page(props: { params: Promise<{ id: string }> }) {
-  const params = await props.params;
-  const id = params.id;
+export default async function Page({ 
+    params,
+    searchParams,
+  }: {
+    params: Promise<{ id: string }> ;
+    searchParams: Promise<{ page?: string }>;
+}) {
+  const { id } = await params;
+  const sp = await searchParams;
   const user = await getUserById(id);
   if (!user) {
     notFound();
   }
+  const currentPage = Number(sp?.page) || 1;
   const session = await getSession();
   const friendship = await areWeFriends(session.userId, id);
   const requested = await areWeRequested(session.userId, id);
@@ -32,7 +39,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   }else if(friendship == true){
     return (
       <div className="w-full">
-        <FriendProfileTable user={fullUser} />
+        <FriendProfileTable user={fullUser} pageAct={currentPage}/>
       </div>
     );
   }
