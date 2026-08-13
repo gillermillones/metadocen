@@ -73,6 +73,7 @@ export const { auth, signIn, signOut } = NextAuth({
                 session.isLoggedIn = defaultSession.isLoggedIn;
                 session.userId = defaultSession.userId;
                 session.email = defaultSession.email;
+                session.name = defaultSession.name;
                 return null;
               } 
               const passwordsMatch = await bcrypt.compare(password, user.password);
@@ -80,6 +81,7 @@ export const { auth, signIn, signOut } = NextAuth({
                 session.isLoggedIn = true;
                 session.userId = user.id;
                 session.email = user.email;
+                session.name = user.name;
                 await session.save();
                 return user;
               } 

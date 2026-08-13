@@ -119,7 +119,7 @@ export async function emailRepeated(email: string) {
 export async function fetchFriendNumber(id: string) {
   try{
     const friendNum = await sql`
-      SELECT COUNT(*) AS total
+      SELECT COUNT(*)
       FROM friends f
       WHERE f.accepted = true
       AND (

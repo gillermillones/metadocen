@@ -20,7 +20,7 @@ export function CardSkeleton() {
 
 export function CardsSkeleton() {
   return (
-    <div className="flex flex-row md:flex-col justify-between gap-2 mt-2">
+    <div className="flex flex-row md:flex-col justify-evenly gap-2 mt-2">
       <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />

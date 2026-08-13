@@ -4,7 +4,8 @@ import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import Pagination from '@/app/ui/pagination';
 import ItemsTable from '@/app/ui/items/table';
-import { ItemTableSkeleton } from '@/app/ui/skeletons';
+import { ItemTableSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
+import CardWrapper from '@/app/ui/dashboard/cards';
 import { fetchItemPagesUserId, fetchFilteredItemsUserId } from '@/app/lib/data';
 import { getSession } from '@/app/lib/actions';
 import { formatDateToLocal } from '@/app/lib/utils';
@@ -24,7 +25,7 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                 <RemoveFriend id={user.id} />
             </div>
         </div>
-        <div className="flex flex-row justify-start">
+        <div className="flex flex-col md:flex-row justify-start gap-4 width-maxflex">
             <div className="rounded-md width-maxflex bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -76,6 +77,11 @@ export default async function FriendProfileTable({ user }: { user: FullUser }) {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex flex-row md:flex-col justify-evenly gap-2 mt-2">
+                <Suspense fallback={<CardsSkeleton />}>
+                    <CardWrapper id={user.id} />
+                </Suspense>
             </div>
         </div>
         <h1 className={`${lusitana.className} mt-4 text-2xl`}>Archivos publicos de {user.name}</h1>

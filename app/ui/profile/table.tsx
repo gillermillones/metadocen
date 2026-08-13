@@ -14,7 +14,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
     <div className="flex flex-col w-full justify-between">
         <h1 className={`${lusitana.className} text-2xl mb-6`}>Tu Perfil</h1>
         <div className="flex flex-col md:flex-row justify-start gap-4 width-maxflex">
-            <div className="flex flex-col justify-start">
+            <div className="flex flex-col justify-start width-maxflex">
                 <div className="rounded-md bg-gray-50 p-4 md:p-6">
                     <div className="mb-4">
                         <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -87,7 +87,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                     <UpdatePassword id={user.id} />
                 </div>
             </div>
-            <div className="flex flex-row md:flex-col justify-between gap-2 mt-2">
+            <div className="flex flex-row md:flex-col justify-evenly gap-2 mt-2">
                 <Suspense fallback={<CardsSkeleton />}>
                     <CardWrapper id={user.id} />
                 </Suspense>
