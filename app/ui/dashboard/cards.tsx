@@ -28,8 +28,8 @@ export function Card({
   type,
 }: {
   title: string;
-  value: number | string;
-  type: 'users' | 'friends' | 'files';
+  value: number;
+  type: 'friends' | 'files';
 }) {
   const Icon = iconMap[type];
 
