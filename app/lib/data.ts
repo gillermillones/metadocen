@@ -116,12 +116,16 @@ export async function emailRepeated(email: string) {
   }
 }
 
-export async function fetchFriendNumber() {
+export async function fetchFriendNumber(id: string) {
   try{
     const friendNum = await sql`
-      SELECT COUNT(*) 
-      FROM friends
-      WHERE friends.accepted = true
+      SELECT COUNT(*) AS total
+      FROM friends f
+      WHERE f.accepted = true
+      AND (
+        f."userIdSource" = ${id}
+        OR f."userIdTarget" = ${id}
+      )
     `;
     const fNum = Number(friendNum[0].count);
 
@@ -226,9 +230,13 @@ export async function areWeRequested(id1: string, id2: string) {
   }
 }
 
-export async function fetchItemNumber() {
+export async function fetchItemNumber(id: string) {
   try{
-    const itemNum = await sql`SELECT COUNT(*) FROM data`;
+    const itemNum = await sql`
+      SELECT COUNT(*) 
+      FROM data
+      WHERE data.user_id = ${id}
+    `;
     const iNum = Number(itemNum[0].count);
 
     return iNum;

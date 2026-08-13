@@ -1,27 +1,23 @@
-import { fetchFriendNumber, fetchUserNumber, fetchItemNumber } from '@/app/lib/data';
+import { fetchFriendNumber, fetchItemNumber } from '@/app/lib/data';
 import {
   FolderOpenIcon,
-  UserGroupIcon,
   HeartIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 
 const iconMap = {
   files: FolderOpenIcon,
-  users: UserGroupIcon,
   friends: HeartIcon,
 };
 
-export default async function CardWrapper() {
-  const userNum = await fetchUserNumber();
-  const friendNum = await fetchFriendNumber();
-  const itemNum = await fetchItemNumber();
+export default async function CardWrapper({ id }: { id: string }) {
+  const friendNum = await fetchFriendNumber(id);
+  const itemNum = await fetchItemNumber(id);
 
   return (
     <>
-      <Card title="Numero de usuarios" value={userNum} type="users" />
       <Card title="Numero de archivos" value={itemNum} type="files" />
-      <Card title="Amigos hechos" value={friendNum} type="friends" />
+      <Card title="Numero de amigos" value={friendNum} type="friends" />
     </>
   );
 }
