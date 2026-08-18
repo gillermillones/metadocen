@@ -189,13 +189,13 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 2 && (
-                                                    <div>
-                                                        <GetDesc rule={3} section={1}/>
-                                                        <GetDesc rule={3} section={2}/>
-                                                        <GetDesc rule={3} section={3}/>
-                                                        <GetDesc rule={3} section={4}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={3} section={1}/>
+                            <GetDesc rule={3} section={2}/>
+                            <GetDesc rule={3} section={3}/>
+                            <GetDesc rule={3} section={4}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="adaptable-error">
                     <div className="flex flex-row justify-start">
@@ -219,14 +219,14 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 3 && (
-                                                    <div>
-                                                        <GetDesc rule={4} section={1}/>
-                                                        <GetDesc rule={4} section={2}/>
-                                                        <GetDesc rule={4} section={3}/>
-                                                        <GetDesc rule={4} section={4}/>
-                                                        <GetDesc rule={4} section={5}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={4} section={1}/>
+                            <GetDesc rule={4} section={2}/>
+                            <GetDesc rule={4} section={3}/>
+                            <GetDesc rule={4} section={4}/>
+                            <GetDesc rule={4} section={5}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="interaction-error">
                     <div className="flex flex-row justify-start">
@@ -250,14 +250,14 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 4 && (
-                                                    <div>
-                                                        <GetDesc rule={5} section={1}/>
-                                                        <GetDesc rule={5} section={2}/>
-                                                        <GetDesc rule={5} section={3}/>
-                                                        <GetDesc rule={5} section={4}/>
-                                                        <GetDesc rule={5} section={5}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={5} section={1}/>
+                            <GetDesc rule={5} section={2}/>
+                            <GetDesc rule={5} section={3}/>
+                            <GetDesc rule={5} section={4}/>
+                            <GetDesc rule={5} section={5}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="motivation-error">
                     <div className="flex flex-row justify-start">
@@ -281,14 +281,14 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 5 && (
-                                                    <div>
-                                                        <GetDesc rule={6} section={1}/>
-                                                        <GetDesc rule={6} section={2}/>
-                                                        <GetDesc rule={6} section={3}/>
-                                                        <GetDesc rule={6} section={4}/>
-                                                        <GetDesc rule={6} section={5}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={6} section={1}/>
+                            <GetDesc rule={6} section={2}/>
+                            <GetDesc rule={6} section={3}/>
+                            <GetDesc rule={6} section={4}/>
+                            <GetDesc rule={6} section={5}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="design-error">
                     <div className="flex flex-row justify-start">
@@ -312,17 +312,17 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 6 && (
-                                                    <div>
-                                                        <GetDesc rule={7} section={1}/>
-                                                        <GetDesc rule={7} section={2}/>
-                                                        <GetDesc rule={7} section={3}/>
-                                                        <GetDesc rule={7} section={4}/>
-                                                        <GetDesc rule={7} section={5}/>
-                                                        <GetDesc rule={7} section={6}/>
-                                                        <GetDesc rule={7} section={7}/>
-                                                        <GetDesc rule={7} section={8}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={7} section={1}/>
+                            <GetDesc rule={7} section={2}/>
+                            <GetDesc rule={7} section={3}/>
+                            <GetDesc rule={7} section={4}/>
+                            <GetDesc rule={7} section={5}/>
+                            <GetDesc rule={7} section={6}/>
+                            <GetDesc rule={7} section={7}/>
+                            <GetDesc rule={7} section={8}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="reusable-error">
                     <div className="flex flex-row justify-start">
@@ -346,12 +346,12 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 7 && (
-                                                    <div>
-                                                        <GetDesc rule={8} section={1}/>
-                                                        <GetDesc rule={8} section={2}/>
-                                                        <GetDesc rule={8} section={3}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={8} section={1}/>
+                            <GetDesc rule={8} section={2}/>
+                            <GetDesc rule={8} section={3}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="portable-error">
                     <div className="flex flex-row justify-start">
@@ -375,14 +375,14 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 8 && (
-                                                    <div>
-                                                        <GetDesc rule={9} section={1}/>
-                                                        <GetDesc rule={9} section={2}/>
-                                                        <GetDesc rule={9} section={3}/>
-                                                        <GetDesc rule={9} section={4}/>
-                                                        <GetDesc rule={9} section={5}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={9} section={1}/>
+                            <GetDesc rule={9} section={2}/>
+                            <GetDesc rule={9} section={3}/>
+                            <GetDesc rule={9} section={4}/>
+                            <GetDesc rule={9} section={5}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="toughness-error">
                     <div className="flex flex-row justify-start">
@@ -406,13 +406,13 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 9 && (
-                                                    <div>
-                                                        <GetDesc rule={10} section={1}/>
-                                                        <GetDesc rule={10} section={2}/>
-                                                        <GetDesc rule={10} section={3}/>
-                                                        <GetDesc rule={10} section={4}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={10} section={1}/>
+                            <GetDesc rule={10} section={2}/>
+                            <GetDesc rule={10} section={3}/>
+                            <GetDesc rule={10} section={4}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="structure-error">
                     <div className="flex flex-row justify-start">
@@ -435,14 +435,14 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                             </p>
                         ))}
                     </div>
-                     {show === 10 && (
-                                                    <div>
-                                                        <GetDesc rule={11} section={1}/>
-                                                        <GetDesc rule={11} section={2}/>
-                                                        <GetDesc rule={11} section={3}/>
-                                                        <GetDesc rule={11} section={4}/>
-                                                    </div>
-                                                )}
+                    {show === 10 && (
+                        <div>
+                            <GetDesc rule={11} section={1}/>
+                            <GetDesc rule={11} section={2}/>
+                            <GetDesc rule={11} section={3}/>
+                            <GetDesc rule={11} section={4}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="navigation-error">
                     <div className="flex flex-row justify-start">
@@ -466,20 +466,20 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 11 && (
-                                                    <div>
-                                                        <GetDesc rule={12} section={1}/>
-                                                        <GetDesc rule={12} section={2}/>
-                                                        <GetDesc rule={12} section={3}/>
-                                                        <GetDesc rule={12} section={4}/>
-                                                        <GetDesc rule={12} section={5}/>
-                                                        <GetDesc rule={12} section={6}/>
-                                                        <GetDesc rule={12} section={7}/>
-                                                        <GetDesc rule={12} section={8}/>
-                                                        <GetDesc rule={12} section={9}/>
-                                                        <GetDesc rule={12} section={10}/>
-                                                        <GetDesc rule={12} section={11}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={12} section={1}/>
+                            <GetDesc rule={12} section={2}/>
+                            <GetDesc rule={12} section={3}/>
+                            <GetDesc rule={12} section={4}/>
+                            <GetDesc rule={12} section={5}/>
+                            <GetDesc rule={12} section={6}/>
+                            <GetDesc rule={12} section={7}/>
+                            <GetDesc rule={12} section={8}/>
+                            <GetDesc rule={12} section={9}/>
+                            <GetDesc rule={12} section={10}/>
+                            <GetDesc rule={12} section={11}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="operable-error">
                     <div className="flex flex-row justify-start">
@@ -503,15 +503,15 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 12 && (
-                                                    <div>
-                                                        <GetDesc rule={13} section={1}/>
-                                                        <GetDesc rule={13} section={2}/>
-                                                        <GetDesc rule={13} section={3}/>
-                                                        <GetDesc rule={13} section={4}/>
-                                                        <GetDesc rule={13} section={5}/>
-                                                        <GetDesc rule={13} section={6}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={13} section={1}/>
+                            <GetDesc rule={13} section={2}/>
+                            <GetDesc rule={13} section={3}/>
+                            <GetDesc rule={13} section={4}/>
+                            <GetDesc rule={13} section={5}/>
+                            <GetDesc rule={13} section={6}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="av_accessible-error">
                     <div className="flex flex-row justify-start">
@@ -535,16 +535,16 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 13 && (
-                                                    <div>
-                                                        <GetDesc rule={14} section={1}/>
-                                                        <GetDesc rule={14} section={2}/>
-                                                        <GetDesc rule={14} section={3}/>
-                                                        <GetDesc rule={14} section={4}/>
-                                                        <GetDesc rule={14} section={5}/>
-                                                        <GetDesc rule={14} section={6}/>
-                                                        <GetDesc rule={14} section={7}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={14} section={1}/>
+                            <GetDesc rule={14} section={2}/>
+                            <GetDesc rule={14} section={3}/>
+                            <GetDesc rule={14} section={4}/>
+                            <GetDesc rule={14} section={5}/>
+                            <GetDesc rule={14} section={6}/>
+                            <GetDesc rule={14} section={7}/>
+                        </div>
+                    )}
                 </fieldset>
                 <fieldset className="mb-4" aria-describedby="text_accessible-error">
                     <div className="flex flex-row justify-start">
@@ -568,16 +568,16 @@ export default function EditItemForm({ data }: {data: ItemData }) {
                         ))}
                     </div>
                     {show === 14 && (
-                                                    <div>
-                                                        <GetDesc rule={15} section={1}/>
-                                                        <GetDesc rule={15} section={2}/>
-                                                        <GetDesc rule={15} section={3}/>
-                                                        <GetDesc rule={15} section={4}/>
-                                                        <GetDesc rule={15} section={5}/>
-                                                        <GetDesc rule={15} section={6}/>
-                                                        <GetDesc rule={15} section={7}/>
-                                                    </div>
-                                                )}
+                        <div>
+                            <GetDesc rule={15} section={1}/>
+                            <GetDesc rule={15} section={2}/>
+                            <GetDesc rule={15} section={3}/>
+                            <GetDesc rule={15} section={4}/>
+                            <GetDesc rule={15} section={5}/>
+                            <GetDesc rule={15} section={6}/>
+                            <GetDesc rule={15} section={7}/>
+                        </div>
+                    )}
                 </fieldset>
             </div>
             <div id="general-error" aria-live="polite" aria-atomic="true">
