@@ -39,9 +39,9 @@ export default function UneStandard() {
             </p>
             <h2 className="text-l">Criterios para evaluar recursos educativos:</h2>
             <ul>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[0]}-100`}>
-                        <button type="button" onClick={() => changeShow(0)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[0]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(0)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 1.</strong> Descripción didáctica</h3>
                             <p className="ml-2">
                                 El recurso define perfectamente los objetivos didácticos, los receptores a los que va dirigido, las competencias que desarrolla e 
@@ -51,7 +51,8 @@ export default function UneStandard() {
                                 Tag &lt;description&gt;
                             </p>
                             {show === 0 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={1} section={1}/>
                                     <GetDesc rule={1} section={2}/>
                                     <GetDesc rule={1} section={3}/>
@@ -63,9 +64,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[1]}-100`}>
-                        <button type="button" onClick={() => changeShow(1)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[1]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(1)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 2.</strong> Calidad de los contenidos</h3>
                             <p className="ml-2">
                                 La presentación es clara, los objetivos se relacionan coherentemente, se respetan los derechos de autor, el nivel es 
@@ -75,7 +76,8 @@ export default function UneStandard() {
                                 Tag &lt;quality&gt;
                             </p>
                             {show === 1 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={2} section={1}/>
                                     <GetDesc rule={2} section={2}/>
                                     <GetDesc rule={2} section={3}/>
@@ -88,9 +90,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[2]}-100`}>
-                        <button type="button" onClick={() => changeShow(2)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[2]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(2)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 3.</strong> Capacidad para generar aprendizaje</h3>
                             <p className="ml-2">
                                 El recurso educativo digital promueve el aprendizaje significativo, promueve la creatividad e innovación, y estimula el 
@@ -100,7 +102,8 @@ export default function UneStandard() {
                                 Tag &lt;capacity&gt;
                             </p>
                             {show === 2 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={3} section={1}/>
                                     <GetDesc rule={3} section={2}/>
                                     <GetDesc rule={3} section={3}/>
@@ -110,9 +113,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[3]}-100`}>
-                        <button type="button" onClick={() => changeShow(3)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[3]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(3)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 4.</strong> Adaptabilidad</h3>
                             <p className="ml-2">
                                 El recurso es adecuado para diferentes tipos de alumnos, se ajusta a su nivel y estilos de aprendizaje, y explota diferentes 
@@ -122,7 +125,8 @@ export default function UneStandard() {
                                 Tag &lt;adaptable&gt;
                             </p>
                             {show === 3 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={4} section={1}/>
                                     <GetDesc rule={4} section={2}/>
                                     <GetDesc rule={4} section={3}/>
@@ -133,9 +137,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[4]}-100`}>
-                        <button type="button" onClick={() => changeShow(4)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[4]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(4)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 5.</strong> Interactividad</h3>
                             <p className="ml-2">
                                 Se asegura la interacción del alumno con el recurso, contiene actividades diversas, el aprendizaje es dirigido y se registra 
@@ -145,7 +149,8 @@ export default function UneStandard() {
                                 Tag &lt;interaction&gt;
                             </p>
                             {show === 4 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={5} section={1}/>
                                     <GetDesc rule={5} section={2}/>
                                     <GetDesc rule={5} section={3}/>
@@ -156,9 +161,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[5]}-100`}>
-                        <button type="button" onClick={() => changeShow(5)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[5]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(5)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 6.</strong> Motivación</h3>
                             <p className="ml-2">
                                 El recurso está vinculado a las experiencias vitales del estudiante, desarrolla su autonomía, se adecúa al ritmo de 
@@ -168,7 +173,8 @@ export default function UneStandard() {
                                 Tag &lt;motivation&gt;
                             </p>
                             {show === 5 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={6} section={1}/>
                                     <GetDesc rule={6} section={2}/>
                                     <GetDesc rule={6} section={3}/>
@@ -179,9 +185,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[6]}-100`}>
-                        <button type="button" onClick={() => changeShow(6)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[6]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(6)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 7.</strong> Formato y diseño</h3>
                             <p className="ml-2">
                                 El medio educativo presenta una clara organización, es intuitivo. Presenta medios audiovisuales de calidad que facilitan 
@@ -192,7 +198,8 @@ export default function UneStandard() {
                                 Tag &lt;design&gt;
                             </p>
                             {show === 6 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={7} section={1}/>
                                     <GetDesc rule={7} section={2}/>
                                     <GetDesc rule={7} section={3}/>
@@ -206,9 +213,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[7]}-100`}>
-                        <button type="button" onClick={() => changeShow(7)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[7]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(7)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 8.</strong> Reusabilidad</h3>
                             <p className="ml-2">
                                 El recurso tiene módulos lo que le confiere la posibilidad de organizarlos para crear nuevos recursos. Estos módulos pueden 
@@ -218,7 +225,8 @@ export default function UneStandard() {
                                 Tag &lt;reusable&gt;
                             </p>
                             {show === 7 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={8} section={1}/>
                                     <GetDesc rule={8} section={2}/>
                                     <GetDesc rule={8} section={3}/>
@@ -227,9 +235,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[8]}-100`}>
-                        <button type="button" onClick={() => changeShow(8)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[8]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(8)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 9.</strong> Portabilidad</h3>
                             <p className="ml-2">
                                 El recurso tiene un formato estándar y puede ser utilizado de manera mayoritaria. Si no fuera el caso, se facilitará el 
@@ -241,7 +249,8 @@ export default function UneStandard() {
                                 Tag &lt;portable&gt;
                             </p>
                             {show === 8 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={9} section={1}/>
                                     <GetDesc rule={9} section={2}/>
                                     <GetDesc rule={9} section={3}/>
@@ -252,9 +261,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[9]}-100`}>
-                        <button type="button" onClick={() => changeShow(9)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[9]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(9)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 10.</strong> Robustez; estabilidad técnica</h3>
                             <p className="ml-2">
                                 El recurso puede ejecutarse sin fallos y con rapidez. Reproduce audio y video cuando el usuario interactúa. Proporciona ayuda 
@@ -264,7 +273,8 @@ export default function UneStandard() {
                                 Tag &lt;toughness&gt;
                             </p>
                             {show === 9 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={10} section={1}/>
                                     <GetDesc rule={10} section={2}/>
                                     <GetDesc rule={10} section={3}/>
@@ -274,9 +284,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[10]}-100`}>
-                        <button type="button" onClick={() => changeShow(10)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[10]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(10)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 11.</strong> Estructura del escenario de aprendizaje</h3>
                             <p className="ml-2">
                                 Los títulos describen el objetivo del recurso. La información de estos escenarios es coherente y significativa, lo que le 
@@ -287,7 +297,8 @@ export default function UneStandard() {
                                 Tag &lt;structure&gt;
                             </p>
                             {show === 10 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={11} section={1}/>
                                     <GetDesc rule={11} section={2}/>
                                     <GetDesc rule={11} section={3}/>
@@ -297,9 +308,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[11]}-100`}>
-                        <button type="button" onClick={() => changeShow(11)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[11]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(11)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 12.</strong> Navegación</h3>
                             <p className="ml-2">
                                 Los enlaces del recurso aportan información relevante y diferente al resto de enlaces. Éstos funcionan correctamente y 
@@ -312,7 +323,8 @@ export default function UneStandard() {
                                 Tag &lt;navigation&gt;
                             </p>
                             {show === 11 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={12} section={1}/>
                                     <GetDesc rule={12} section={2}/>
                                     <GetDesc rule={12} section={3}/>
@@ -329,9 +341,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[12]}-100`}>
-                        <button type="button" onClick={() => changeShow(12)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[12]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(12)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 13.</strong> Operabilidad</h3>
                             <p className="ml-2">
                                 El recurso puede ser utilizado con distintos periféricos (ratón, teclado…), de una forma intuitiva, clara y rápida. Presenta 
@@ -341,7 +353,8 @@ export default function UneStandard() {
                                 Tag &lt;operable&gt;
                             </p>
                             {show === 12 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={13} section={1}/>
                                     <GetDesc rule={13} section={2}/>
                                     <GetDesc rule={13} section={3}/>
@@ -353,9 +366,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[13]}-100`}>
-                        <button type="button" onClick={() => changeShow(13)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[13]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(13)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 14.</strong> Accesibilidad del contenido audiovisual</h3>
                             <p className="ml-2">
                                 El contraste es adecuado, la imagen acompaña una descripción textual (excepto en imágenes decorativas). Existen alternativas a 
@@ -366,7 +379,8 @@ export default function UneStandard() {
                                 Tag &lt;av_accessible&gt;
                             </p>
                             {show === 13 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={14} section={1}/>
                                     <GetDesc rule={14} section={2}/>
                                     <GetDesc rule={14} section={3}/>
@@ -379,9 +393,9 @@ export default function UneStandard() {
                         </button>
                     </div>
                 </li>
-                <li className="ml-4 mt-2">
-                    <div className={`rounded-xl bg-${colors[14]}-100`}>
-                        <button type="button" onClick={() => changeShow(14)} className="rounded-md bg-white hover:bg-gray-200">
+                <li className="mt-2">
+                    <div className={`rounded-xl bg-${colors[14]}-100 p-4`}>
+                        <button type="button" onClick={() => changeShow(14)} className="flex flex-col text-start p-2 rounded-md bg-white hover:bg-gray-200">
                             <h3><strong>Criterio 15.</strong> Accesibilidad del contenido textual</h3>
                             <p className="ml-2">
                                 Puede ajustarse el tamaño del texto. El contraste es adecuado. La información se proporciona en distintos medios. Los formularios 
@@ -392,7 +406,8 @@ export default function UneStandard() {
                                 Tag &lt;text_accessible&gt;
                             </p>
                             {show === 14 && (
-                                <div>
+                                <div className="mt-2">
+                                    <GetDesc rule={0} section={0}/>
                                     <GetDesc rule={15} section={1}/>
                                     <GetDesc rule={15} section={2}/>
                                     <GetDesc rule={15} section={3}/>

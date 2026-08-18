@@ -6,6 +6,12 @@ export default function GetDesc({
     section: number;
 }) {
     switch(rule){
+        case 0:
+            return(
+                <p>
+                    Se otorgará 1 punto por cada característica que posea el documento:
+                </p>
+            );
         case 1:
             switch(section){
                 case 1:
