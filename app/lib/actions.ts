@@ -16,48 +16,49 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 const RegisterFormSchema = z.object({
   id: z.string(),
-  name: z.string().min(1, { message: 'User name can not be empty' }),
-  email: z.string().min(1, { message: 'Email can not be empty' }).email({ message: "Email is invalid" }),
-  password: z.string().min(6, { message: 'Password must be at least 6 characters' }),
-  password2: z.string().min(6, { message: 'Passwords do not match' }),
+  name: z.string().min(1, { message: 'Nombre de usuario vacio' }),
+  email: z.string().min(1, { message: 'Email vacio' }).email({ message: "El email no es valido" }),
+  password: z.string().min(6, { message: 'La contraseña debe tener al menos 6 caracteres' }),
+  password2: z.string().min(6, { message: 'Las contraseñas no coinciden' }),
 });
 
 const ProfileFormSchema = z.object({
   id: z.string(),
   password: z.string(),
-  gender: z.enum(['masculino', 'femenino', 'otro'], { invalid_type_error: 'Error en el genero' }).optional().or(z.literal('')),
+  fullname: z.string().optional().or(z.literal('')),
+  gender: z.enum(['Masculino', 'Femenino', 'Otro'], { invalid_type_error: 'Error en el genero' }).optional().or(z.literal('')),
   birthday: z.string().optional(),
   workplace: z.string().optional().or(z.literal('')),
 });
 
 const PasswordFormSchema = z.object({
   id: z.string(),
-  newPassword: z.string().min(6, { message: 'New password must be at least 6 characters' }),
-  newPassword2: z.string().min(6, { message: 'Passwords do not match' }),
+  newPassword: z.string().min(6, { message: 'La nueva contraseña debe tener al menos 6 caracteres' }),
+  newPassword2: z.string().min(6, { message: 'Las contraseñas no coinciden' }),
   oldPassword: z.string(),
 });
 
 const ItemsFormSchema = z.object({
     id: z.string(),
     user_id: z.string(),
-    name: z.string().min(1, { message: 'Name can not be empty' }),
-    extension: z.string().min(1, { message: 'File extension can not be empty' }),
+    name: z.string().min(1, { message: 'Nombe vacio' }),
+    extension: z.string().min(1, { message: 'Extension de archivo vacia' }),
     summary: z.string(),
-    description: z.enum(['1', '2', '3', '4', '5', '6'], {message: 'Please select a value',}).transform(Number),
-    quality: z.enum(['1', '2', '3', '4', '5', '6', '7'], {message: 'Please select a value',}).transform(Number),
-    capacity: z.enum(['1', '2', '3', '4'], {message: 'Please select a value',}).transform(Number),
-    adaptable: z.enum(['1', '2', '3', '4', '5'], {message: 'Please select a value',}).transform(Number),
-    interaction: z.enum(['1', '2', '3', '4', '5'], {message: 'Please select a value',}).transform(Number),
-    motivation: z.enum(['1', '2', '3', '4', '5'], {message: 'Please select a value',}).transform(Number),
-    design: z.enum(['1', '2', '3', '4', '5', '6', '7', '8'], {message: 'Please select a value',}).transform(Number),
-    reusable: z.enum(['1', '2', '3'], {message: 'Please select a value',}).transform(Number),
-    portable: z.enum(['1', '2', '3', '4', '5'], {message: 'Please select a value',}).transform(Number),
-    toughness: z.enum(['1', '2', '3', '4'], {message: 'Please select a value',}).transform(Number),
-    structure: z.enum(['1', '2', '3', '4'], {message: 'Please select a value',}).transform(Number),
-    navigation: z.enum(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'], {message: 'Please select a value',}).transform(Number),
-    operable: z.enum(['1', '2', '3', '4', '5', '6'], {message: 'Please select a value',}).transform(Number),
-    av_accessible: z.enum(['1', '2', '3', '4', '5', '6', '7'], {message: 'Please select a value',}).transform(Number),
-    text_accessible: z.enum(['1', '2', '3', '4', '5', '6', '7'], {message: 'Please select a value',}).transform(Number),
+    description: z.enum(['1', '2', '3', '4', '5', '6'], {message: 'Selecciona un valor',}).transform(Number),
+    quality: z.enum(['1', '2', '3', '4', '5', '6', '7'], {message: 'Selecciona un valor',}).transform(Number),
+    capacity: z.enum(['1', '2', '3', '4'], {message: 'Selecciona un valor',}).transform(Number),
+    adaptable: z.enum(['1', '2', '3', '4', '5'], {message: 'Selecciona un valor',}).transform(Number),
+    interaction: z.enum(['1', '2', '3', '4', '5'], {message: 'Selecciona un valor',}).transform(Number),
+    motivation: z.enum(['1', '2', '3', '4', '5'], {message: 'Selecciona un valor',}).transform(Number),
+    design: z.enum(['1', '2', '3', '4', '5', '6', '7', '8'], {message: 'Selecciona un valor',}).transform(Number),
+    reusable: z.enum(['1', '2', '3'], {message: 'Selecciona un valor',}).transform(Number),
+    portable: z.enum(['1', '2', '3', '4', '5'], {message: 'Selecciona un valor',}).transform(Number),
+    toughness: z.enum(['1', '2', '3', '4'], {message: 'Selecciona un valor',}).transform(Number),
+    structure: z.enum(['1', '2', '3', '4'], {message: 'Selecciona un valor',}).transform(Number),
+    navigation: z.enum(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'], {message: 'Selecciona un valor',}).transform(Number),
+    operable: z.enum(['1', '2', '3', '4', '5', '6'], {message: 'Selecciona un valor',}).transform(Number),
+    av_accessible: z.enum(['1', '2', '3', '4', '5', '6', '7'], {message: 'Selecciona un valor',}).transform(Number),
+    text_accessible: z.enum(['1', '2', '3', '4', '5', '6', '7'], {message: 'Selecciona un valor',}).transform(Number),
     date: z.string(),
 });
 
@@ -84,6 +85,7 @@ export type RegisterState = {
 export type ProfileState = {
   errors?: {
     password?: string[];
+    fullname?: string[];
     gender?: string[];
     workplace?: string[];
   };
@@ -140,12 +142,12 @@ export async function searchUserByName(prevState: SimpleState, formData: FormDat
     user = await fetchUserByName(name);
     if(!user){
         return {
-            message: 'No user matches your search',
+            message: 'Usuario no encontrado',
         };
     }
   } catch (error) {
     return {
-        message: 'Search error',
+        message: 'Error de busqueda',
     };
   }
   redirect('/dashboard/profile/' + user.id);
@@ -173,11 +175,10 @@ export async function createItem(prevState: ItemState, formData: FormData) {
         text_accessible: formData.get('text_accessible'),
     });
 
-    // If form validation fails, return errors early. Otherwise, continue.
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Create your item.',
+            message: 'Faltan campos, error al crear item',
         };
     }
 
@@ -196,7 +197,7 @@ export async function createItem(prevState: ItemState, formData: FormData) {
         `;
     }catch(error){
         return {
-            message: 'Database Error: Failed to Create item.',
+            message: 'Fallo de base de datos, error al crear item',
         };
     }
 
@@ -226,11 +227,10 @@ export async function updateItem(id: string, prevState: ItemState, formData: For
         text_accessible: formData.get('text_accessible'),
     });
 
-    // If form validation fails, return errors early. Otherwise, continue.
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Update your item.',
+            message: 'Faltan campos, error al editar item',
         };
     }
 
@@ -249,7 +249,7 @@ export async function updateItem(id: string, prevState: ItemState, formData: For
         console.error(error);
 
         return {
-            message: 'Database Error: Failed to Update your file',
+            message: 'Fallo de base de datos, error al editar item',
         };
     }
  
@@ -314,7 +314,7 @@ export async function addFriend(id: string | undefined) {
             console.error(error);
         }
     }else{
-        console.error("404 Id not found");
+        console.error("404 Id no encontrado");
     }
 
   revalidatePath('/dashboard/profile/' + session.userId);
@@ -327,9 +327,9 @@ export async function authenticate(prevState: string | undefined, formData: Form
     if (error instanceof AuthError) {
       switch (error.type) {
         case 'CredentialsSignin':
-          return 'Invalid credentials.';
+          return 'Credenciales no validos';
         default:
-          return 'Something went wrong.';
+          return 'Error';
       }
     }
     throw error;
@@ -344,11 +344,10 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
         password2: formData.get('password2'),
     });
 
-    // If form validation fails, return errors early. Otherwise, continue.
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Register User.',
+            message: 'Faltan campos, error al registrar usuario',
         };
     }
 
@@ -356,17 +355,17 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
 
     if (password.localeCompare(password2) != 0) {
         return {
-            message: 'Passwords do not match',
+            message: 'Las contraseñas no coinciden',
         };
     }
     if (await emailRepeated(email)) {
         return {
-            message: 'Email already in use',
+            message: 'Email en uso',
         };
     }
     if (await nameRepeated(name)) {
         return {
-            message: 'User name already in use',
+            message: 'Nombre de usuario en uso',
         };
     }
 
@@ -379,7 +378,7 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
         `;
     }catch(error){
         return {
-            message: 'Database Error: Failed to Register User.',
+            message: 'Fallo en base de datos, error al registrar usuario',
         };
     }
 
@@ -392,11 +391,11 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
             switch (error.type) {
                 case 'CredentialsSignin':
                     return {
-                        message:'Invalid credentials.'
+                        message:'Credenciales no validos'
                     };
                 default:
                     return {
-                        message: 'Something went wrong.'
+                        message: 'Error'
                     };
             }
         }
@@ -409,19 +408,19 @@ export async function registerUser(prevState: RegisterState, formData: FormData)
 export async function updateProfile(id: string, prevState: ProfileState, formData: FormData) {
     const validatedFields = UpdateProfile.safeParse({
         password: formData.get('password'),
+        fullname: formData.get('fullname'),
         gender: formData.get('gender'),
         workplace: formData.get('workplace'),
     });
 
-    // If form validation fails, return errors early. Otherwise, continue.
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Faltan campos. Por favor, completa los obligatorios.',
+            message: 'Faltan campos, error al editar perfil',
         };
     }
 
-    const { password, gender, workplace } = validatedFields.data;
+    const { password, fullname, gender, workplace } = validatedFields.data;
     const target = await getUserById(id);
     if(target == undefined){
         return {
@@ -442,14 +441,14 @@ export async function updateProfile(id: string, prevState: ProfileState, formDat
     try{  
         await sql`
             UPDATE users
-            SET gender = ${gender ?? null}, birthday = ${dateFix}, workplace = ${workplace ?? null}
+            SET fullname = ${fullname ?? null}, gender = ${gender ?? null}, birthday = ${dateFix}, workplace = ${workplace ?? null}
             WHERE id = ${id}
         `;
     }catch(error){
         console.error(error);
 
         return {
-            message: 'Error en base de datos: fallo al actualizar tu perfil',
+            message: 'Fallo en base de datos, error al editar perfil',
         };
     }
  
@@ -464,11 +463,10 @@ export async function updatePassword(id: string, prevState: PasswordState, formD
         oldPassword: formData.get('oldPassword'),
     });
 
-    // If form validation fails, return errors early. Otherwise, continue.
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Faltan campos. Por favor, completalos',
+            message: 'Faltan campos, error al cambiar contraseña',
         };
     }
 
@@ -510,7 +508,7 @@ export async function updatePassword(id: string, prevState: PasswordState, formD
         console.error(error);
 
         return {
-            message: 'Error en base de datos: fallo al actualizar tu contraseña',
+            message: 'Fallo en base de datos, error al cambiar contraseña',
         };
     }
  

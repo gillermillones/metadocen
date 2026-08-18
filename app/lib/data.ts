@@ -63,7 +63,7 @@ export async function fetchUserNumber() {
     return uNum;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Can not fetch user number');
+    throw new Error('No se pudo obtener el numero de usuarios');
   }
 }
 
@@ -78,7 +78,7 @@ export async function fetchUserByName(name: string) {
     return user[0];
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Can not fetch user by name');
+    throw new Error('No se pudo obtener el usuario por nombre');
   }
 }
 
@@ -95,7 +95,7 @@ export async function nameRepeated(name: string) {
     return result[0].exists;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Can not check user name availability');
+    throw new Error('No se pudo comprobar la disponibilidad del nombre de usuario');
   }
 }
 
@@ -112,7 +112,7 @@ export async function emailRepeated(email: string) {
     return result[0].exists;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Can not check email availability');
+    throw new Error('No se pudo comprobar la disponibilidad del email');
   }
 }
 
@@ -132,7 +132,7 @@ export async function fetchFriendNumber(id: string) {
     return fNum;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Can not fetch friend number');
+    throw new Error('No se pudo obtener el numero de amigos');
   }
 }
 
@@ -155,7 +155,7 @@ export async function fetchFriends(id: string) {
     return friends;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch friends.');
+    throw new Error('No se pudo obtener los amigos');
   }
 }
 
@@ -172,7 +172,7 @@ export async function fetchFriendRequests(id: string) {
     return friends;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch friend requests.');
+    throw new Error('No se pudo obtener las solicitudes de amistad');
   }
 }
 
@@ -199,7 +199,7 @@ export async function areWeFriends(id1: string, id2: string) {
     return result[0].exists;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to prove friendship.');
+    throw new Error('No se pudo comprobar la amistad');
   }
 }
 
@@ -226,7 +226,7 @@ export async function areWeRequested(id1: string, id2: string) {
     return result[0].exists;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to prove friendship.');
+    throw new Error('No se pudo comprobar la solicitud de amistad');
   }
 }
 
@@ -242,7 +242,7 @@ export async function fetchItemNumber(id: string) {
     return iNum;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Can not fetch item number');
+    throw new Error('No se pudo obtener el numero de items');
   }
 }
 
@@ -262,7 +262,7 @@ export async function fetchItemById(id: string) {
     return item[0];
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch item');
+    throw new Error('No se pudo obtener el item');
   }
 }
 
@@ -287,7 +287,7 @@ export async function fetchFilteredItemsUserId(
     return data;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch filtered items');
+    throw new Error('No se pudo obtener los items filtrados');
   }
 }
 
@@ -306,7 +306,7 @@ export async function fetchItemPagesUserId(query: string, id: string) {
     return totalPages;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch total number of items');
+    throw new Error('No se pudo obtener el numero de items');
   }
 }
 
@@ -325,7 +325,7 @@ export async function fetchItemByUserId(id: string) {
     return item[0];
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch item');
+    throw new Error('No se pudo obtener el item');
   }
 }
 
@@ -346,7 +346,7 @@ export async function fetch5ItemsByUserId(id: string) {
     return items;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch all items');
+    throw new Error('No se pudo obtener los 5 ultimos items');
   }
 }
 
@@ -365,6 +365,6 @@ export async function fetchAllItemsByUserId(id: string) {
     return items;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch all items');
+    throw new Error('No se pudo obtener todos los items');
   }
 }

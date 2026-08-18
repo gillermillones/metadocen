@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-18 shrink-0 items-center rounded-lg bg-blue-500 p-4 md:h-32">
+      <div className="flex h-18 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-32">
         <MetadocenLogo />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
@@ -35,14 +35,14 @@ export default function Page() {
             src="/infografias.jpg"
             width={1000}
             height={760}
-            className="hidden md:block"
+            className="hidden md:block rounded-lg"
             alt="Esquema que resume los apartados a evaluar en un documento, version de escritorio"
           />
           <Image
             src="/infografias.jpg"
             width={560}
             height={620}
-            className="block md:hidden"
+            className="block md:hidden rounded-lg"
             alt="Esquema que resume los apartados a evaluar en un documento, version de movil"
           />
         </div>

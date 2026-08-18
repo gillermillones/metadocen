@@ -37,6 +37,16 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                         </div>
                     </div>
                     <div className="mb-4">
+                        <label htmlFor="name" className="mb-2 block text-sm font-medium">
+                            Nombre completo
+                        </label>
+                        <div className="relative mt-2 rounded-md">
+                            <div className="peer block w-full rounded-md border border-gray-200 px-2 py-2 outline-2">
+                            <h1>{user.fullname}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mb-4">
                         <label htmlFor="gender" className="mb-2 block text-sm font-medium">
                             Genero
                         </label>

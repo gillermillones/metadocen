@@ -14,6 +14,7 @@ export type FullUser = {
   name: string;
   email: string;
   password: string;
+  fullname: string;
   gender: 'masculino' | 'femenino' | 'otro' | '';
   birthday: string;
   workplace: string;
