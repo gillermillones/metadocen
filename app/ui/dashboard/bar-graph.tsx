@@ -19,16 +19,28 @@ export default function BarGraph({ items }: { items: ItemData[] }) {
   const { yAxisLabels, topLabel } = generateYAxis(11);
   const itemValues: Record<string, number> = {};
   let aux = 0;
+  let total = 0;
+  let subt = 0;
+  if(graph !== -1){
+    valArr.forEach((i) => {
+      subt += items[graph][i.key];
+    })
+  }
   for (let j = 0; j < 15; j++) {
     aux = 0;
     items.forEach((item) => {
         aux += item[valArr[j].key];
     });
+    total += aux;
     itemValues[valArr[j].key] = aux / items.length;
   }
+  total = total / items.length;
 
   return (
       <div className="rounded-xl bg-gray-50 p-4">
+        <p className="text-s text-black text-start">
+          Total: {graph === -1 ? Math.round(total*100)/100 : Math.round(subt*100)/100}
+        </p>
         <div className="mt-0 grid grid-cols-16 grid-flow-col items-end gap-1 rounded-md bg-white p-4 overflow-x-auto">
           <div
             className="mb-6 flex-col justify-between text-sm text-gray-400 flex"
