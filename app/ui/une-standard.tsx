@@ -421,6 +421,12 @@ export default function UneStandard() {
                     </div>
                 </li>
             </ul>
+            <p>
+                Puedes consultar más información en el siguiente enlace: 
+                <Link href="https://intef.es/formacion/educacion-digital-de-calidad/une-71362/">
+                    Norma 71362:2020 UNE
+                </Link>
+            </p>
         </div>
     );
 }

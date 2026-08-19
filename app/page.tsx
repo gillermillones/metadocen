@@ -31,20 +31,22 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          <Image
-            src="/infografias.jpg"
-            width={1000}
-            height={760}
-            className="hidden md:block rounded-lg"
-            alt="Esquema que resume los apartados a evaluar en un documento, version de escritorio"
-          />
-          <Image
-            src="/infografias.jpg"
-            width={560}
-            height={620}
-            className="block md:hidden rounded-lg"
-            alt="Esquema que resume los apartados a evaluar en un documento, version de movil"
-          />
+          <Link href="https://intef.es/formacion/educacion-digital-de-calidad/une-71362/" >
+            <Image
+              src="/infografias.jpg"
+              width={1000}
+              height={760}
+              className="hidden md:block rounded-lg"
+              alt="Esquema que resume los apartados a evaluar en un documento, version de escritorio"
+            />
+            <Image
+              src="/infografias.jpg"
+              width={560}
+              height={620}
+              className="block md:hidden rounded-lg"
+              alt="Esquema que resume los apartados a evaluar en un documento, version de movil"
+            />
+          </Link>
         </div>
       </div>
     </main>
