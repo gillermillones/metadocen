@@ -3,6 +3,7 @@
 import { lusitana } from '@/app/ui/fonts';
 import GetDesc from '@/app/lib/paragraphs';
 import { colors } from '@/app/lib/utils';
+import Link from 'next/link';
 import { useState } from 'react';
     
 export default function UneStandard() {
