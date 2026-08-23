@@ -1,7 +1,7 @@
 'use client'
 
 import { UpdateItem, DeleteItem } from '@/app/ui/items/buttons';
-import { ChevronRightIcon, ChevronDownIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { ChevronRightIcon, ChevronDownIcon, ArrowDownTrayIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react'
 import ShowValues from '@/app/ui/items/show-values';
 import { ItemData } from '@/app/lib/definitions';
@@ -18,6 +18,9 @@ export default function ItemsTable({
 }) {
   const [state, setState] = useState<string | null>(null);
   const changeState = (itemId : string) => {setState(state === itemId ? null : itemId)}
+
+  const [modal, setModal] = useState<string | null>(null);
+  const showModal = (itemId : string) => {setModal(modal === itemId ? null : itemId)}
 
   const download = async (id: string) => {
     const xmlData = await generateXml(id);
@@ -56,19 +59,19 @@ export default function ItemsTable({
                         </button>
                    )}
                 </div>
-                {idSession.localeCompare(idUser) == 0 ? (
+                {idSession.localeCompare(idUser) == 0 && (
                     <div className="flex w-full items-center justify-between pt-4">
                         <div className="flex justify-end gap-2">
                           <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-green-300 hover:bg-green-400">
                             <ArrowDownTrayIcon className="w-5" />
                           </button>
                           <UpdateItem id={i.id} />
-                          <DeleteItem id={i.id} />
+                          <button onClick={() => showModal(i.id)} className="rounded-md border p-2 bg-red-400 hover:bg-red-500">
+                            <TrashIcon className="w-5" />
+                          </button>
                         </div>
                     </div>
-                    ):(
-                      <></>
-                    )}
+                )}
                 {state === i.id && (
                     <div>
                       <ShowValues item={i} mobile={true} />
@@ -134,10 +137,12 @@ export default function ItemsTable({
                     <td className="whitespace-nowrap py-3 pl-6 pr-3">
                       <div className="flex justify-end gap-3">
                         <button onClick={() => download(i.id)} className="rounded-md border p-2 bg-green-300 hover:bg-green-400">
-                          <ArrowDownTrayIcon className="w-5" />
-                        </button>
-                        <UpdateItem id={i.id} />
-                        <DeleteItem id={i.id} />
+                            <ArrowDownTrayIcon className="w-5" />
+                          </button>
+                          <UpdateItem id={i.id} />
+                          <button onClick={() => showModal(i.id)} className="rounded-md border p-2 bg-red-400 hover:bg-red-500">
+                            <TrashIcon className="w-5" />
+                          </button>
                       </div>
                     </td>
                     ):(
@@ -155,6 +160,21 @@ export default function ItemsTable({
               ))}
             </tbody>
           </table>
+          {modal && (
+            <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/25">
+              <div className="absolute flex flex-col p-8 gap-4 rounded-md bg-white">
+                  <p className="text-sm text-center">
+                    Seguro que quieres eliminar este archivo?
+                  </p>
+                  <div className="flex flex-row justify-between">
+                    <button type="button" onClick={() => showModal(modal)} className="rounded-md border p-2 bg-blue-300 hover:bg-blue-500">
+                      <span>No, cancelar</span>
+                    </button>
+                    <DeleteItem id={modal} onDelete={() => showModal(modal)} />
+                  </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
