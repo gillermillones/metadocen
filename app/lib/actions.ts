@@ -4,7 +4,7 @@ import { z } from 'zod';
 import postgres from 'postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { getUserById, signIn } from '@/auth';
+import { getUserById, signIn, signOut } from '@/auth';
 import { AuthError } from 'next-auth';
 import bcrypt from 'bcrypt';
 import { getIronSession, IronSession } from "iron-session";
@@ -514,4 +514,33 @@ export async function updatePassword(id: string, prevState: PasswordState, formD
  
   revalidatePath('/dashboard/profile/' + id);
   redirect('/dashboard/profile/' + id);
+}
+
+export async function deleteUser(id: string) {
+    
+    try{
+         await sql`
+            DELETE FROM friends 
+            WHERE "userIdSource" = ${id}
+            OR "userIdTarget" = ${id}
+        `;
+         await sql`
+            DELETE FROM "data" 
+            WHERE user_id = ${id}
+        `;
+    }catch(error){
+        console.error(error);
+    }
+    try{
+        await sql`
+            DELETE FROM users 
+            WHERE id = ${id}
+        `;
+    }catch(error){
+        console.error(error);
+    }
+    
+    await signOut({ redirectTo: '/' });
+    const session = await getSession();
+    session.destroy();
 }

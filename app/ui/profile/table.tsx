@@ -6,6 +6,7 @@ import FriendList from '@/app/ui/friends/friend-list';
 import { UpdateProfile, UpdatePassword } from '@/app/ui/profile/buttons';
 import { getFullUserById } from '@/auth';
 import { formatDateToLocal } from '@/app/lib/utils'
+import ProfileModal from '@/app/ui/profile/profile-modal';
 
 export default async function OwnProfileTable({ id }: { id: string }) {
   const user = await getFullUserById(id);
@@ -95,6 +96,7 @@ export default async function OwnProfileTable({ id }: { id: string }) {
                 <div className="flex flex-row justify-center gap-4 my-2">
                     <UpdateProfile id={user.id} />
                     <UpdatePassword id={user.id} />
+                    <ProfileModal id={user.id} />
                 </div>
             </div>
             <div className="flex flex-row md:flex-col justify-evenly gap-2 mt-2">

@@ -2,6 +2,6 @@
 
 import { deleteItem } from '@/app/lib/actions';
 
-export async function deleteItemAction(id: string) {
+export default async function DeleteItemAction(id: string) {
   await deleteItem(id);
 }

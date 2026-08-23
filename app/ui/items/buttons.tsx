@@ -1,6 +1,6 @@
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { deleteItemAction } from '@/app/ui/items/delete-button';
+import DeleteItemAction from '@/app/ui/items/delete-button';
 
 export function CreateItem() {
   return (
@@ -43,7 +43,7 @@ export function DeleteItem({ id }: { id: string }) {
 
 export function DeleteItem({ id, onDelete }: { id: string; onDelete?: () => void }) {
   return (
-    <form action={deleteItemAction.bind(null, id)} onSubmit={() => {onDelete?.();}}>
+    <form action={DeleteItemAction.bind(null, id)} onSubmit={() => {onDelete?.();}}>
       <button type="submit" className="rounded-md border p-2 bg-red-300 hover:bg-red-500">
         <span>Si, eliminar</span>
       </button>
