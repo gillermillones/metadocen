@@ -44,7 +44,8 @@ export const colors = [
               "indigo", 
               "purple", 
               "fuchsia", 
-              "pink", "rose", 
+              "pink", 
+              "rose", 
               "slate", 
               "stone"
 ];
