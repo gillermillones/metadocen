@@ -6,12 +6,6 @@ import { useState } from 'react';
 import { ItemData } from '@/app/lib/definitions';
 import clsx from 'clsx';
 
-// This component is representational only.
-// For data visualization UI, check out:
-// https://www.tremor.so/
-// https://www.chartjs.org/
-// https://airbnb.io/visx/
-
 export default function BarGraph({ items }: { items: ItemData[] }) {
   const chartHeight = 550;
   const [graph, setGraph] = useState<number>(-1);
@@ -64,7 +58,7 @@ export default function BarGraph({ items }: { items: ItemData[] }) {
                   })
                 }
               ></div>
-              <p className="w-full text-xs text-clip text-gray-400">
+              <p className="w-full text-xs text-center text-clip text-gray-400">
                 {i.key}
               </p>
             </div>

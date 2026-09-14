@@ -171,7 +171,7 @@ export default function ItemForm() {
                                     id="summary"
                                     name="summary"
                                     type="text"
-                                    placeholder="Breve descripcion del acrhivo"
+                                    placeholder="Breve descripcion del archivo"
                                     value={formData.summary}
                                     onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
                                     className="peer block w-full rounded-md border border-gray-200 py-2 text-sm outline-2 placeholder:text-gray-500"

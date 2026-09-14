@@ -36,7 +36,7 @@ export default function BarGraphLite({ items }: { items: ItemData[] }) {
                   height: `${(chartHeight / topLabel) * i[valArr[graph].key]}px`,
                 }}
               ></div>
-              <p className="w-full text-xs truncate text-gray-400 rotate-0">
+              <p className="w-full text-xs text-center truncate text-gray-400 rotate-0">
                 {i.name}
               </p>
             </div>

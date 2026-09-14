@@ -10,7 +10,7 @@ export default function ProfileModal({ id }: { id: string }) {
 
     return (
         <div>
-            <button onClick={() => showModal(id)} className="flex h-10 ml-4 items-center justify-between gap-2 md:gap-1 rounded-lg bg-red-400 px-4 text-sm font-medium text-white transition-colors hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+            <button onClick={() => showModal(id)} className="flex h-10 width-maxflex ml-4 items-center justify-between gap-2 md:gap-1 rounded-lg bg-red-400 px-4 text-sm font-medium text-white transition-colors hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
                 <span className="block">Eliminar perfil</span>{' '}
                 <TrashIcon className="w-5 md:ml-4" />
             </button>
