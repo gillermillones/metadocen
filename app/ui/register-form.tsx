@@ -41,7 +41,7 @@ export default function RegisterForm() {
                         id="name"
                         type="text"
                         name="name"
-                        placeholder="Enter your user name"
+                        placeholder="Introduce tu nombre de usuario"
                         aria-describedby='name-error'
                         required
                     />
@@ -69,7 +69,7 @@ export default function RegisterForm() {
                         id="email"
                         type="email"
                         name="email"
-                        placeholder="Enter your email address"
+                        placeholder="Introduce tu correo electronico"
                         aria-describedby='email-error'
                         required
                     />
@@ -97,7 +97,7 @@ export default function RegisterForm() {
                         id="password"
                         type="password"
                         name="password"
-                        placeholder="Enter password"
+                        placeholder="Introduce tu contraseña"
                         aria-describedby='password-error'
                         required
                         minLength={6}
@@ -126,7 +126,7 @@ export default function RegisterForm() {
                         id="password2"
                         type="password"
                         name="password2"
-                        placeholder="Repeat password"
+                        placeholder="Repite la contraseña"
                         aria-describedby='password2-error'
                         required
                         minLength={6}
